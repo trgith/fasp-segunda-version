@@ -253,6 +253,14 @@ export class Dashboard1Component {
       this.MostrandoObservaciones = false;
     }
 
+    ToggleEnviarObservacion(){
+      if(this.MostrandoObservaciones){
+        this.MostrandoObservaciones = false;
+      } else {
+        this.MostrandoObservaciones = true;
+      }
+    }
+
   /*
   *
   *

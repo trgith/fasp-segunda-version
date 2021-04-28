@@ -25,6 +25,7 @@ export class CustomizerComponent implements OnInit, OnDestroy {
   isOpen = true;
   public config: any = {};
   layoutSub: Subscription;
+  usuarioLogeado: string;
 
   constructor(
     private renderer: Renderer2,
@@ -43,7 +44,8 @@ export class CustomizerComponent implements OnInit, OnDestroy {
   @Output() directionEvent = new EventEmitter<Object>();
 
   ngOnInit() {
-
+    //Variable de Usuario para mostrar si o no los elementos
+    this.usuarioLogeado = localStorage.getItem('currentUser');
   }
 
 

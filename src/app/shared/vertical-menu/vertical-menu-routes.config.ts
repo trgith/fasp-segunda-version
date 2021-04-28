@@ -289,10 +289,10 @@ export const ROUTES: RouteInfo[] = [
     path: 'funcionarioEstatal', title: 'Impulso al Modelo Nacional de Policia', icon: 'ft-trending-up', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
     submenu: [
       {
-        path: '/uikit/grids', title: 'Subprograma de Modelo Nacional de Policia', icon: 'ft-user submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Subprograma de Modelo Nacional de Policia', icon: 'ft-user submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Subprograma de Dignificación Policial', icon: 'ft-book submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Subprograma de Dignificación Policial', icon: 'ft-book submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       }
     ]
   },
@@ -300,10 +300,10 @@ export const ROUTES: RouteInfo[] = [
     path: 'funcionarioEstatal', title: 'Profesionalización', icon: 'ft-loader', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
     submenu: [
       {
-        path: '/uikit/grids', title: 'Fortalecimiento de las Capacidades de Evaluación en Control de Confianza', icon: 'ft-git-commit submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Fortalecimiento de las Capacidades de Evaluación en Control de Confianza', icon: 'ft-git-commit submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Profesionalización y Capacitación de Elementos de Confianza', icon: 'ft-stop-circle submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Profesionalización y Capacitación de Elementos de Confianza', icon: 'ft-stop-circle submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       }
     ]
   },
@@ -311,22 +311,22 @@ export const ROUTES: RouteInfo[] = [
     path: 'funcionarioEstatal', title: 'Equipamiento e Infraestructura de los Elementos Policiales y las Instituciones de Seguridad Pública', icon: 'ft-home', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
     submenu: [
       {
-        path: '/uikit/grids', title: 'Equipamiento', icon: 'ft-crop submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Equipamiento', icon: 'ft-crop submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Infraestructura', icon: 'ft-home submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Infraestructura', icon: 'ft-home submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Fortalecimiento de Capacidades', icon: 'ft-shield submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Fortalecimiento de Capacidades', icon: 'ft-shield submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Especialización de las Instancias Responsables de Búsqueda de Personas', icon: 'ft-search submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Especialización de las Instancias Responsables de Búsqueda de Personas', icon: 'ft-search submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Fortalecimiento de Capacidades', icon: 'ft-shield submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Fortalecimiento de Capacidades', icon: 'ft-shield submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Fortalecimiento y/o Creación de Unidades de Inteligencia Patrimonial y Económica', icon: 'ft-plus-square submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Fortalecimiento y/o Creación de Unidades de Inteligencia Patrimonial y Económica', icon: 'ft-plus-square submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       }
     ]
   },
@@ -336,10 +336,10 @@ export const ROUTES: RouteInfo[] = [
     path: 'evaluadorExterno', title: 'Construir Informe', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
     submenu: [
       {
-        path: '/uikit/grids', title: 'Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       }
     ]
   },
@@ -347,10 +347,10 @@ export const ROUTES: RouteInfo[] = [
     path: 'evaluadorExterno', title: 'Monitoreo', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
     submenu: [
       {
-        path: '/uikit/grids', title: 'Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       }
     ]
   },
@@ -358,16 +358,16 @@ export const ROUTES: RouteInfo[] = [
     path: 'evaluadorExterno', title: 'Descargas', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
     submenu: [
       {
-        path: '/uikit/grids', title: 'Bases de Datos Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Bases de Datos Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Bases de Datos Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Bases de Datos Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Formatos Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Formatos Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Formatos Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Formatos Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       }
     ]
   },
@@ -377,10 +377,10 @@ export const ROUTES: RouteInfo[] = [
     path: 'enlaceEstatal', title: 'Validar Informe', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
     submenu: [
       {
-        path: '/uikit/grids', title: 'Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       }
     ]
   },
@@ -388,10 +388,10 @@ export const ROUTES: RouteInfo[] = [
     path: 'enlaceEstatal', title: 'Monitoreo', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
     submenu: [
       {
-        path: '/uikit/grids', title: 'Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       }
     ]
   },
@@ -399,16 +399,16 @@ export const ROUTES: RouteInfo[] = [
     path: 'enlaceEstatal', title: 'Descargas', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
     submenu: [
       {
-        path: '/uikit/grids', title: 'Bases de Datos Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Bases de Datos Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Bases de Datos Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#s', title: 'Bases de Datos Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Formatos Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Formatos Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '/uikit/grids', title: 'Formatos Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Formatos Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       }
     ]
   },
