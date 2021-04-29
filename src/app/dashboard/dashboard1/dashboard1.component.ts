@@ -4,6 +4,13 @@ import { trackByHourSegment } from 'angular-calendar/modules/common/util';
 //Graficas
 import * as Chartist from 'chartist';
 import { ChartType, ChartEvent } from "ng-chartist";
+//Mapa
+// amCharts imports
+import * as am4core from '@amcharts/amcharts4/core';
+import * as am4maps from '@amcharts/amcharts4/maps';
+import * as am4charts from '@amcharts/amcharts4/charts';
+import countries2  from '@amcharts/amcharts4-geodata/data/countries2';
+import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 
 declare var require: any;
 
@@ -105,6 +112,97 @@ export class Dashboard1Component {
     //Se inicializan programas
     this.programas = this.getProducts();
   }
+
+
+  ngAfterViewInit() {
+
+        am4core.useTheme(am4themes_animated);
+        let geo : any = [{"country_code":"MX","country_name":"Mexico"}];
+        // Default map
+        let defaultMap = "mexicoHigh";
+
+        // calculate which map to be used
+        let currentMap = defaultMap;
+        let title = "";
+
+        if ( countries2[ geo.country_code ] !== undefined ) {
+          currentMap = countries2[ geo.country_code ][ "maps" ][ 0 ];
+
+          // add country title
+          if ( countries2[ geo.country_code ][ "country" ] ) {
+            title = countries2[ geo.country_code ][ "country" ];
+          }
+
+        }
+
+        // Create map instance
+        let chart = am4core.create("chartdiv", am4maps.MapChart);
+        chart.titles.create().text = title;
+
+        // Set map definition
+        chart.geodataSource.url = "https://www.amcharts.com/lib/4/geodata/json/" + currentMap + ".json";
+        chart.geodataSource.events.on("parseended", function(ev) {
+          let data = [];
+          for(var i = 0; i < ev.target.data.features.length; i++) {
+            data.push({
+              id: ev.target.data.features[i].id,
+              value: Math.round( Math.random() * 10000 )
+            })
+          }
+          polygonSeries.data = data;
+        })
+
+        // Set projection
+        chart.projection = new am4maps.projections.Mercator();
+
+        // Create map polygon series
+        let polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+
+        //Set min/max fill color for each area
+        polygonSeries.heatRules.push({
+          property: "fill",
+          target: polygonSeries.mapPolygons.template,
+          min: chart.colors.getIndex(1).brighten(1),
+          max: chart.colors.getIndex(1).brighten(-0.3)
+        });
+
+        // Make map load polygon data (state shapes and names) from GeoJSON
+        polygonSeries.useGeodata = true;
+
+        // Set up heat legend
+        let heatLegend = chart.createChild(am4maps.HeatLegend);
+        heatLegend.series = polygonSeries;
+        heatLegend.align = "right";
+        heatLegend.width = am4core.percent(0);
+        heatLegend.marginRight = am4core.percent(4);
+        heatLegend.minValue = 0;
+        heatLegend.maxValue = 40000000;
+        heatLegend.valign = "bottom";
+
+        // Blank out internal heat legend value axis labels
+        heatLegend.valueAxis.renderer.labels.template.adapter.add("text", function(labelText) {
+          return "";
+        });
+
+        // Configure series tooltip
+        let polygonTemplate = polygonSeries.mapPolygons.template;
+        polygonTemplate.tooltipText = "{name}";
+        polygonTemplate.nonScalingStroke = true;
+        polygonTemplate.strokeWidth = 0.5;
+
+        // Create hover state and set alternative fill color
+        let hs = polygonTemplate.states.create("hover");
+        hs.properties.fill = chart.colors.getIndex(1).brighten(-0.5);
+
+        //Function Click
+        /*
+        polygonTemplate.events.on("hit", function(ev) {
+          // zoom to an object
+          ev.target.series.chart.zoomToMapObject(ev.target);
+
+        });*/
+        polygonTemplate.events.on("hit", this.AreaDesdeMapa, this);
+  }
   /*
   *
   *
@@ -133,6 +231,11 @@ export class Dashboard1Component {
   * Funciones para la card de Areas
   *
   */
+  //0.- Muestra Siempre el card de Areas
+  AreaDesdeMapa(ev){
+    this.MostrandoAreas = true;
+    ev.target.series.chart.zoomToMapObject(ev.target);
+  }
   //1.- Para mostrar u ocultar la card de Areas
   ToggleAreas(){
     if(this.MostrandoAreas){

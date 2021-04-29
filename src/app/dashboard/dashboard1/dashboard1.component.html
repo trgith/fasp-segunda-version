@@ -1,3 +1,5 @@
+
+
 <!-- Menu de Evaluador Externo  -->
 <div class="card" *ngIf="MainEvaluador">
   <div class="card-content">
@@ -41,16 +43,12 @@
   </div>
   <div class="card-content">
     <div class="card-body">
-      <div class="row justify-content-md-center">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Mexico_Map.svg" alt="">
-        <div>
-        </div>
+      <div class="row justify-content-md-center" id="chartdiv" style="height: 35em !important;">
       </div>
       <br>
       <div class="row justify-content-md-center">
         <div class="col-12 col-md-6 mb-2 mb-md-0">
-          <button type="button" class="btn btn-success btn-block" (click)="VerNacional()">Nacional</button>
-          <button type="button" class="btn btn-warning btn-block" (click)="ToggleAreas()">Estado Individual (Test)</button>
+          <button type="button" class="btn btn-success btn-block" (click)="VerNacional()">Ver Gráficas Nacionales</button>
         </div>
       </div>
     </div>

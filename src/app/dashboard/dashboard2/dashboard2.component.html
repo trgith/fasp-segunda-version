@@ -1,4 +1,183 @@
+<!-- Pantalla de bienvenida -->
+<div class="card" *ngIf="usuarioLogeado == 'policia' && instrucciones">
+  <div class="card-content">
+    <div class="card-header">
+      <h4>Cuestionario Institucional</h4>
+    </div>
+    <div class="card-body">
+      
+      <!-- Instrucciones -->
+      <ul class="list-group">
+        <li class="list-group-item">
+          I. El cuestionario es de aplicación anónima y está orientado a conocer la percepción del personal operativo de las instituciones policiales, de procuración de justicia y del sistema penitenciario de las entidades federativas en temas tales como: Perfil, Aspectos socioeconómicos, Profesionalización, Capacitación, Evaluación Policial, Equipamiento, Uso de tecnología, Infraestructura, Condiciones laborales, Hábitos y Problemas en el trabajo.
+        </li>
+        <li class="list-group-item">
+          II. El encuestador o responsable de la aplicación de la encuesta electrónica deberá llenar la totalidad de los campos del encabezado de la encuesta.
+        </li>
+        <li class="list-group-item">
+          III. La encuesta podrá ser aplicada mediante una entrevista preferentemente directa o conjunta del encuestador hacia el personal seleccionado, o bien, bajo la metodología que determine el evaluador externo en caso de que sea mediante aplicación electrónica.
+        </li>
+        <li class="list-group-item">
+          IV. En todas las preguntas se presentan respuestas de opción múltiple, por lo que ninguna pregunta puede quedar sin contestar, a excepción de aquellas que están condicionadas a la respuesta de otras preguntas.
+        </li>
+        <li class="list-group-item">
+          V. En caso de que el encuestado no conteste o no sepa la respuesta de la pregunta número l (uno), no deberá continuar con la aplicación de la encuesta y en caso de haber contestado la totalidad de la encuesta salvo la pregunta número l (uno), la encuesta se deberá considerar NO VÁLIDA, por lo que no deberá ser registrada en la base de datos correspondiente.
+        </li>
+        <li class="list-group-item">
+          VI. Antes de concluir con la aplicación de la encuesta, el encuestador o responsable de la aplicación de la encuesta electrónica deberá revisar que todas las preguntas hayan sido contestadas y, en su caso, solicitar al encuestado indicar su(s) respuesta(s) correspondiente(s a las pregunta(s) faltante(s) por contestar.
+        </li>
+        <li class="list-group-item text-center">
+          <button class="btn btn-success" (click)="ComenzarCuestionario()">Comenzar Cuestionario</button>
+        </li>
+      </ul>
+      <!-- Instrucciones -->
+    </div>
+  </div>
+</div>
+<!-- Pantalla de bienvenida -->
 
-<!-- Card sizing section start -->
+<!-- Contador de Tiempo -->
+<div class="card" *ngIf="usuarioLogeado == 'policia' && contadorActivo">
+  <div class="card-content">
+    <div class="card-body">
+      <div class="row">
+        <div class="col text-right">
+          <h5>Tiempo restante: 0h 0m {{ (restante$ | async) }}s</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contador de Tiempo -->
 
-<!-- Card sizing section end -->
+<!-- Primera Pregunta -->
+<div class="card" *ngIf="usuarioLogeado == 'policia' && primeraPregunta">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          1. Perfil de Personal Operativo
+        </div>
+        <div class="text-right">
+          <button class="btn btn-warning">
+            Observación
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+      <!-- Cuerpo de pregunta -->
+      <table class="table" rules="none">
+        <tbody>
+        <tr>
+            <td colspan="3" title="El puesto en el cual esta contratado actualmente.">
+                1.1 <strong>FUNCIÓN</strong>. ¿Cuál es la función que desempeña actualmente?
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="Cap1Pre1Opc1" name="Cap1Pre1" class="custom-control-input" required>
+                    <label class="custom-control-label" for="Cap1Pre1Opc1">
+                        De prevención, reacción o de investigación en la Institución Policial <strong>(Policía Estatal)</strong>
+                    </label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="Cap1Pre1Opc2" name="Cap1Pre1" class="custom-control-input" required>
+                    <label class="custom-control-label" for="Cap1Pre1Opc2">
+                        De investigación en la Procuraduría General o Fiscalía <strong>(Policía Ministerial o equivalente)</strong>
+                    </label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="Cap1Pre1Opc3" name="Cap1Pre1" class="custom-control-input" required>
+                    <label class="custom-control-label" for="Cap1Pre1Opc3">
+                        De vigilancia o custodia del Sistema Penitenciario <strong>(Custodio)</strong>
+                    </label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+          <td class="text-right">
+            <button class="btn btn-success" (click)="DobleValidacion()">Siguiente</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <!-- Cuerpo de pregunta -->
+
+    </div>
+  </div>
+</div>
+<!-- Primera Pregunta -->
+
+<!-- Segunda Pregunta -->
+<div class="card" *ngIf="segundaPregunta">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          1. Perfil de Personal Operativo
+        </div>
+        <div class="text-right">
+          <button class="btn btn-warning">
+            Observación
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+      <!-- Cuerpo de pregunta -->
+      <table class="table" rules="none">
+        <tbody>
+        <tr>
+            <td colspan="3" title="El puesto en el cual esta contratado actualmente.">
+                1.2 <strong>SEXO</strong>.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="222" name="2222222" class="custom-control-input">
+                    <label class="custom-control-label" for="Cap1Pre1Opc1">
+                        Femenino
+                    </label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="222" name="2222222" class="custom-control-input">
+                    <label class="custom-control-label" for="Cap1Pre1Opc2">
+                        Masculino
+                    </label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+          <td class="text-right">
+            <button class="btn btn-success" (click)="DobleValidacion()">Siguiente</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <!-- Cuerpo de pregunta -->
+
+    </div>
+  </div>
+</div>
+<!-- Segunda Pregunta -->
