@@ -285,6 +285,7 @@ export const ROUTES: RouteInfo[] = [
       isExternalLink: false,
       submenu: []
   },
+  //Menu de Funcionario estatal
   {
     path: 'funcionarioEstatal', title: 'Impulso al Modelo Nacional de Policia', icon: 'ft-trending-up', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
     submenu: [
@@ -327,6 +328,80 @@ export const ROUTES: RouteInfo[] = [
       },
       {
         path: '#', title: 'Fortalecimiento y/o Creación de Unidades de Inteligencia Patrimonial y Económica', icon: 'ft-plus-square submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      },
+      {
+        path: '#', title: 'Desarrollo de Ciencias Forenses', icon: 'ft-search submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      },
+      {
+        path: '#', title: 'Modelo Homologado de Policia Cibernética', icon: 'ft-aperture submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      },
+      {
+        path: '#', title: 'Fortalecimiento y/o Creación de Unidades de Inteligencia Patrimonial y Económica', icon: 'ft-plus-square submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      }
+    ]
+  },
+  {
+    path: 'funcionarioEstatal', title: 'Prevención y Combate a Delitos de Alto Impacto', icon: 'ft-loader', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+  },
+  {
+    path: 'funcionarioEstatal', title: 'Prevención Social', icon: 'ft-alert-circle', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
+    submenu: [
+      {
+        path: '#', title: 'Acceso a la Justicia para Mujeres', icon: 'ft-award submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      },
+      {
+        path: '#', title: 'Participación Ciudadana', icon: 'ft-user submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      },
+      {
+        path: '#', title: 'Asesorías Jurídicas de Victímas', icon: 'ft-sidebar submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      },
+      {
+        path: '#', title: 'Asesorías Jurídicas de Victímas', icon: 'ft-sidebar submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      }
+    ]
+  },
+  {
+    path: 'funcionarioEstatal', title: 'Metas alcanzadas', icon: 'ft-award', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+  },
+  {
+    path: 'funcionarioEstatal', title: 'Sistema Penitenciario Nacional', icon: 'ft-alert-circle', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
+    submenu: [
+      {
+        path: '#', title: 'Fortalecimiento del Sistema Penitenciario Nacional', icon: 'ft-shield submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      },
+      {
+        path: '#', title: 'Fortalecimiento de la autoridad administrativa especializada del sistema de Justicia para Adolecentes', icon: 'ft-shield submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      },
+      {
+        path: '#', title: 'Acreditación de Establecimientos Penitenciarios', icon: 'ft-award submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      },
+      {
+        path: '#', title: 'Asesorías Jurídicas de Victímas', icon: 'ft-sidebar submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      }
+    ]
+  },
+  {
+    path: 'funcionarioEstatal', title: 'Sistena Nacional de Información', icon: 'ft-database', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
+    submenu: [
+      {
+        path: '#', title: 'Bases de Datos del SNSP', icon: 'ft-database submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      },
+      {
+        path: '#', title: 'Atención a Llamadas de Emergencia y Denuncias Ciudadanas', icon: 'ft-phone-call submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      },
+      {
+        path: '#', title: 'Red Nacional de Comunicación', icon: 'ft-radio submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      },
+      {
+        path: '#', title: 'Sistema de Video Vigilancia y Geolocalización', icon: 'ft-video submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      }
+    ]
+  },
+  {
+    path: 'funcionarioEstatal', title: 'Fortalecimiento Tecnológico de REPUVE', icon: 'ft-slack', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
+    submenu: [
+      {
+        path: '#', title: 'Subprograma de Registro Público Vehicular', icon: 'ft-truck submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       }
     ]
   },

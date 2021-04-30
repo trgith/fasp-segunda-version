@@ -1,183 +1,372 @@
-<!-- Pantalla de bienvenida -->
-<div class="card" *ngIf="usuarioLogeado == 'policia' && instrucciones">
-  <div class="card-content">
+<!--
+
+  Seccion para Funcionario Estatal
+
+-->
+<div *ngIf="usuarioLogeado == 'policia'">
+  <!-- Pantalla de bienvenida -->
+  <div class="card" *ngIf="usuarioLogeado == 'policia' && instrucciones">
+    <div class="card-content">
+      <div class="card-header">
+        <h4>Cuestionario Institucional</h4>
+      </div>
+      <div class="card-body">
+
+        <!-- Instrucciones -->
+        <ul class="list-group">
+          <li class="list-group-item">
+            I. El cuestionario es de aplicación anónima y está orientado a conocer la percepción del personal operativo de las instituciones policiales, de procuración de justicia y del sistema penitenciario de las entidades federativas en temas tales como: Perfil, Aspectos socioeconómicos, Profesionalización, Capacitación, Evaluación Policial, Equipamiento, Uso de tecnología, Infraestructura, Condiciones laborales, Hábitos y Problemas en el trabajo.
+          </li>
+          <li class="list-group-item">
+            II. El encuestador o responsable de la aplicación de la encuesta electrónica deberá llenar la totalidad de los campos del encabezado de la encuesta.
+          </li>
+          <li class="list-group-item">
+            III. La encuesta podrá ser aplicada mediante una entrevista preferentemente directa o conjunta del encuestador hacia el personal seleccionado, o bien, bajo la metodología que determine el evaluador externo en caso de que sea mediante aplicación electrónica.
+          </li>
+          <li class="list-group-item">
+            IV. En todas las preguntas se presentan respuestas de opción múltiple, por lo que ninguna pregunta puede quedar sin contestar, a excepción de aquellas que están condicionadas a la respuesta de otras preguntas.
+          </li>
+          <li class="list-group-item">
+            V. En caso de que el encuestado no conteste o no sepa la respuesta de la pregunta número l (uno), no deberá continuar con la aplicación de la encuesta y en caso de haber contestado la totalidad de la encuesta salvo la pregunta número l (uno), la encuesta se deberá considerar NO VÁLIDA, por lo que no deberá ser registrada en la base de datos correspondiente.
+          </li>
+          <li class="list-group-item">
+            VI. Antes de concluir con la aplicación de la encuesta, el encuestador o responsable de la aplicación de la encuesta electrónica deberá revisar que todas las preguntas hayan sido contestadas y, en su caso, solicitar al encuestado indicar su(s) respuesta(s) correspondiente(s a las pregunta(s) faltante(s) por contestar.
+          </li>
+          <li class="list-group-item text-center">
+            <button class="btn btn-success" (click)="ComenzarCuestionario()">Comenzar Cuestionario</button>
+          </li>
+        </ul>
+        <!-- Instrucciones -->
+      </div>
+    </div>
+  </div>
+  <!-- Pantalla de bienvenida -->
+
+  <!-- Contador de Tiempo -->
+  <div class="card" *ngIf="usuarioLogeado == 'policia' && contadorActivo">
+    <div class="card-content">
+      <div class="card-body">
+        <div class="row">
+          <div class="col text-right">
+            <h5>Tiempo restante: 0h 0m {{ (restante$ | async) }}s</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Contador de Tiempo -->
+
+  <!-- Primera Pregunta -->
+  <div class="card" *ngIf="usuarioLogeado == 'policia' && primeraPregunta">
     <div class="card-header">
-      <h4>Cuestionario Institucional</h4>
-    </div>
-    <div class="card-body">
-      
-      <!-- Instrucciones -->
-      <ul class="list-group">
-        <li class="list-group-item">
-          I. El cuestionario es de aplicación anónima y está orientado a conocer la percepción del personal operativo de las instituciones policiales, de procuración de justicia y del sistema penitenciario de las entidades federativas en temas tales como: Perfil, Aspectos socioeconómicos, Profesionalización, Capacitación, Evaluación Policial, Equipamiento, Uso de tecnología, Infraestructura, Condiciones laborales, Hábitos y Problemas en el trabajo.
-        </li>
-        <li class="list-group-item">
-          II. El encuestador o responsable de la aplicación de la encuesta electrónica deberá llenar la totalidad de los campos del encabezado de la encuesta.
-        </li>
-        <li class="list-group-item">
-          III. La encuesta podrá ser aplicada mediante una entrevista preferentemente directa o conjunta del encuestador hacia el personal seleccionado, o bien, bajo la metodología que determine el evaluador externo en caso de que sea mediante aplicación electrónica.
-        </li>
-        <li class="list-group-item">
-          IV. En todas las preguntas se presentan respuestas de opción múltiple, por lo que ninguna pregunta puede quedar sin contestar, a excepción de aquellas que están condicionadas a la respuesta de otras preguntas.
-        </li>
-        <li class="list-group-item">
-          V. En caso de que el encuestado no conteste o no sepa la respuesta de la pregunta número l (uno), no deberá continuar con la aplicación de la encuesta y en caso de haber contestado la totalidad de la encuesta salvo la pregunta número l (uno), la encuesta se deberá considerar NO VÁLIDA, por lo que no deberá ser registrada en la base de datos correspondiente.
-        </li>
-        <li class="list-group-item">
-          VI. Antes de concluir con la aplicación de la encuesta, el encuestador o responsable de la aplicación de la encuesta electrónica deberá revisar que todas las preguntas hayan sido contestadas y, en su caso, solicitar al encuestado indicar su(s) respuesta(s) correspondiente(s a las pregunta(s) faltante(s) por contestar.
-        </li>
-        <li class="list-group-item text-center">
-          <button class="btn btn-success" (click)="ComenzarCuestionario()">Comenzar Cuestionario</button>
-        </li>
-      </ul>
-      <!-- Instrucciones -->
-    </div>
-  </div>
-</div>
-<!-- Pantalla de bienvenida -->
-
-<!-- Contador de Tiempo -->
-<div class="card" *ngIf="usuarioLogeado == 'policia' && contadorActivo">
-  <div class="card-content">
-    <div class="card-body">
-      <div class="row">
-        <div class="col text-right">
-          <h5>Tiempo restante: 0h 0m {{ (restante$ | async) }}s</h5>
+      <h4 class="card-title">
+        <div class="row">
+          <div class="col">
+            1. Perfil de Personal Operativo
+          </div>
+          <div class="text-right">
+            <button class="btn btn-warning">
+              Observación
+            </button>
+          </div>
         </div>
+      </h4>
+    </div>
+    <div class="card-content">
+      <div class="card-body">
+
+        <!-- Cuerpo de pregunta -->
+        <table class="table" rules="none">
+          <tbody>
+          <tr>
+              <td colspan="3" title="El puesto en el cual esta contratado actualmente.">
+                  1.1 <strong>FUNCIÓN</strong>. ¿Cuál es la función que desempeña actualmente?
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="Cap1Pre1Opc1" name="Cap1Pre1" class="custom-control-input" required>
+                      <label class="custom-control-label" for="Cap1Pre1Opc1">
+                          De prevención, reacción o de investigación en la Institución Policial <strong>(Policía Estatal)</strong>
+                      </label>
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="Cap1Pre1Opc2" name="Cap1Pre1" class="custom-control-input" required>
+                      <label class="custom-control-label" for="Cap1Pre1Opc2">
+                          De investigación en la Procuraduría General o Fiscalía <strong>(Policía Ministerial o equivalente)</strong>
+                      </label>
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="Cap1Pre1Opc3" name="Cap1Pre1" class="custom-control-input" required>
+                      <label class="custom-control-label" for="Cap1Pre1Opc3">
+                          De vigilancia o custodia del Sistema Penitenciario <strong>(Custodio)</strong>
+                      </label>
+                  </div>
+              </td>
+          </tr>
+          <tr>
+            <td class="text-right">
+              <button class="btn btn-success" (click)="DobleValidacion()">Siguiente</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- Cuerpo de pregunta -->
+
       </div>
     </div>
   </div>
-</div>
-<!-- Contador de Tiempo -->
+  <!-- Primera Pregunta -->
 
-<!-- Primera Pregunta -->
-<div class="card" *ngIf="usuarioLogeado == 'policia' && primeraPregunta">
-  <div class="card-header">
-    <h4 class="card-title">
-      <div class="row">
-        <div class="col">
-          1. Perfil de Personal Operativo
+  <!-- Segunda Pregunta -->
+  <div class="card" *ngIf="segundaPregunta">
+    <div class="card-header">
+      <h4 class="card-title">
+        <div class="row">
+          <div class="col">
+            1. Perfil de Personal Operativo
+          </div>
+          <div class="text-right">
+            <button class="btn btn-warning">
+              Observación
+            </button>
+          </div>
         </div>
-        <div class="text-right">
-          <button class="btn btn-warning">
-            Observación
-          </button>
-        </div>
+      </h4>
+    </div>
+    <div class="card-content">
+      <div class="card-body">
+
+        <!-- Cuerpo de pregunta -->
+        <table class="table" rules="none">
+          <tbody>
+          <tr>
+              <td colspan="3" title="El puesto en el cual esta contratado actualmente.">
+                  1.2 <strong>SEXO</strong>.
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="222" name="2222222" class="custom-control-input">
+                      <label class="custom-control-label" for="Cap1Pre1Opc1">
+                          Femenino
+                      </label>
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="222" name="2222222" class="custom-control-input">
+                      <label class="custom-control-label" for="Cap1Pre1Opc2">
+                          Masculino
+                      </label>
+                  </div>
+              </td>
+          </tr>
+          <tr>
+            <td class="text-right">
+              <button class="btn btn-success" (click)="DobleValidacion()">Siguiente</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- Cuerpo de pregunta -->
+
       </div>
-    </h4>
-  </div>
-  <div class="card-content">
-    <div class="card-body">
-
-      <!-- Cuerpo de pregunta -->
-      <table class="table" rules="none">
-        <tbody>
-        <tr>
-            <td colspan="3" title="El puesto en el cual esta contratado actualmente.">
-                1.1 <strong>FUNCIÓN</strong>. ¿Cuál es la función que desempeña actualmente?
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="Cap1Pre1Opc1" name="Cap1Pre1" class="custom-control-input" required>
-                    <label class="custom-control-label" for="Cap1Pre1Opc1">
-                        De prevención, reacción o de investigación en la Institución Policial <strong>(Policía Estatal)</strong>
-                    </label>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="Cap1Pre1Opc2" name="Cap1Pre1" class="custom-control-input" required>
-                    <label class="custom-control-label" for="Cap1Pre1Opc2">
-                        De investigación en la Procuraduría General o Fiscalía <strong>(Policía Ministerial o equivalente)</strong>
-                    </label>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="Cap1Pre1Opc3" name="Cap1Pre1" class="custom-control-input" required>
-                    <label class="custom-control-label" for="Cap1Pre1Opc3">
-                        De vigilancia o custodia del Sistema Penitenciario <strong>(Custodio)</strong>
-                    </label>
-                </div>
-            </td>
-        </tr>
-        <tr>
-          <td class="text-right">
-            <button class="btn btn-success" (click)="DobleValidacion()">Siguiente</button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-      <!-- Cuerpo de pregunta -->
-
     </div>
   </div>
+  <!-- Segunda Pregunta -->
 </div>
-<!-- Primera Pregunta -->
 
-<!-- Segunda Pregunta -->
-<div class="card" *ngIf="segundaPregunta">
-  <div class="card-header">
-    <h4 class="card-title">
-      <div class="row">
-        <div class="col">
-          1. Perfil de Personal Operativo
-        </div>
-        <div class="text-right">
-          <button class="btn btn-warning">
-            Observación
-          </button>
-        </div>
+<!--
+
+  Seccion para Funcionario Estatal
+
+-->
+<div *ngIf="usuarioLogeado == 'funcionarioEstatal'">
+  <!-- Pantalla de bienvenida -->
+  <div class="card" *ngIf="usuarioLogeado == 'funcionarioEstatal' && instrucciones">
+    <div class="card-content">
+      <div class="card-header">
+        <h4>Cuestionario Integral</h4>
       </div>
-    </h4>
-  </div>
-  <div class="card-content">
-    <div class="card-body">
+      <div class="card-body">
 
-      <!-- Cuerpo de pregunta -->
-      <table class="table" rules="none">
-        <tbody>
-        <tr>
-            <td colspan="3" title="El puesto en el cual esta contratado actualmente.">
-                1.2 <strong>SEXO</strong>.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="222" name="2222222" class="custom-control-input">
-                    <label class="custom-control-label" for="Cap1Pre1Opc1">
-                        Femenino
-                    </label>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="222" name="2222222" class="custom-control-input">
-                    <label class="custom-control-label" for="Cap1Pre1Opc2">
-                        Masculino
-                    </label>
-                </div>
-            </td>
-        </tr>
-        <tr>
-          <td class="text-right">
-            <button class="btn btn-success" (click)="DobleValidacion()">Siguiente</button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-      <!-- Cuerpo de pregunta -->
-
+        <!-- Instrucciones -->
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>¡Bienvenido!</strong>, como se encuentra establecido en los Lineamientos del FASP 2020 (Artículo 15), adicionalmente al Informe Estatal de Evaluación 2020, es requisito llenar la Base de Datos de las metas alcanzadas y los avances generales de los Programas con Prioridad Nacional y Subprogramas con corte al 31 de diciembre de 2020 en un archivo electrónico formato MS-Excel (xslx)."
+          </li>
+          <li class="list-group-item">
+            "Para este ejercicio se ha diseñado un formato de Base de Datos especifico para contener la información tal y como se analizará en el Informe Nacional de Evaluación. Es por eso que, aunque contiene todos los datos correspondientes al Informe, el diseño es diferente y se le solicita se respete el mismo, ya que servirá para vaciar la información que nos proporcione, directamente en un repositorio general."
+          </li>
+          <li class="list-group-item">
+            "La base cuenta con especificaciones de los siguientes tipos de información: dato numérico o decimal, respuestas binarias o dicotómicas [SI/NO], catálogos específicos que debe contener alguna respuesta [años/condiciones]. La intención de incluir este nivel de especificidad no ha sido restringir su captura, es para aclarar el tipo de dato necesario para poder incluir su evaluación en un repositorio nacional."
+          </li>
+          <li class="list-group-item">
+            "Para los casos en los que desee añadir información o aclaraciones pertinentes, se le solicita abrir una nueva pestaña que aclare los siguientes elementos: Capítulo al que se refiere, Sección e Inciso, indicando si se trata de un anexo, algún dato añadido o una aclaración (o cualquier otro que usted considere importante). La misma dinámica aplica para cualquier imagen, fotografía o documento adjunto que desee integrar, se le solicita vaya en una pestaña nueva."
+          </li>
+          <li class="list-group-item">
+            "Finalmente, usted puede contar con que todos los rubros incluidos en esta Base de Datos son los mismos que encontrará en el Informe del Anexo 2, por lo que es la guía ideal para reconocer el tipo de información que deberá cargar para cada Capítulo, Sección y/o Inciso de la Evaluación FASP 2021."
+          </li>
+          <li class="list-group-item text-center">
+            <button class="btn btn-success" (click)="ComenzarCuestionarioIntegral()">Comenzar Cuestionario</button>
+          </li>
+        </ul>
+        <!-- Instrucciones -->
+      </div>
     </div>
   </div>
+  <!-- Pantalla de bienvenida -->
+
+  <!-- Modal Solicitar Observacion -->
+  <ng-template #customContent let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Solicitar Chat</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+      <!-- Cuerpo de Formulario -->
+      <form>
+        <div class="row">
+          <div class="col-md-12 col-12">
+            <div class="form-group row">
+              <label class="col-md-12 col-form-label" for="horizontal-form-6">Asunto</label>
+              <div class="col-md-12">
+                <select class="form-control" id="exampleFormControlSelect1" class="form-control square">
+                  <option>Solicitud de Información Adicional</option>
+                  <option>Discordancia de Datos</option>
+                  <option>Datos no visibles</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-12">
+            <div class="form-group row">
+              <label class="col-md-12 col-form-label" for="horizontal-form-9">Descripción</label>
+              <div class="col-md-12">
+                <textarea id="horizontal-form-12" rows="12" class="form-control square" name="comment3"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- Cuerpo de Formulario -->
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="c('Close click')">Enviar</button>
+    </div>
+  </ng-template>
+  <!-- Modal Solicitar Observacion -->
+
+  <!-- Primera Pregunta -->
+  <div class="card" *ngIf="usuarioLogeado == 'funcionarioEstatal' && primeraPregunta">
+    <div class="card-header">
+      <h4 class="card-title">
+        <div class="row">
+          <div class="col">
+            1. Perfil de Personal Operativo
+          </div>
+          <div class="text-right">
+            <button class="btn btn-warning" (click)="openModal(customContent)">Solicitar Chat</button>&nbsp;
+          </div>
+          <div class="text-right">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-danger" placement="bottom"
+              ngbPopover="Esta pregunta no esta respondida o esta siendo respondida." popoverTitle="Respondiendo Pregunta">
+              Respondiendo
+              </button>
+              <button type="button" class="btn btn-outline-warning" placement="bottom"
+              ngbPopover="La respuesta ya esta siendo validada por un Evaluador" popoverTitle="En Proceso de Revisión">
+              En Revisión
+              </button>
+              <button type="button" class="btn btn-outline-success" placement="bottom"
+              ngbPopover="Pregunta ya validada" popoverTitle="Pregunta Validada">
+              Validado
+              </button>
+            </div>
+          </div>
+        </div>
+      </h4>
+    </div>
+    <div class="card-content">
+      <div class="card-body">
+
+        <!-- Cuerpo de pregunta -->
+        <table class="table" rules="none">
+          <tbody>
+          <tr>
+              <td colspan="3" title="El puesto en el cual esta contratado actualmente.">
+                  1.1 <strong>FUNCIÓN</strong>. ¿Cuál es la función que desempeña actualmente?
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="Cap1Pre1Opc1" name="Cap1Pre1" class="custom-control-input" checked>
+                      <label class="custom-control-label" for="Cap1Pre1Opc1">
+                          De prevención, reacción o de investigación en la Institución Policial <strong>(Policía Estatal)</strong>
+                      </label>
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="Cap1Pre1Opc2" name="Cap1Pre1" class="custom-control-input">
+                      <label class="custom-control-label" for="Cap1Pre1Opc2">
+                          De investigación en la Procuraduría General o Fiscalía <strong>(Policía Ministerial o equivalente)</strong>
+                      </label>
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="Cap1Pre1Opc3" name="Cap1Pre1" class="custom-control-input">
+                      <label class="custom-control-label" for="Cap1Pre1Opc3">
+                          De vigilancia o custodia del Sistema Penitenciario <strong>(Custodio)</strong>
+                      </label>
+                  </div>
+              </td>
+          </tr>
+          <tr>
+            <td class="text-right">
+              <button class="btn btn-success" (click)="DobleValidacion()">Siguiente</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- Cuerpo de pregunta -->
+
+      </div>
+
+      <div class="card-footer">
+        <fieldset class="form-group">
+          <label for="inputGroupFile01">Archivo de Evidencia</label>
+          <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile01">
+              <label class="custom-file-label" for="inputGroupFile01">Elegir Archivo</label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+  <!-- Primera Pregunta -->
 </div>
-<!-- Segunda Pregunta -->

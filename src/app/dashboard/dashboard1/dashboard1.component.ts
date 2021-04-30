@@ -1,16 +1,14 @@
 import { Component, ElementRef, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { trackByHourSegment } from 'angular-calendar/modules/common/util';
-//Graficas
 import * as Chartist from 'chartist';
 import { ChartType, ChartEvent } from "ng-chartist";
-//Mapa
-// amCharts imports
 import * as am4core from '@amcharts/amcharts4/core';
 import * as am4maps from '@amcharts/amcharts4/maps';
 import * as am4charts from '@amcharts/amcharts4/charts';
 import countries2  from '@amcharts/amcharts4-geodata/data/countries2';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
+import { NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 declare var require: any;
 
@@ -40,9 +38,11 @@ export interface Programas {
 })
 
 
-export class Dashboard1Component {
+export class Dashboard1Component implements OnInit {
 
   programas: Programas[];
+
+  constructor(private modalService: NgbModal) { }
 
   //Variables
   MostrarMapa: boolean;
@@ -54,10 +54,13 @@ export class Dashboard1Component {
   MostrandoMonitoreoIntegralEspecifico: boolean;
   MostrandoCreacionDeInformeInstitucional: boolean;
   MostrandoCreacionDeInformeIntegral: boolean;
+  MostrandoVisualizacionDeInformeInstitucional: boolean;
+  MostrandoVisualizacionDeInformeIntegral: boolean;
   MostrandoBotonesAreaInstitucional: boolean;
   MostrandoBotonesAreaIntegral: boolean;
   MostrandoDetalleGrupo: boolean;
   MostrandoObservaciones: boolean;
+  GenerarTicketObservacion: boolean;
   Nacional: boolean;
   MostrandoDescargas: boolean;
   estados = [
@@ -99,6 +102,8 @@ export class Dashboard1Component {
     this.MostrandoMonitoreoIntegral = false;
     this.MostrandoCreacionDeInformeInstitucional = false;
     this.MostrandoCreacionDeInformeIntegral = false;
+    this.MostrandoVisualizacionDeInformeInstitucional = false;
+    this.MostrandoVisualizacionDeInformeIntegral = false;
     this.MostrandoMonitoreoInstitucionalEspecifico = false;
     this.MostrandoMonitoreoIntegralEspecifico = false;
     //Se inicializan variables de card de Areas
@@ -107,6 +112,7 @@ export class Dashboard1Component {
     //Variables para Detalle de Grupo
     this.MostrandoDetalleGrupo = false;
     this.MostrandoObservaciones = false;
+    this.GenerarTicketObservacion = false;
     //Nacional
     this.Nacional = false;
     //Se inicializan programas
@@ -364,6 +370,14 @@ export class Dashboard1Component {
       }
     }
 
+    ToggleGenerarTicketObservacion(){
+      if(this.GenerarTicketObservacion){
+        this.GenerarTicketObservacion = false;
+      } else {
+        this.GenerarTicketObservacion = true;
+      }
+    }
+
   /*
   *
   *
@@ -371,19 +385,35 @@ export class Dashboard1Component {
   *
   */
   MostrarCreacionDeInformeInstitucional(){
-    this.MostrandoCreacionDeInformeInstitucional = true;
-    this.MostrandoCreacionDeInformeIntegral = false;
-    //Se esconden monitoreos
-    this.MostrandoMonitoreoIntegral = false;
-    this.MostrandoMonitoreoInstitucional = false;
+    if(this.usuarioLogeado == 'enlaceEstatal'){
+      this.MostrandoVisualizacionDeInformeInstitucional = true;
+      this.MostrandoVisualizacionDeInformeIntegral = false;
+      //Se esconden monitoreos
+      this.MostrandoMonitoreoIntegral = false;
+      this.MostrandoMonitoreoInstitucional = false;
+    } else {
+      this.MostrandoCreacionDeInformeInstitucional = true;
+      this.MostrandoCreacionDeInformeIntegral = false;
+      //Se esconden monitoreos
+      this.MostrandoMonitoreoIntegral = false;
+      this.MostrandoMonitoreoInstitucional = false;
+    }
   }
 
   MostrarCreacionDeInformeIntegral(){
-    this.MostrandoCreacionDeInformeIntegral = true;
-    this.MostrandoCreacionDeInformeInstitucional = false;
-    //Se esconden monitoreos
-    this.MostrandoMonitoreoIntegral = false;
-    this.MostrandoMonitoreoInstitucional = false;
+    if(this.usuarioLogeado == 'enlaceEstatal'){
+      this.MostrandoVisualizacionDeInformeInstitucional = false;
+      this.MostrandoVisualizacionDeInformeIntegral = true;
+      //Se esconden monitoreos
+      this.MostrandoMonitoreoIntegral = false;
+      this.MostrandoMonitoreoInstitucional = false;
+    } else {
+      this.MostrandoCreacionDeInformeIntegral = true;
+      this.MostrandoCreacionDeInformeInstitucional = false;
+      //Se esconden monitoreos
+      this.MostrandoMonitoreoIntegral = false;
+      this.MostrandoMonitoreoInstitucional = false;
+    }
   }
 
 
@@ -448,5 +478,10 @@ export class Dashboard1Component {
     this.Nacional = false;
     //Descargas
     this.MostrandoDescargas = true;
+  }
+
+  //Modal
+  openModal(customContent) {
+    this.modalService.open(customContent, { windowClass: 'dark-modal' });
   }
 }

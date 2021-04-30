@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation, Input } from '@angular/core';
 import swal from 'sweetalert2';
-import { Observable, timer } from 'rxjs';
+import { Observable, timer, interval } from 'rxjs';
 import { take, map } from 'rxjs/operators';
+import { NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 declare var require: any;
 @Component({
@@ -19,22 +20,27 @@ export class Dashboard2Component{
   count = 60;
   contadorActivo: boolean;
   instrucciones: boolean;
+  solicitarChat: boolean;
 
-  constructor() {
 
-  }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
     //Se recupera la sesion simulada del usuario
     this.usuarioLogeado = localStorage.getItem('currentUser');
+    this.instrucciones = true;
     this.primeraPregunta = false;
     this.segundaPregunta = false;
     this.contadorActivo = false;
-    this.instrucciones = true;
+
   }
 
   DobleValidacion(){
     //
+  }
+
+  LimiteTiempo(){
+    interval(1000).subscribe((val) => { console.log(this.restante$); });
   }
 
   ComenzarCuestionario() {
@@ -45,7 +51,17 @@ export class Dashboard2Component{
       take(this.count),
       map(() => --this.count)
     );
+    this.LimiteTiempo();
   }
 
-  
+  ComenzarCuestionarioIntegral() {
+    this.primeraPregunta = true;
+    this.instrucciones = false;
+  }
+
+  //Esto es del Modal
+  // Open modal with dark section
+  openModal(customContent) {
+    this.modalService.open(customContent, { windowClass: 'dark-modal' });
+  }
 }
