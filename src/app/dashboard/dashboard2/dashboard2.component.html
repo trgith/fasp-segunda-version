@@ -275,13 +275,17 @@
   </ng-template>
   <!-- Modal Solicitar Observacion -->
 
-  <!-- Primera Pregunta -->
-  <div class="card" *ngIf="usuarioLogeado == 'funcionarioEstatal' && primeraPregunta">
+<!-- Primera Pregunta -->
+<div *ngIf="usuarioLogeado == 'funcionarioEstatal' && primeraPregunta">
+  <h3 class="card-title">
+    1. Programa de Impulso al Modelo Nacional de Policía y Justicia Cívica.
+  </h3>
+  <div class="card">
     <div class="card-header">
       <h4 class="card-title">
         <div class="row">
           <div class="col">
-            1. Perfil de Personal Operativo
+            1.1. Subprograma de Modelo Nacional de Policía
           </div>
           <div class="text-right">
             <button class="btn btn-warning" (click)="openModal(customContent)">Solicitar Chat</button>&nbsp;
@@ -313,7 +317,7 @@
           <tbody>
           <tr>
               <td colspan="3" title="El puesto en el cual esta contratado actualmente.">
-                  1.1 <strong>FUNCIÓN</strong>. ¿Cuál es la función que desempeña actualmente?
+                a) ¿Cuenta la entidad federativa con Unidad de Investigación dentro de su Secretaría de Seguridad Estatal o equivalente?
               </td>
           </tr>
           <tr>
@@ -321,7 +325,7 @@
                   <div class="custom-control custom-radio custom-control-inline">
                       <input type="radio" id="Cap1Pre1Opc1" name="Cap1Pre1" class="custom-control-input" checked>
                       <label class="custom-control-label" for="Cap1Pre1Opc1">
-                          De prevención, reacción o de investigación en la Institución Policial <strong>(Policía Estatal)</strong>
+                          Sí
                       </label>
                   </div>
               </td>
@@ -331,17 +335,7 @@
                   <div class="custom-control custom-radio custom-control-inline">
                       <input type="radio" id="Cap1Pre1Opc2" name="Cap1Pre1" class="custom-control-input">
                       <label class="custom-control-label" for="Cap1Pre1Opc2">
-                          De investigación en la Procuraduría General o Fiscalía <strong>(Policía Ministerial o equivalente)</strong>
-                      </label>
-                  </div>
-              </td>
-          </tr>
-          <tr>
-              <td>
-                  <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="Cap1Pre1Opc3" name="Cap1Pre1" class="custom-control-input">
-                      <label class="custom-control-label" for="Cap1Pre1Opc3">
-                          De vigilancia o custodia del Sistema Penitenciario <strong>(Custodio)</strong>
+                          No
                       </label>
                   </div>
               </td>
@@ -368,5 +362,6 @@
       </div>
     </div>
   </div>
-  <!-- Primera Pregunta -->
+</div>
+<!-- Primera Pregunta -->
 </div>

@@ -43,7 +43,7 @@ export class ConfigService {
   setConfigValue() {
     return this.templateConf = {
       layout: {
-        variant: "Dark",
+        variant: "Light",
         menuPosition: "Side",
         customizer: {
           hidden: true
@@ -54,7 +54,7 @@ export class ConfigService {
         sidebar: {
           collapsed: false,
           size: "sidebar-md",
-          backgroundColor: "black",
+          backgroundColor: "success",
           backgroundImage: false,
           backgroundImageURL: "assets/img/sidebar-bg/01.jpg"
         }
