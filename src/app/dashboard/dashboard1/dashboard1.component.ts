@@ -168,8 +168,8 @@ export class Dashboard1Component implements OnInit {
         polygonSeries.heatRules.push({
           property: "fill",
           target: polygonSeries.mapPolygons.template,
-          min: chart.colors.getIndex(1).brighten(1),
-          max: chart.colors.getIndex(1).brighten(-0.3)
+          min: chart.colors.getIndex(15).brighten(1),
+          max: chart.colors.getIndex(15).brighten(-0.3)
         });
 
         // Make map load polygon data (state shapes and names) from GeoJSON
@@ -198,7 +198,7 @@ export class Dashboard1Component implements OnInit {
 
         // Create hover state and set alternative fill color
         let hs = polygonTemplate.states.create("hover");
-        hs.properties.fill = chart.colors.getIndex(1).brighten(-0.5);
+        hs.properties.fill = chart.colors.getIndex(16).brighten(-0.5);
 
         //Function Click
         /*

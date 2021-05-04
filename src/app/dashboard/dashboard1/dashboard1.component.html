@@ -46,7 +46,7 @@
       <br>
       <div class="row justify-content-md-center">
         <div class="col-12 col-md-6 mb-2 mb-md-0">
-          <button type="button" class="btn btn-success btn-block" (click)="VerNacional()">Ver Gráficas Nacionales</button>
+          <button type="button" class="btn btn-success btn-block" (click)="VerNacional()" style="background-color: #022e24;">Ver Gráficas Nacionales</button>
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@
           Áreas
         </div>
         <div class="text-right">
-          <button class="btn btn-warning" (click)="ToggleAreas()">
+          <button class="btn btn-success" (click)="ToggleAreas()" style="background-color: #1F5247;">
             Cerrar
           </button>
         </div>
@@ -75,27 +75,27 @@
     <div class="card-body">
       <div class="row">
         <div class="col-12 col-md-6 mb-2 mb-md-0">
-          <button type="button" class="btn btn-success btn-block" (click)="MostrarBotonesInstitucional()">Institucional</button>
+          <button type="button" class="btn btn-success btn-block" (click)="MostrarBotonesInstitucional()" style="background-color: #022e24;">Institucional</button>
         </div>
         <div class="col-12 col-md-6">
-          <button type="button" class="btn btn-success btn-block" (click)="MostrarBotonesIntegral()">Integral</button>
+          <button type="button" class="btn btn-success btn-block" (click)="MostrarBotonesIntegral()" style="background-color: #022e24;">Integral</button>
         </div>
       </div>
       <br>
       <div class="row" *ngIf="MostrandoBotonesAreaInstitucional">
         <div class="col-12 col-md-6 mb-2 mb-md-0">
-          <button type="button" class="btn btn-success btn-block" (click)="MostrarMonitoreoInstitucional()">Monitoreo Institucional</button>
+          <button type="button" class="btn btn-success btn-block" (click)="MostrarMonitoreoInstitucional()" style="background-color: #022e24;">Monitoreo Institucional</button>
         </div>
         <div class="col-12 col-md-6">
-          <button type="button" class="btn btn-success btn-block" (click)="MostrarCreacionDeInformeInstitucional()">Informe de Evaluación Institucional</button>
+          <button type="button" class="btn btn-success btn-block" (click)="MostrarCreacionDeInformeInstitucional()" style="background-color: #022e24;">Informe de Evaluación Institucional</button>
         </div>
       </div>
       <div class="row" *ngIf="MostrandoBotonesAreaIntegral">
         <div class="col-12 col-md-6 mb-2 mb-md-0">
-          <button type="button" class="btn btn-success btn-block" (click)="MostrarMonitoreoIntegral()">Monitoreo Integral</button>
+          <button type="button" class="btn btn-success btn-block" (click)="MostrarMonitoreoIntegral()" style="background-color: #022e24;">Monitoreo Integral</button>
         </div>
         <div class="col-12 col-md-6">
-          <button type="button" class="btn btn-success btn-block" (click)="MostrarCreacionDeInformeIntegral()">Informe de Evaluación Integral</button>
+          <button type="button" class="btn btn-success btn-block" (click)="MostrarCreacionDeInformeIntegral()" style="background-color: #022e24;">Informe de Evaluación Integral</button>
         </div>
       </div>
     </div>
@@ -113,7 +113,7 @@
           Monitoreo General de la Encuesta Institucional
         </div>
         <div class="text-right">
-          <button class="btn btn-warning" (click)="OcultarMonitoreoInstitucional()">
+          <button class="btn btn-success" (click)="OcultarMonitoreoInstitucional()" style="background-color: #1F5247;">
             Cerrar
           </button>
         </div>
@@ -209,7 +209,7 @@
           Monitoreo de la Encuesta Integral
         </div>
         <div class="text-right">
-          <button class="btn btn-warning" (click)="OcultarMonitoreoIntegral()">
+          <button class="btn btn-success" (click)="OcultarMonitoreoIntegral()" style="background-color: #1F5247;">
             Cerrar
           </button>
         </div>
@@ -267,11 +267,11 @@
                               <td>Seccion 3</td>
                               <td>Programa 1</td>
                               <td>
-                                <button class="btn btn-warning" title="Enviar" type="button">
+                                <button class="btn btn-success" title="Enviar" type="button" style="background-color: #022e24;">
                                   <i class="ft-volume"></i>
                                 </button>
                                 &nbsp;
-                                <button class="btn btn-info" title="Ver" type="button">
+                                <button class="btn btn-info" title="Ver" type="button" style="background-color: #022e24;">
                                   <i class="ft-eye"></i>
                                 </button>
                               </td>
@@ -283,11 +283,11 @@
                               <td>Seccion 1</td>
                               <td>Programa 3</td>
                               <td>
-                                <button class="btn btn-warning" title="Enviar" type="button">
+                                <button class="btn btn-success" title="Enviar" type="button" style="background-color: #022e24;">
                                   <i class="ft-volume"></i>
                                 </button>
                                 &nbsp;
-                                <button class="btn btn-info" title="Ver" type="button">
+                                <button class="btn btn-info" title="Ver" type="button" style="background-color: #022e24;">
                                   <i class="ft-eye"></i>
                                 </button>
                               </td>
@@ -330,7 +330,7 @@
           Creación de Informe Institucional
         </div>
         <div class="text-right">
-          <button class="btn btn-warning" (click)="CerrarCardCreacionInformeInstitucional()">
+          <button class="btn btn-success" (click)="CerrarCardCreacionInformeInstitucional()" style="background-color: #1F5247;">
             Cerrar
           </button>
         </div>
@@ -369,7 +369,7 @@
                 </select>
               </div>
               <div class="col-12 col-md-4">
-                <button type="button" class="btn btn-warning">
+                <button type="button" class="btn btn-success" style="background-color: #022e24;">
                   <i class="ft-download"></i>
                   &nbsp;
                   <i class="ft-database"></i>
@@ -382,26 +382,26 @@
             Generar Gráficas
           </div>
           <br>
-          <button type="button" class="btn btn-success">Barra</button>&nbsp;
-          <button type="button" class="btn btn-success">Pastel</button>&nbsp;
-          <button type="button" class="btn btn-success">Linea</button>&nbsp;
-          <button type="button" class="btn btn-success">Área</button><br><br>
-          <button type="button" class="btn btn-success">Dona</button>&nbsp;
-          <button type="button" class="btn btn-success">Radar</button>&nbsp;
-          <button type="button" class="btn btn-success">Polar</button>&nbsp;
-          <button type="button" class="btn btn-success">Columna</button><br><br>
-          <button type="button" class="btn btn-success">Mixta</button>&nbsp;
-          <button type="button" class="btn btn-success">Burbuja</button>&nbsp;
-          <button type="button" class="btn btn-success">Calor</button>&nbsp;
-          <button type="button" class="btn btn-success">Radial</button><br><br>
+          <button type="button" class="btn btn-success" style="background-color: #1F5247;">Barra</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #1F5247;">Pastel</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #1F5247;">Linea</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #1F5247;">Área</button><br><br>
+          <button type="button" class="btn btn-success" style="background-color: #1F5247;">Dona</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #1F5247;">Radar</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #1F5247;">Polar</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #1F5247;">Columna</button><br><br>
+          <button type="button" class="btn btn-success" style="background-color: #1F5247;">Mixta</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #1F5247;">Burbuja</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #1F5247;">Calor</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #1F5247;">Radial</button><br><br>
         </div>
       </div>
       <div class="row">
         <div class="col-12 col-md-4">
-          <button type="button" class="btn btn-warning btn-block">Guardar</button>
+          <button type="button" class="btn btn-success btn-block" style="background-color: #022e24;">Guardar</button>
         </div>
         <div class="col-12 col-md-4">
-          <button type="button" class="btn btn-warning btn-block">Exportar</button>
+          <button type="button" class="btn btn-success btn-block" style="background-color: #022e24;">Exportar</button>
         </div>
       </div>
     </div>
@@ -419,7 +419,7 @@
           Creación de Informe Integral
         </div>
         <div class="text-right">
-          <button class="btn btn-warning" (click)="CerrarCardCreacionInformeIntegral()">
+          <button class="btn btn-success" (click)="CerrarCardCreacionInformeIntegral()" style="background-color: #1F5247;">
             Cerrar
           </button>
         </div>
@@ -456,7 +456,7 @@
                 </select>
               </div>
               <div class="col-12 col-md-4">
-                <button type="button" class="btn btn-warning">
+                <button type="button" class="btn btn-success" style="background-color: #022e24;">
                   <i class="ft-download"></i>
                   &nbsp;
                   <i class="ft-database"></i>
@@ -468,26 +468,26 @@
           <div>
             Generar Gráficas
           </div>
-          <button type="button" class="btn btn-success">Barra</button>&nbsp;
-          <button type="button" class="btn btn-success">Pastel</button>&nbsp;
-          <button type="button" class="btn btn-success">Linea</button>&nbsp;
-          <button type="button" class="btn btn-success">Área</button><br><br>
-          <button type="button" class="btn btn-success">Dona</button>&nbsp;
-          <button type="button" class="btn btn-success">Radar</button>&nbsp;
-          <button type="button" class="btn btn-success">Polar</button>&nbsp;
-          <button type="button" class="btn btn-success">Columna</button><br><br>
-          <button type="button" class="btn btn-success">Mixta</button>&nbsp;
-          <button type="button" class="btn btn-success">Burbuja</button>&nbsp;
-          <button type="button" class="btn btn-success">Calor</button>&nbsp;
-          <button type="button" class="btn btn-success">Radial</button><br><br>
+          <button type="button" class="btn btn-success" style="background-color: #022e24;">Barra</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #022e24;">Pastel</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #022e24;">Linea</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #022e24;">Área</button><br><br>
+          <button type="button" class="btn btn-success" style="background-color: #022e24;">Dona</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #022e24;">Radar</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #022e24;">Polar</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #022e24;">Columna</button><br><br>
+          <button type="button" class="btn btn-success" style="background-color: #022e24;">Mixta</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #022e24;">Burbuja</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #022e24;">Calor</button>&nbsp;
+          <button type="button" class="btn btn-success" style="background-color: #022e24;">Radial</button><br><br>
         </div>
       </div>
       <div class="row">
         <div class="col-12 col-md-4">
-          <button type="button" class="btn btn-warning btn-block">Guardar</button>
+          <button type="button" class="btn btn-success btn-block" style="background-color: #022e24;">Guardar</button>
         </div>
         <div class="col-12 col-md-4">
-          <button type="button" class="btn btn-warning btn-block">Exportar</button>
+          <button type="button" class="btn btn-success btn-block" style="background-color: #022e24;">Exportar</button>
         </div>
       </div>
     </div>
@@ -505,7 +505,7 @@
           Monitoreo Detallado de la Encuesta Institucional
         </div>
         <div class="text-right">
-          <button class="btn btn-warning" (click)="OcultarMonitoreoInstitucional()">
+          <button class="btn btn-success" (click)="OcultarMonitoreoInstitucional()" style="background-color: #1F5247;">
             Cerrar
           </button>
         </div>
@@ -634,7 +634,7 @@
                     </div>
                   </div>
                   <ngb-progressbar type="warning" [value]="35" class="progress-bar-sm" height="4px"></ngb-progressbar><br>
-                  <button class="btn btn-warning" (click)="BotonMostrarDetalleGrupo()">Ver más...</button>
+                  <button class="btn btn-warning" (click)="BotonMostrarDetalleGrupo()" style="background-color: #022e24;">Ver más...</button>
                 </div>
               </div>
             </div>
@@ -653,7 +653,7 @@
                     </div>
                   </div>
                   <ngb-progressbar type="warning" [value]="70" class="progress-bar-sm" height="4px"></ngb-progressbar><br>
-                  <button class="btn btn-warning" (click)="BotonMostrarDetalleGrupo()">Ver más...</button>
+                  <button class="btn btn-warning" (click)="BotonMostrarDetalleGrupo()" style="background-color: #022e24;">Ver más...</button>
                 </div>
               </div>
             </div>
@@ -672,7 +672,7 @@
                     </div>
                   </div>
                   <ngb-progressbar type="warning" [value]="100" class="progress-bar-sm" height="4px"></ngb-progressbar><br>
-                  <button class="btn btn-warning" (click)="BotonMostrarDetalleGrupo()">Ver más...</button>
+                  <button class="btn btn-warning" (click)="BotonMostrarDetalleGrupo()" style="background-color: #022e24;">Ver más...</button>
                 </div>
               </div>
             </div>
@@ -691,7 +691,7 @@
                     </div>
                   </div>
                   <ngb-progressbar type="warning" [value]="24" class="progress-bar-sm" height="4px"></ngb-progressbar><br>
-                  <button class="btn btn-warning">Ver más...</button>
+                  <button class="btn btn-warning" style="background-color: #022e24;">Ver más...</button>
                 </div>
               </div>
             </div>
@@ -737,7 +737,7 @@
                             <td>0h 30m 30s</td>
                             <td>30%</td>
                             <td class="text-truncate">
-                              <button type="button" class="btn btn-primary" (click)="showObservacion()">Observación</button>
+                              <button type="button" class="btn btn-primary" (click)="showObservacion()" style="background-color: #022e24;">Observación</button>
                             </td>
                           </tr>
                           <tr>
@@ -749,7 +749,7 @@
                             <td>1h 30m 20s</td>
                             <td>50%</td>
                             <td class="text-truncate">
-                              <button type="button" class="btn btn-primary" (click)="showObservacion()">Observación</button>
+                              <button type="button" class="btn btn-primary" (click)="showObservacion()" style="background-color: #022e24;">Observación</button>
                             </td>
                           </tr>
                           <tr>
@@ -761,7 +761,7 @@
                             <td>2h 20m 22</td>
                             <td>30%</td>
                             <td class="text-truncate">
-                              <button type="button" class="btn btn-primary" (click)="showObservacion()">Observación</button>
+                              <button type="button" class="btn btn-primary" (click)="showObservacion()" style="background-color: #022e24;">Observación</button>
                             </td>
                           </tr>
                           <tr>
@@ -773,7 +773,7 @@
                             <td>1h 20m 20s</td>
                             <td>30%</td>
                             <td class="text-truncate">
-                              <button type="button" class="btn btn-primary" (click)="showObservacion()">Observación</button>
+                              <button type="button" class="btn btn-primary" (click)="showObservacion()" style="background-color: #022e24;">Observación</button>
                             </td>
                           </tr>
                           <tr>
@@ -785,7 +785,7 @@
                             <td>1h 40m 30s</td>
                             <td>80%</td>
                             <td class="text-truncate">
-                              <button type="button" class="btn btn-primary" (click)="showObservacion()">Observación</button>
+                              <button type="button" class="btn btn-primary" (click)="showObservacion()" style="background-color: #022e24;">Observación</button>
                             </td>
                           </tr>
                         </tbody>
@@ -851,7 +851,7 @@
                           </div>
                         </div>
                       </div>
-                      <button type="button" class="btn btn-primary mr-2"><i class="ft-check-square mr-1"></i>Enviar</button>
+                      <button type="button" class="btn btn-primary mr-2" style="background-color: #022e24;"><i class="ft-check-square mr-1"></i>Enviar</button>
                     </form>
                   </div>
                 </div>
@@ -875,7 +875,7 @@
           Monitoreo Detallado de la Encuesta Integral
         </div>
         <div class="text-right">
-          <button class="btn btn-warning" (click)="OcultarMonitoreoIntegral()">
+          <button class="btn btn-warning" (click)="OcultarMonitoreoIntegral()" style="background-color: #1F5247;">
             Cerrar
           </button>
         </div>
@@ -941,7 +941,7 @@
                         <h4 class="card-title">Detalle de Grupo</h4>
                       </div>
                       <div class="col text-right">
-                        <button class="btn btn-warning" (click)="CerrarDetalleGrupo()">Cerrar</button>
+                        <button class="btn btn-success" (click)="CerrarDetalleGrupo()" style="background-color: #1F5247;">Cerrar</button>
                       </div>
                     </div>
                   </div>
@@ -1038,7 +1038,7 @@
                         <h4 class="card-title">Observaciones de Usuario</h4>
                       </div>
                       <div class="col text-right">
-                        <button class="btn btn-warning" (click)="CerrarObservaciones()">Cerrar</button>
+                        <button class="btn btn-success" (click)="CerrarObservaciones()" style="background-color: #1F5247;">Cerrar</button>
                       </div>
                     </div>
                   </div>
@@ -1061,7 +1061,7 @@
                             <td>16:02</td>
                             <td>Pendiente</td>
                             <td>
-                              <button class="btn btn-warning" (click)="ToggleGenerarTicketObservacion()">
+                              <button class="btn btn-success" (click)="ToggleGenerarTicketObservacion()" style="background-color: #022e24;">
                                 Generar
                               </button>
                             </td>
@@ -1090,7 +1090,7 @@
                       <h4 class="card-title">Generar Ticket de Observación</h4>
                     </div>
                     <div class="col text-right">
-                      <button class="btn btn-warning" (click)="ToggleGenerarTicketObservacion()">Cerrar</button>
+                      <button class="btn btn-success" (click)="ToggleGenerarTicketObservacion()" style="background-color: #1F5247;">Cerrar</button>
                     </div>
                   </div>
                 </div>
@@ -1137,7 +1137,7 @@
                           </div>
                         </div>
                       </div>
-                      <button type="button" class="btn btn-primary mr-2"><i class="ft-check-square mr-1"></i>Enviar</button>
+                      <button type="button" class="btn btn-primary mr-2" style="background-color: #1F5247;"><i class="ft-check-square mr-1"></i>Enviar</button>
                     </form>
                   </div>
                 </div>
@@ -1162,7 +1162,7 @@
           Progreso Nacional
         </div>
         <div class="text-right">
-          <button class="btn btn-warning" (click)="CerrarNacional()">
+          <button class="btn btn-success" (click)="CerrarNacional()" style="background-color: #1F5247;">
             Cerrar
           </button>
         </div>
@@ -1241,7 +1241,7 @@
           Descargas
         </div>
         <div class="text-right">
-          <button class="btn btn-warning" (click)="cerrarDescargas()">
+          <button class="btn btn-success" (click)="cerrarDescargas()" style="background-color: #1F5247;">
             Cerrar
           </button>
         </div>
@@ -1258,7 +1258,7 @@
           <ul class="list-group">
             <li class="list-group-item list-group-item-action flex-column align-items-start">
               <div class="d-flex w-100 justify-content-between">
-                <h5 class="white mb-3">Filtro por Entidad</h5>
+                <h5 class="white mb-3" style="color: black !important;">Filtro por Entidad</h5>
               </div>
               <select class="form-control" id="exampleFormControlSelect1">
                 <option>Entidad 1</option>
@@ -1270,7 +1270,7 @@
             </li>
             <li class="list-group-item list-group-item-action flex-column align-items-start">
               <div class="d-flex w-100 justify-content-between">
-                <h5 class="white mb-3">Bases de Datos de Institucionales</h5>
+                <h5 class="white mb-3" style="color: black !important;">Bases de Datos de Institucionales</h5>
                 <small>Última actualización hace 1 hora</small>
               </div>
               <small><a style="color: green;" href="">Descargar Base de Datos (xlsx)</a></small><br>
@@ -1295,7 +1295,7 @@
           <ul class="list-group">
             <li class="list-group-item list-group-item-action flex-column align-items-start">
               <div class="d-flex w-100 justify-content-between">
-                <h5 class="white mb-3">Filtro por Entidad</h5>
+                <h5 class="white mb-3" style="color: black !important;">Filtro por Entidad</h5>
               </div>
               <select class="form-control" id="exampleFormControlSelect1">
                 <option>Entidad 1</option>
@@ -1307,7 +1307,7 @@
             </li>
             <li class="list-group-item list-group-item-action flex-column align-items-start">
               <div class="d-flex w-100 justify-content-between">
-                <h5 class="white mb-3">Bases de Datos de Integrales</h5>
+                <h5 class="white mb-3" style="color: black !important;">Bases de Datos de Integrales</h5>
                 <small>Última actualización hace 1 hora</small>
               </div>
               <small><a style="color: green;" href="">Descargar Base de Datos (xlsx)</a></small><br>
@@ -1340,7 +1340,7 @@
           Enviar Observación
         </div>
         <div class="text-right">
-          <button class="btn btn-warning" (click)="ToggleEnviarObservacion()">
+          <button class="btn btn-success" (click)="ToggleEnviarObservacion()" style="background-color: #1F5247;">
             Cerrar
           </button>
         </div>
@@ -1418,8 +1418,8 @@
                       </div>
                     </div>
                   </div>
-                  <button type="button" class="btn btn-primary mr-2"><i class="ft-check-square mr-1"></i>Save</button>
-                  <button type="button" class="btn btn-secondary"><i class="ft-x mr-1"></i>Cancel</button>
+                  <button type="button" class="btn btn-primary mr-2" style="background-color: #022e24;"><i class="ft-check-square mr-1"></i>Save</button>
+                  <button type="button" class="btn btn-secondary" style="background-color: #022e24;"><i class="ft-x mr-1"></i>Cancel</button>
                 </form>
               </div>
             </div>
@@ -1440,7 +1440,7 @@
           Validación de Informe Institucional
         </div>
         <div class="text-right">
-          <button class="btn btn-warning" (click)="CerrarCardCreacionInformeInstitucional()">
+          <button class="btn btn-success" (click)="CerrarCardCreacionInformeInstitucional()" style="background-color: #1F5247;">
             Cerrar
           </button>
         </div>
@@ -1458,11 +1458,11 @@
               <div class="card-body">
                 <div class="media">
                   <div class="media-body text-left">
-                    <h3 class="mb-1 warning">64.89 %</h3>
+                    <h3 class="mb-1 success">64.89 %</h3>
                     <span>Puebla</span>
                   </div>
                   <div class="media-right align-self-center">
-                    <i class="ft-alert-circle warning font-large-2 float-right"></i>
+                    <i class="ft-alert-circle success font-large-2 float-right"></i>
                   </div>
                 </div>
                 <ngb-progressbar type="warning" [value]="60" class="progress-bar-sm" height="4px"></ngb-progressbar>
@@ -1510,7 +1510,7 @@
                 </div>
                 <div class="row">
                   <div class="col" style="margin: 1px;">
-                    <button class="btn btn-warning btn-block">Enviar Observación</button>
+                    <button class="btn btn-success btn-block">Enviar Observación</button>
                   </div>
                 </div>
                 <div class="row">
@@ -1575,7 +1575,7 @@
           Visualización de Informe Integral
         </div>
         <div class="text-right">
-          <button class="btn btn-warning" (click)="CerrarCardCreacionInformeIntegral()">
+          <button class="btn btn-success" (click)="CerrarCardCreacionInformeIntegral()" style="background-color: #1F5247;">
             Cerrar
           </button>
         </div>
@@ -1645,7 +1645,7 @@
                   </div>
                   <div class="row">
                     <div class="col" style="margin: 1px;">
-                      <button class="btn btn-warning btn-block">Enviar Observación</button>
+                      <button class="btn btn-success btn-block">Enviar Observación</button>
                     </div>
                   </div>
                   <div class="row">
@@ -1740,7 +1740,7 @@
 
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-success" (click)="c('Close click')">Enviar</button>
+    <button type="button" class="btn btn-success" (click)="c('Close click')" style="background-color: #1F5247;">Enviar</button>
   </div>
 </ng-template>
 <!-- Modal Solicitar Observacion -->

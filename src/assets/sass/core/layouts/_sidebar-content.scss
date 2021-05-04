@@ -473,6 +473,10 @@ body {
     @include set-background-color(map-get($danger-color, darken-1));
   }
 
+  &[data-background-color="militar"] {
+    @include set-background-color(map-get($militar-color, darken-1));
+  }
+
   // Gradient Background Colors
   &[data-background-color="mint"] {
     @include set-gradient-background-color(map-get($info-color, darken-2), map-get($success-color, base));
