@@ -104,7 +104,7 @@
 
 @mixin ct-chart-series-color($color) {
   .#{$ct-class-point}, .#{$ct-class-line}, .#{$ct-class-bar}, .#{$ct-class-slice-donut} {
-    stroke: $color;
+    stroke: #1F5247;
   }
 
   .#{$ct-class-slice-pie}, .#{$ct-class-area} {

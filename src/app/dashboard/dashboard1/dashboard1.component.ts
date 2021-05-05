@@ -1,3 +1,4 @@
+import { barChartColorScheme } from './../../shared/configs/ngx-charts.config';
 import { Component, ElementRef, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { trackByHourSegment } from 'angular-calendar/modules/common/util';
@@ -324,30 +325,46 @@ export class Dashboard1Component implements OnInit {
     this.MostrandoMonitoreoIntegral = false;
   }
   //4.- Graficas generales
-  // Bi-polar Line Chart Starts
-  biPolarLineChart: Chart = {
-    type: 'Line',
-    data: data['Bi-PolarLine'],
-    options: {
-        high: 3,
-        low: -3,
-        showArea: true,
-        showLine: false,
-        showPoint: false,
-        fullWidth: true,
-        axisX: {
-            showGrid: false,
-            offset: 100,
-            labelInterpolationFnc: function (value: number, index: number): number {
-                return index % 2 === 0 ? value : null;
-            }
-            },
-            axisY: {
-                scaleMinSpace: 30,
-            }
-        }
+    // Bar Chart Starts
+    barChart: Chart = {
+      type: 'Bar',
+      data: data['Bar'],
+      options: {
+          seriesBarDistance: 21,
+          axisX: {
+            showGrid: true, offset: 100,
+          },
+          axisY: {
+            scaleMinSpace: 30,
+          }
+      },
+
     };
-    // Bi-polar Line Chart Ends
+    barChart2: Chart = {
+      type: 'Bar',
+      data: data['Bar2'],
+      options: {
+          seriesBarDistance: 21,
+          axisX: {
+            showGrid: true, offset: 100,
+          },
+          axisY: {
+            scaleMinSpace: 30,
+          },
+          scales: {
+            xAxes: [{
+              ticks: {
+                // Include a dollar sign in the ticks
+                callback: function(value, index, values) {
+                    return '$' + value;
+                }
+            }
+            }]
+          }
+      },
+
+    };
+  // Bar Chart Ends
     //5.- Detalles de Grupo
     MostrarDetalleGrupo(){
       this.MostrandoDetalleGrupo = true;

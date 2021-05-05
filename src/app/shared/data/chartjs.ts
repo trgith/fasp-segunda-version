@@ -69,8 +69,8 @@ export var lineChartColors: Array<any> = [
 
     fill: false,
     borderDash: [5, 5],
-    borderColor: "#F77E17",
-    pointBorderColor: "#F77E17",
+    borderColor: "#022E24",
+    pointBorderColor: "#022E24",
     pointBackgroundColor: "#FFF",
     pointBorderWidth: 2,
     pointHoverBorderWidth: 2,
@@ -145,8 +145,6 @@ export var areaChartOptions: any = {
   }
 };
 export var areaChartColors: Array<any> = [
-
-
   {
 
     backgroundColor: "rgba(189, 189, 189, 0.3)",
@@ -362,7 +360,7 @@ export var barChartOptions: any = {
     xAxes: [{
       display: true,
       gridLines: {
-        color: "#F5F5F5",
+        color: "#ff0000",
         drawTicks: false,
       },
       scaleLabel: {
@@ -372,7 +370,7 @@ export var barChartOptions: any = {
     yAxes: [{
       display: true,
       gridLines: {
-        color: "#F5F5F5",
+        color: "#0CAE51",
         drawTicks: false,
       },
       scaleLabel: {
@@ -386,7 +384,7 @@ export var barChartOptions: any = {
   }
 
 };
-export var barChartLabels: string[] = ["January", "February", "March", "April", "May"];
+export var barChartLabels: string[] = ["Yanuary", "February", "March", "April", "May"];
 export var barChartType = 'bar';
 export var barChartLegend = true;
 
@@ -397,24 +395,23 @@ export var barChartData: any[] = [
 
 export var barChartColors: Array<any> = [
 
-
   {
 
-    backgroundColor: '#975AFF',
+    backgroundColor: '#fff',
     borderColor: 'transparent',
     pointBackgroundColor: 'transparent',
     pointBorderColor: '#fff',
     pointHoverBackgroundColor: '#fff',
-    pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+    pointHoverBorderColor: 'rgba(1,1,1,0.8)'
   },
   {
 
-    backgroundColor: '#F77E17',
+    backgroundColor: '#fff',
     borderColor: 'transparent',
     pointBackgroundColor: 'transparent',
     pointBorderColor: '#fff',
     pointHoverBackgroundColor: '#fff',
-    pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+    pointHoverBorderColor: 'rgba(1,1,1,0.8)'
   },
 
 ];
@@ -422,7 +419,7 @@ export var barChartColors: Array<any> = [
 // Doughnut
 export var doughnutChartLabels: string[] = ["January", "February", "March", "April", "May"];
 export var doughnutChartData: number[] = [65, 35, 24, 45, 85];
-export var doughnutChartColors: any[] = [{ backgroundColor: ['#975AFF', '#F77E17', '#40C057', '#F55252', '#2F8BE6'] }];
+export var doughnutChartColors: any[] = [{ backgroundColor: ['#975AFF', '#022E24', '#40C057', '#F55252', '#2F8BE6'] }];
 export var doughnutChartType = 'doughnut';
 export var doughnutChartOptions: any = {
   animation: false,
