@@ -2497,6 +2497,12 @@
             <option>...</option>
           </select>
         </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail5">Código de verificación</label>
+            <input type="number" class="form-control" id="inputEmail5" placeholder="Código">
+          </div>
+        </div>
         <button type="button" class="btn btn-primary" style="background-color: #1F5247;">Validar</button>
       </form>
       <!-- Cuerpo de Card -->
@@ -2512,7 +2518,7 @@
   <h4 class="card-title">
     <div class="row">
       <div class="col">
-        Validar Cuestionario
+        Historial de Observaciones
       </div>
       <div class="text-right">
         <button class="btn btn-success" (click)="CerrarCardMostrandoValidacionDeFirma()" style="background-color: #1F5247;">
@@ -2566,7 +2572,7 @@
 <!-- Modal para datos de un poli-->
 <ng-template #infoPoli let-c="close" let-d="dismiss">
   <div class="modal-header">
-    <h4 class="modal-title">Historial de Observaciones Recibidas</h4>
+    <h4 class="modal-title">Respuestas recientes</h4>
     <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -2606,7 +2612,7 @@
 
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-success" (click)="c('Close click')" style="background-color: #1F5247;">Enviar</button>
+    <button type="button" class="btn btn-success" (click)="c('Close click')" style="background-color: #1F5247;">Cerrar</button>
   </div>
 </ng-template>
 <!-- Modal para datos de un poli-->
