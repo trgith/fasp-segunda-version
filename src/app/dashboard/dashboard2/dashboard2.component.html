@@ -47,6 +47,9 @@
     <div class="card-content">
       <div class="card-body">
         <div class="row">
+          <div class="col text-left">
+            <button class="btn btn-info" (click)="Ajustes(ajustes)">Ajustes</button>
+          </div>
           <div class="col text-right">
             <h5>Tiempo restante: 0h 0m {{ (restante$ | async) }}s</h5>
           </div>
@@ -56,8 +59,53 @@
   </div>
   <!-- Contador de Tiempo -->
 
+  <!-- Modal Solicitar Observacion -->
+  <ng-template #ajustes let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Ajustes</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')" style="background-color: #1F5247;">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+      <!-- Cuerpo de Formulario -->
+      <form>
+        <div class="row">
+          <div class="col-md-12 col-12">
+            <div class="form-group row">
+              <label class="col-md-12 col-form-label" for="horizontal-form-6">Asunto</label>
+              <div class="col-md-12">
+                <select class="form-control" id="exampleFormControlSelect1" class="form-control square">
+                  <option>Solicitud de Información Adicional</option>
+                  <option>Discordancia de Datos</option>
+                  <option>Datos no visibles</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-12">
+            <div class="form-group row">
+              <label class="col-md-12 col-form-label" for="horizontal-form-9">Descripción</label>
+              <div class="col-md-12">
+                <textarea id="horizontal-form-12" rows="12" class="form-control square" name="comment3"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- Cuerpo de Formulario -->
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="c('Close click')" style="background-color: #1F5247;">Enviar</button>
+    </div>
+  </ng-template>
+  <!-- Modal Solicitar Observacion -->
+
   <!-- Primera Pregunta -->
-  <div class="card" *ngIf="usuarioLogeado == 'policia' && primeraPregunta">
+  <div class="card" *ngIf="usuarioLogeado == 'policia' && primeraPregunta" style="font-size: 20pt !important;">
     <div class="card-header">
       <h4 class="card-title">
         <div class="row">

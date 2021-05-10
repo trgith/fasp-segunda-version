@@ -57,13 +57,19 @@ export class Dashboard1Component implements OnInit {
   MostrandoCreacionDeInformeIntegral: boolean;
   MostrandoVisualizacionDeInformeInstitucional: boolean;
   MostrandoVisualizacionDeInformeIntegral: boolean;
+  MostrandoConstruccionInformeNacionalInstitucional: boolean;
+  MostrandoConstruccionInformeNacionalIntegral: boolean;
   MostrandoBotonesAreaInstitucional: boolean;
   MostrandoBotonesAreaIntegral: boolean;
   MostrandoDetalleGrupo: boolean;
   MostrandoObservaciones: boolean;
+  MostrandoCreacionDeUsuarios: boolean;
   GenerarTicketObservacion: boolean;
   Nacional: boolean;
   MostrandoDescargas: boolean;
+  MostrandoAplicadorInicio: boolean;
+  MostrandoValidacionDeFirma: boolean;
+  MostrandoHistorialObservaciones: boolean;
   estados = [
     'Aguascalientes', 'Baja California', 'Baja California Sur', 'Campeche', 'Coahuila', 'Colima', 'Chiapas', 'Chihuahua', 'Durango', 'Distrito Federal', 'Guanajuato', 'Guerrero', 'Hidalgo', 'Jalisco', 'México', 'Michoacán', 'Morelos', 'Nayarit', 'Nuevo León', 'Oaxaca', 'Puebla', 'Querétaro', 'Quintana Roo', 'San Luis Potosí', 'Sinaloa', 'Sonora', 'Tabasco', 'Tamaulipas', 'Tlaxcala', 'Veracruz', 'Yucatán', 'Zacatecas'
   ];
@@ -75,7 +81,10 @@ export class Dashboard1Component implements OnInit {
     //Mapeo de las cosas que debería ver cada usuario
     switch(this.usuarioLogeado){
       case 'funcionarioFederal': {
-
+          //Puede ver mapa de la republica
+          this.MostrarMapa = true;
+          //Se muestran descargas
+          this.MostrandoDescargas = true;
           break;
       }
       case 'evaluadorExterno': {
@@ -83,12 +92,19 @@ export class Dashboard1Component implements OnInit {
           this.MostrarMapa = true;
           //Se muestran descargas
           this.MostrandoDescargas = true;
+          //Se muestra para crear usuarios
+          this.MostrandoCreacionDeUsuarios = true;
           break;
       }
       case 'enlaceEstatal': {
           //Puede ver mapa de la republica
           this.MostrarMapa = true;
             break;
+      }
+      case 'aplicador': {
+          this.MostrandoAplicadorInicio = true;
+          this.MostrandoValidacionDeFirma = true;
+          this.MostrandoHistorialObservaciones = true;
       }
       default: {
 
@@ -402,34 +418,68 @@ export class Dashboard1Component implements OnInit {
   *
   */
   MostrarCreacionDeInformeInstitucional(){
-    if(this.usuarioLogeado == 'enlaceEstatal'){
-      this.MostrandoVisualizacionDeInformeInstitucional = true;
-      this.MostrandoVisualizacionDeInformeIntegral = false;
-      //Se esconden monitoreos
-      this.MostrandoMonitoreoIntegral = false;
-      this.MostrandoMonitoreoInstitucional = false;
-    } else {
-      this.MostrandoCreacionDeInformeInstitucional = true;
-      this.MostrandoCreacionDeInformeIntegral = false;
-      //Se esconden monitoreos
-      this.MostrandoMonitoreoIntegral = false;
-      this.MostrandoMonitoreoInstitucional = false;
+    switch(this.usuarioLogeado){
+      case 'funcionarioFederal': {
+          this.MostrandoConstruccionInformeNacionalInstitucional = true;
+          this.MostrandoConstruccionInformeNacionalIntegral = false;
+          //Se esconden monitoreos
+          this.MostrandoMonitoreoIntegral = false;
+          this.MostrandoMonitoreoInstitucional = false;
+          break;
+      }
+      case 'evaluadorExterno': {
+          this.MostrandoCreacionDeInformeInstitucional = true;
+          this.MostrandoCreacionDeInformeIntegral = false;
+          //Se esconden monitoreos
+          this.MostrandoMonitoreoIntegral = false;
+          this.MostrandoMonitoreoInstitucional = false;
+          break;
+      }
+      case 'enlaceEstatal': {
+          this.MostrandoVisualizacionDeInformeInstitucional = true;
+          this.MostrandoVisualizacionDeInformeIntegral = false;
+          //Se esconden monitoreos
+          this.MostrandoMonitoreoIntegral = false;
+          this.MostrandoMonitoreoInstitucional = false;
+          break;
+      }
+      default: {
+
+          break;
+      }
     }
   }
 
   MostrarCreacionDeInformeIntegral(){
-    if(this.usuarioLogeado == 'enlaceEstatal'){
-      this.MostrandoVisualizacionDeInformeInstitucional = false;
-      this.MostrandoVisualizacionDeInformeIntegral = true;
-      //Se esconden monitoreos
-      this.MostrandoMonitoreoIntegral = false;
-      this.MostrandoMonitoreoInstitucional = false;
-    } else {
-      this.MostrandoCreacionDeInformeIntegral = true;
-      this.MostrandoCreacionDeInformeInstitucional = false;
-      //Se esconden monitoreos
-      this.MostrandoMonitoreoIntegral = false;
-      this.MostrandoMonitoreoInstitucional = false;
+    switch(this.usuarioLogeado){
+      case 'funcionarioFederal': {
+          this.MostrandoConstruccionInformeNacionalInstitucional = false;
+          this.MostrandoConstruccionInformeNacionalIntegral = true;
+          //Se esconden monitoreos
+          this.MostrandoMonitoreoIntegral = false;
+          this.MostrandoMonitoreoInstitucional = false;
+          break;
+      }
+      case 'evaluadorExterno': {
+          this.MostrandoCreacionDeInformeIntegral = true;
+          this.MostrandoCreacionDeInformeInstitucional = false;
+          //Se esconden monitoreos
+          this.MostrandoMonitoreoIntegral = false;
+          this.MostrandoMonitoreoInstitucional = false;
+          break;
+      }
+      case 'enlaceEstatal': {
+          this.MostrandoVisualizacionDeInformeInstitucional = false;
+          this.MostrandoVisualizacionDeInformeIntegral = true;
+          //Se esconden monitoreos
+          this.MostrandoMonitoreoIntegral = false;
+          this.MostrandoMonitoreoInstitucional = false;
+          break;
+      }
+      default: {
+          //
+          break;
+      }
     }
   }
 
@@ -500,5 +550,9 @@ export class Dashboard1Component implements OnInit {
   //Modal
   openModal(customContent) {
     this.modalService.open(customContent, { windowClass: 'dark-modal' });
+  }
+
+  openModalPoli(infoPoli) {
+    this.modalService.open(infoPoli, { windowClass: 'dark-modal' });
   }
 }

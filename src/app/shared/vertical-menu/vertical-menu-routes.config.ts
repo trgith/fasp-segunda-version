@@ -487,4 +487,9 @@ export const ROUTES: RouteInfo[] = [
       }
     ]
   },
+  //Menu de Aplicador
+  { path: 'aplicador', title: 'Inicio', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+  { path: 'aplicador', title: 'Firma Digital', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false, submenu: []},
+  { path: 'aplicador', title: 'Solicitudes de Ayuda', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false, submenu: []},
+  { path: 'aplicador', title: 'Observaciones', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false, submenu: []},
 ];

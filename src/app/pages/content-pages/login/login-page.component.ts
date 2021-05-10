@@ -56,22 +56,27 @@ export class LoginPageComponent {
           localStorage.removeItem('currentUser');
         switch(this.loginForm.value.username){
             case 'funcionario_estatal@test.com': {
-            localStorage.setItem('currentUser', 'funcionarioEstatal');
+                localStorage.setItem('currentUser', 'funcionarioEstatal');
                 this.router.navigate(['/dashboard/dashboard2']);
                 break;
             }
             case 'evaluador_externo@test.com': {
-            localStorage.setItem('currentUser', 'evaluadorExterno');
+                localStorage.setItem('currentUser', 'evaluadorExterno');
                 this.router.navigate(['/dashboard/dashboard1']);
                 break;
             }
             case 'funcionario_federal@test.com': {
-              localStorage.setItem('currentUser', 'funcionarioFederal');
+                  localStorage.setItem('currentUser', 'funcionarioFederal');
                   this.router.navigate(['/dashboard/dashboard1']);
                   break;
             }
             case 'enlace_estatal@test.com': {
-              localStorage.setItem('currentUser', 'enlaceEstatal');
+                  localStorage.setItem('currentUser', 'enlaceEstatal');
+                  this.router.navigate(['/dashboard/dashboard1']);
+                  break;
+            }
+            case 'aplicador@test.com': {
+                  localStorage.setItem('currentUser', 'aplicador');
                   this.router.navigate(['/dashboard/dashboard1']);
                   break;
             }

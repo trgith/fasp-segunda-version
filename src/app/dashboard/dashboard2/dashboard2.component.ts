@@ -64,4 +64,9 @@ export class Dashboard2Component{
   openModal(customContent) {
     this.modalService.open(customContent, { windowClass: 'dark-modal' });
   }
+
+  //Modal de Ajustes como tamaño de letra
+  Ajustes(ajustes){
+    this.modalService.open(ajustes, { windowClass: 'dark-modal' });
+  }
 }

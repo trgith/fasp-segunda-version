@@ -1470,12 +1470,12 @@
               <div class="card-footer">
                 <div class="row">
                   <div class="col" style="margin: 1px;">
-                    <button class="btn btn-secondary btn-block">Descargar Informe</button>
+                    <button class="btn btn-success btn-block">Descargar Informe</button>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col" style="margin: 1px;">
-                    <button class="btn btn-warning btn-block">Enviar Observación</button>
+                    <button class="btn btn-success btn-block">Enviar Observación</button>
                   </div>
                 </div>
                 <div class="row">
@@ -1505,7 +1505,7 @@
               <div class="card-footer">
                 <div class="row">
                   <div class="col" style="margin: 1px;">
-                    <button class="btn btn-secondary btn-block">Descargar Informe</button>
+                    <button class="btn btn-success btn-block">Descargar Informe</button>
                   </div>
                 </div>
                 <div class="row">
@@ -1540,12 +1540,12 @@
               <div class="card-footer">
                 <div class="row">
                   <div class="col" style="margin: 1px;">
-                    <button class="btn btn-secondary btn-block">Descargar Informe</button>
+                    <button class="btn btn-success btn-block">Descargar Informe</button>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col" style="margin: 1px;">
-                    <button class="btn btn-warning btn-block" (click)="openModal(customContent)">Enviar Observación</button>
+                    <button class="btn btn-success btn-block" (click)="openModal(customContent)">Enviar Observación</button>
                   </div>
                 </div>
                 <div class="row">
@@ -1744,3 +1744,869 @@
   </div>
 </ng-template>
 <!-- Modal Solicitar Observacion -->
+
+<!-- Construccion de Informe Institucional Nacional -->
+<div class="card" *ngIf="MostrandoConstruccionInformeNacionalInstitucional">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Construcción de Informe Nacional Institucional
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="CerrarCardCreacionInformeNacionalInstitucional()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+        <!-- Contenido de Construccion Nacional Institucional -->
+        <div class="row">
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 success">64.89 %</h3>
+                      <span>Puebla</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-alert-circle success font-large-2 float-right"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="warning" [value]="60" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Descargar Informe</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Enviar Observación</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Validar Informe</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 success">100.00 %</h3>
+                      <span>Veracruz</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-check-circle success font-large-2 float-right"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="sucess" [value]="100" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Descargar Informe</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Enviar Observación</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Validar Informe</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 warning">30.43 %</h3>
+                      <span>Michoacán</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-alert-circle warning font-large-2 float-right"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="warning" [value]="30" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Descargar Informe</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block" (click)="openModal(customContent)">Enviar Observación</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Validar Informe</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <app-editor></app-editor>
+        </div>
+        <!-- Contenido de Construccion Nacional Institucional -->
+
+    </div>
+  </div>
+</div>
+<!-- Construccion de Informe Institucional Nacional -->
+
+<!-- Construccion de Informe Integral Nacional -->
+<div class="card" *ngIf="MostrandoConstruccionInformeNacionalIntegral">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Construcción de Informe Nacional Integral
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="CerrarCardCreacionInformeNacionalIntegral()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+        <!-- Contenido de Construccion Nacional Institucional -->
+        <div class="row">
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 success">64.89 %</h3>
+                      <span>Puebla</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-alert-circle success font-large-2 float-right"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="warning" [value]="60" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Descargar Informe</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Enviar Observación</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Validar Informe</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 success">100.00 %</h3>
+                      <span>Veracruz</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-check-circle success font-large-2 float-right"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="sucess" [value]="100" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Descargar Informe</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Enviar Observación</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Validar Informe</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 warning">30.43 %</h3>
+                      <span>Michoacán</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-alert-circle warning font-large-2 float-right"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="warning" [value]="30" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Descargar Informe</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block" (click)="openModal(customContent)">Enviar Observación</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Validar Informe</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-left: 5%; margin-right: 5%;">
+          <app-editor></app-editor>
+        </div>
+        <!-- Contenido de Construccion Nacional Institucional -->
+
+    </div>
+  </div>
+</div>
+<!-- Construccion de Informe Integral Nacional -->
+
+<!-- Construccion de Informe Integral Nacional -->
+<div class="card" *ngIf="MostrandoCreacionDeUsuarios">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Crear usuarios
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="CerrarCardCrearUsuarios()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+        <!-- Contenido de Construccion Nacional Integral -->
+        <h4 class="card-title">Crear Folios para Policias</h4>
+        <div class="row">
+          <form>
+            <div class="col-12">
+              <div class="col-md-12 mb-12 form-group">
+                <label for="validationTooltip01">First name</label>
+                <input type="text" name="fname" class="form-control" id="validationTooltip01" placeholder="First name" required>
+              </div>
+              <div class="col-md-12 mb-12 form-group">
+                <label for="validationTooltip02">Last name</label>
+                <input type="text" name="lname" class="form-control" id="validationTooltip02" placeholder="Last name" required>
+              </div>
+              <div class="col-md-12 mb-12 form-group">
+                <label for="validationTooltip03">City</label>
+                <input type="text" name="city" class="form-control" id="validationTooltip03" placeholder="City" required>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="row">
+          <div class="card-body table-responsive">
+            <table class="table text-center m-0">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th></th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Gender</th>
+                  <th>Email</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <div class="checkbox">
+                      <input type="checkbox" id="item1">
+                      <label for="item1"></label>
+                    </div>
+                  </td>
+                  <td>Kelly</td>
+                  <td>Carter</td>
+                  <td>Female</td>
+                  <td>kellycarter@mail.com</td>
+                  <td class="text-truncate">
+                    <a href="javascript:;" class="info p-0">
+                      <i class="ft-user font-medium-3 mr-2"></i>
+                    </a>
+                    <a href="javascript:;" class="success p-0">
+                      <i class="ft-edit-2 font-medium-3 mr-2"></i>
+                    </a>
+                    <a href="javascript:;" class="danger p-0">
+                      <i class="ft-x font-medium-3"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>
+                    <div class="checkbox">
+                      <input type="checkbox" id="item2">
+                      <label for="item2"></label>
+                    </div>
+                  </td>
+                  <td>Peter</td>
+                  <td>Parker</td>
+                  <td>Male</td>
+                  <td>peterparker@mail.com</td>
+                  <td class="text-truncate">
+                    <a href="javascript:;" class="info p-0">
+                      <i class="ft-user font-medium-3 mr-2"></i>
+                    </a>
+                    <a href="javascript:;" class="success p-0">
+                      <i class="ft-edit-2 font-medium-3 mr-2"></i>
+                    </a>
+                    <a href="javascript:;" class="danger p-0">
+                      <i class="ft-x font-medium-3"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>
+                    <div class="checkbox">
+                      <input type="checkbox" id="item3">
+                      <label for="item3"></label>
+                    </div>
+                  </td>
+                  <td>William</td>
+                  <td>Rambo</td>
+                  <td>Male</td>
+                  <td>williamrambo@mail.com</td>
+                  <td class="text-truncate">
+                    <a href="javascript:;" class="info p-0">
+                      <i class="ft-user font-medium-3 mr-2"></i>
+                    </a>
+                    <a href="javascript:;" class="success p-0">
+                      <i class="ft-edit-2 font-medium-3 mr-2"></i>
+                    </a>
+                    <a href="javascript:;" class="danger p-0">
+                      <i class="ft-x font-medium-3"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Contenido de Construccion Nacional Integral -->
+
+    </div>
+  </div>
+</div>
+<!-- Construccion de Informe Integral Nacional -->
+
+<!-- Pantalla de aplicador -->
+<div class="card" *ngIf="MostrandoAplicadorInicio">
+    <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Usuarios Respondiendo
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="CerrarCardMostrandoAplicadorInicio()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+      <!-- Cuerpo de la card de Aplicador Inicio -->
+      <div class="row">
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-8765</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 25%; background-color: #1F5247;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 56%; background-color: #1F5247;" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-8765</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 25%; background-color: #1F5247;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 56%; background-color: #1F5247;" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-8765</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 25%; background-color: #1F5247;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 56%; background-color: #1F5247;" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="background-color: #1F5247;" (click)="openModalPoli(infoPoli)">
+                <i class="ft-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Cuerpo de la card de Aplicador Inicio -->
+
+    </div>
+  </div>
+</div>
+<!-- Pantalla de aplicador -->
+
+<!-- Pantalla de validar con firma -->
+<div class="card" *ngIf="MostrandoValidacionDeFirma">
+    <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Validar Cuestionario
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="CerrarCardMostrandoValidacionDeFirma()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+      <!-- Cuerpo de Card -->
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Nombre</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Email">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Apellidos</label>
+            <input type="text" class="form-control" id="inputPassword4" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Grupo</label>
+          <select id="inputState" class="form-control">
+            <option selected>Elegir Grupo...</option>
+            <option>...</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-primary" style="background-color: #1F5247;">Validar</button>
+      </form>
+      <!-- Cuerpo de Card -->
+
+    </div>
+  </div>
+</div>
+<!-- Pantalla de validar con firma -->
+
+<!-- Pantalla para ver su historial de Observaciones -->
+<div class="card" *ngIf="MostrandoHistorialObservaciones">
+  <div class="card-header">
+  <h4 class="card-title">
+    <div class="row">
+      <div class="col">
+        Validar Cuestionario
+      </div>
+      <div class="text-right">
+        <button class="btn btn-success" (click)="CerrarCardMostrandoValidacionDeFirma()" style="background-color: #1F5247;">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </h4>
+</div>
+<div class="card-content">
+  <div class="card-body">
+
+    <!-- Cuerpo de Card -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Fecha y Hora de Emisión</th>
+          <th scope="col">Asunto</th>
+          <th scope="col">Estatus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>10-05-2021 11:45:08</td>
+          <td>Velocidad de Respuesta Baja</td>
+          <td>Atendida</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>10-05-2021 11:50:30</td>
+          <td>Velocidad de Respuesta Baja</td>
+          <td>Atendida</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10-05-2021 12:32:42</td>
+          <td>Velocidad de Respuesta Excesiva</td>
+          <td>En proceso...</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Cuerpo de Card -->
+
+  </div>
+</div>
+</div>
+<!-- Pantalla para ver su historial de Observaciones -->
+
+<!-- Modal para datos de un poli-->
+<ng-template #infoPoli let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Historial de Observaciones Recibidas</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <!-- Cuerpo de Formulario -->
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Folio</th>
+            <th scope="col">Sección</th>
+            <th scope="col">Porcentaje Completado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>P0L-7653</td>
+            <td>Profesionalización</td>
+            <td>35%</td>
+          </tr>
+          <tr>
+            <td>P0L-6524</td>
+            <td>Aspectos Socioeconómicos</td>
+            <td>40%</td>
+          </tr>
+          <tr>
+            <td>P0L-6534</td>
+            <td>Equipamiento</td>
+            <td>80%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Cuerpo de Formulario -->
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="c('Close click')" style="background-color: #1F5247;">Enviar</button>
+  </div>
+</ng-template>
+<!-- Modal para datos de un poli-->
