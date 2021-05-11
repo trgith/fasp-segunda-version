@@ -90,7 +90,7 @@ export class Dashboard2Component{
   //Funcion Cambiar Tamaño de Fuente
   CambiarTamanoLetra(){
     var e = document.getElementById("exampleFormControlSelect1");
-    document.getElementById('PrimeraPregunta').style.fontSize = e.value;
+    //document.getElementById('PrimeraPregunta').style.fontSize = e.value;
   }
 
   ExpulsionDeEmergencia(){
