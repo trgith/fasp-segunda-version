@@ -4,6 +4,8 @@ import { Observable, timer, interval } from 'rxjs';
 import { take, map } from 'rxjs/operators';
 import { NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { transpileModule } from 'typescript';
+import { CountdownModule } from 'ngx-countdown';
+import { Router } from '@angular/router';
 
 declare var require: any;
 @Component({
@@ -28,7 +30,7 @@ export class Dashboard2Component{
   titulo: boolean;
 
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private router:Router) { }
 
   ngOnInit(): void {
     //Se recupera la sesion simulada del usuario
@@ -100,5 +102,11 @@ export class Dashboard2Component{
     this.segundaPregunta = false;
     this.contadorActivo = false;
     this.botonEmergencia = false;
+    this.closedSesionEmergency();
+  }
+
+  private closedSesionEmergency() {
+    localStorage.removeItem('currentUser');
+    this.router.navigate(['/pages/login']);
   }
 }
