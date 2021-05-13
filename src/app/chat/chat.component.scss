@@ -1,0 +1,25 @@
+.chat-application .chats .chat-body .chat-content {
+    background-color: #28a745;
+}
+
+.chat-application .chats .chat-body .chat-content p {
+    color: #fff;
+}
+
+.chat-application .chat-sidebar .users-list-padding .selected-chat {
+    background-color: #eee;
+    border-right: 3px solid #28a745;
+}
+
+.list-group i,
+.bg-light-primary {
+    color: #28a745 !important;
+}
+
+.bg-light-primary {
+    background-color: rgba(40, 167, 6, .3) !important;
+}
+
+.btn-primary-modified {
+    background-color: #28a745 !important;
+}

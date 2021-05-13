@@ -405,6 +405,7 @@ export const ROUTES: RouteInfo[] = [
       }
     ]
   },
+
   //Sidebar de Evaluador Externo
   { path: 'evaluadorExterno', title: 'Inicio', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
   {
@@ -444,8 +445,10 @@ export const ROUTES: RouteInfo[] = [
       {
         path: '#', title: 'Formatos Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       }
-    ]
+    ],
+    
   },
+<<<<<<< HEAD
   //Menu de Ayuda
   {
     path: 'evaluadorExterno', title: 'Ayuda', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
@@ -482,6 +485,11 @@ export const ROUTES: RouteInfo[] = [
       }
     ]
   },
+=======
+ 
+
+
+>>>>>>> origin/master
   //Sidebar de Enlace Estatal
   { path: 'enlaceEstatal', title: 'Inicio', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
   {
@@ -513,7 +521,7 @@ export const ROUTES: RouteInfo[] = [
         path: '#', title: 'Bases de Datos Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
-        path: '#s', title: 'Bases de Datos Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '#', title: 'Bases de Datos Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       },
       {
         path: '#', title: 'Formatos Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
