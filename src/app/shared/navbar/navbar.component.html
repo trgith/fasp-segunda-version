@@ -26,22 +26,118 @@
 
                     <li class="dropdown nav-item" placement="bottom-left" display="static" ngbDropdown>
                         <a class="nav-link dropdown-toggle dropdown-notification p-0 mt-2" id="drp-notification" href="javascript:;" data-toggle="dropdown" ngbDropdownToggle><i class="ft-bell font-medium-3"></i><span
-                class="notification badge badge-pill badge-danger">0</span></a>
+                class="notification badge badge-pill badge-danger">3</span></a>
                         <ul ngbDropdownMenu class="notification-dropdown dropdown-menu dropdown-menu-media dropdown-menu-right m-0 overflow-hidden">
                             <li class="dropdown-menu-header">
                                 <div class="dropdown-header d-flex justify-content-between m-0 px-3 py-2 white bg-success">
                                     <div class="d-flex">
                                         <i class="ft-bell font-medium-3 d-flex align-items-center mr-2"></i><span class="noti-title">
-                    Sin notificaciones
+                   3 notificaciones
                   </span>
                                     </div>
                                 </div>
                             </li>
+
                             <li class="scrollable-container" [perfectScrollbar]>
+                                <div class="cursor-pointer">
+                                    <div class="media d-flex align-items-center justify-content-between">
+                                        <div class="media-left">
+                                            <div class="media-body">
+                                                <h6 class="m-0">Chat</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="d-flex justify-content-between" href="javascript:void(0)">
+                                    <div class="media d-flex align-items-center">
+                                        <div class="media-left">
+                                            <div class="mr-3">
+                                                <img class="avatar" src="assets/img/portrait/small/avatar-s-20.png" alt="avatar" height="45" width="45" />
+                                            </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="m-0">
+                                                <span>Isabel</span><small class="grey lighten-1 font-italic float-right">Hace 5 min.</small>
+                                            </h6>
+                                            <a class="noti-text" [routerLink]="['/dashboard/chat-dashboard']">¿Como va el evaluador?</a>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="d-flex justify-content-between" href="javascript:void(0)">
+                                    <div class="media d-flex align-items-center">
+                                        <div class="media-left">
+                                            <div class="mr-3">
+                                                <img class="avatar" src="assets/img/portrait/small/avatar-s-11.png" alt="avatar" height="45" width="45" />
+                                            </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="m-0">
+                                                <span>Jesus</span><small class="grey lighten-1 font-italic float-right">Hace 49 min</small>
+                                            </h6>
+                                            <small class="noti-text">¿Como va el policia?</small>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <div class="cursor-pointer">
+                                    <div class="media d-flex align-items-center justify-content-between">
+                                        <div class="media-left">
+                                            <div class="media-body">
+                                                <h6 class="m-0">Observaciones</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between cursor-pointer read-notification">
+                                    <div class="media d-flex align-items-center">
+                                        <div class="media-left">
+                                            <div class="avatar bg-danger bg-lighten-4 mr-3 p-1">
+                                                <span class="avatar-content font-medium-2"><i class="ft-heart text-danger"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="m-0">
+                                                <span>Aprovado</span><small class="grey lighten-1 font-italic float-right">Hace 10 min</small>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="d-flex justify-content-between read-notification" href="javascript:void(0)">
+                                    <div class="media d-flex align-items-center">
+                                        <div class="media-left">
+                                            <div class="mr-3">
+                                                <img class="avatar" src="assets/img/portrait/small/avatar-s-6.png" alt="avatar" height="45" width="45" />
+                                            </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="m-0">
+                                                <span>Anna Lee</span><small class="grey lighten-1 font-italic float-right">Hace 2 dias</small>
+                                            </h6>
+                                            <small class="noti-text">Observación en la encuesta numero 2</small>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="d-flex justify-content-between cursor-pointer read-notification">
+                                    <div class="media d-flex align-items-center">
+                                        <div class="media-left">
+                                            <div class="avatar bg-info bg-lighten-4 mr-3 p-1">
+                                                <div class="avatar-content font-medium-2">
+                                                    <i class="ft-align-left text-info"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="m-0">
+                                                <span>Reporte Generado</span><small class="grey lighten-1 font-italic float-right">Hace 35 horas</small>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
+
                             <li class="dropdown-menu-footer">
                                 <div class="noti-footer text-center cursor-pointer primary border-top text-bold-400 py-1">
-                                    ...
+                                    Leer Todas
                                 </div>
                             </li>
                         </ul>

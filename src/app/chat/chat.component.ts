@@ -72,6 +72,7 @@ export class ChatComponent implements OnInit, OnDestroy {
       })
       this.newMessage = "";
     }
+      
   }
 
   viewChat(chat: UsersChat) {

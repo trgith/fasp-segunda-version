@@ -22,6 +22,11 @@ import { ChatComponent } from "./chat.component";
     ],
     declarations: [
         ChatComponent
+    ],
+
+    exports: [
+        ChatComponent
     ]
 })
+
 export class ChatModule { }

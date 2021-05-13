@@ -13,6 +13,8 @@ import { Dashboard2Component } from "./dashboard2/dashboard2.component";
 import { EditorComponent } from 'app/forms/elements/editor/editor.component';
 import { QuillModule } from 'ngx-quill'
 import { CountdownModule } from 'ngx-countdown';
+import { ChatModule } from '../chat/chat.module';
+import { ChatDashboardComponent } from './chat-dashboard/chat-dashboard.component';
 
 
 
@@ -26,15 +28,15 @@ import { CountdownModule } from 'ngx-countdown';
         NgApexchartsModule,
         AngularResizedEventModule,
         QuillModule.forRoot(),
-        CountdownModule
-
+        CountdownModule,
+        ChatModule
     ],
     exports: [],
     declarations: [
         Dashboard1Component,
         Dashboard2Component,
         EditorComponent,
-
+        ChatDashboardComponent,
     ],
     providers: [],
 })
