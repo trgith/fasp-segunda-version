@@ -1,3 +1,4 @@
+import { BrowserWindowRef } from './../../shared/services/window.service';
 import { barChartColorScheme } from './../../shared/configs/ngx-charts.config';
 import { Component, ElementRef, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
@@ -10,6 +11,24 @@ import * as am4charts from '@amcharts/amcharts4/charts';
 import countries2  from '@amcharts/amcharts4-geodata/data/countries2';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 import { NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import {
+  ApexAxisChartSeries,
+  ApexChart,
+  ApexXAxis,
+  ApexYAxis,
+  ApexGrid,
+  ApexDataLabels,
+  ApexStroke,
+  ApexTitleSubtitle,
+  ApexTooltip,
+  ApexLegend,
+  ApexPlotOptions,
+  ApexFill,
+  ApexMarkers,
+  ApexTheme,
+  ApexNonAxisChartSeries,
+  ApexResponsive
+} from "ng-apexcharts";
 
 declare var require: any;
 
@@ -31,6 +50,34 @@ export interface Programas {
   nombre: string;
   porcentaje: number;
 }
+
+export type ChartOptions = {
+  series: ApexAxisChartSeries | ApexNonAxisChartSeries;
+  colors: string[],
+  chart: ApexChart;
+  xaxis: ApexXAxis;
+  yaxis: ApexYAxis | ApexYAxis[],
+  title: ApexTitleSubtitle;
+  dataLabels: ApexDataLabels,
+  stroke: ApexStroke,
+  grid: ApexGrid,
+  legend?: ApexLegend,
+  tooltip?: ApexTooltip,
+  plotOptions?: ApexPlotOptions,
+  labels?: string[],
+  fill: ApexFill,
+  markers?: ApexMarkers,
+  theme: ApexTheme,
+  responsive: ApexResponsive[]
+};
+
+var $primary = "#975AFF",
+  $success = "#40C057",
+  $info = "#2F8BE6",
+  $warning = "#F77E17",
+  $danger = "#F55252",
+  $label_color_light = "#E6EAEE";
+var themeColors = [$primary, $warning, $success, $danger, $info];
 @Component({
   selector: 'app-dashboard1',
   templateUrl: './dashboard1.component.html',
@@ -43,7 +90,28 @@ export class Dashboard1Component implements OnInit {
 
   programas: Programas[];
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal) {
+    this.pieChartOptions = {
+      chart: {
+        type: 'pie',
+        width: 400
+      },
+      colors: themeColors,
+      labels: ['Estatal', 'Custodio', 'Investigación'],
+      series: [44, 55, 13],
+      responsive: [{
+        breakpoint: 800,
+        options: {
+          chart: {
+            width: 700
+          }
+        }
+      }]
+    }
+  }
+
+  //De las chart
+  pieChartOptions : Partial<ChartOptions>;
 
   //Variables
   MostrarMapa: boolean;
@@ -62,7 +130,12 @@ export class Dashboard1Component implements OnInit {
   MostrandoBotonesAreaInstitucional: boolean;
   MostrandoBotonesAreaIntegral: boolean;
   MostrandoDetalleGrupo: boolean;
+  /* Variables de monitoreo Detallado de un Funcionario Estatal */
   MostrandoObservaciones: boolean;
+  MostrandoHistorialRespuestas: boolean;
+  MostrandoContacto: boolean;
+  MostrandoRealizarObservacion: boolean;
+
   MostrandoCreacionDeUsuarios: boolean;
   GenerarTicketObservacion: boolean;
   Nacional: boolean;
@@ -70,6 +143,9 @@ export class Dashboard1Component implements OnInit {
   MostrandoAplicadorInicio: boolean;
   MostrandoValidacionDeFirma: boolean;
   MostrandoHistorialObservaciones: boolean;
+  MostrarDetalleGrupoMonitoreoInstitucional: boolean;
+  MostrarRealizarObservacionGrupo: boolean;
+  MostrandoFichaInformativa: boolean;
   estados = [
     'Aguascalientes', 'Baja California', 'Baja California Sur', 'Campeche', 'Coahuila', 'Colima', 'Chiapas', 'Chihuahua', 'Durango', 'Distrito Federal', 'Guanajuato', 'Guerrero', 'Hidalgo', 'Jalisco', 'México', 'Michoacán', 'Morelos', 'Nayarit', 'Nuevo León', 'Oaxaca', 'Puebla', 'Querétaro', 'Quintana Roo', 'San Luis Potosí', 'Sinaloa', 'Sonora', 'Tabasco', 'Tamaulipas', 'Tlaxcala', 'Veracruz', 'Yucatán', 'Zacatecas'
   ];
@@ -105,6 +181,7 @@ export class Dashboard1Component implements OnInit {
           this.MostrandoAplicadorInicio = true;
           this.MostrandoValidacionDeFirma = true;
           this.MostrandoHistorialObservaciones = true;
+          this.MostrandoFichaInformativa = true;
       }
       default: {
 
@@ -129,11 +206,17 @@ export class Dashboard1Component implements OnInit {
     //Variables para Detalle de Grupo
     this.MostrandoDetalleGrupo = false;
     this.MostrandoObservaciones = false;
+    this.MostrandoHistorialRespuestas = false;
+    this.MostrandoContacto = false;
+    this.MostrandoRealizarObservacion = false;
     this.GenerarTicketObservacion = false;
     //Nacional
     this.Nacional = false;
     //Se inicializan programas
     this.programas = this.getProducts();
+    //Variables a Identificar
+    this.MostrarDetalleGrupoMonitoreoInstitucional = false;
+    this.MostrarRealizarObservacionGrupo = false;
   }
 
 
@@ -209,7 +292,12 @@ export class Dashboard1Component implements OnInit {
 
         // Configure series tooltip
         let polygonTemplate = polygonSeries.mapPolygons.template;
-        polygonTemplate.tooltipText = "{name}";
+        //polygonTemplate.tooltipText = "{name}";
+        polygonTemplate.tooltipText = `[bold]{name}[/]
+        ----
+        Estatal: 320
+        Custodio: 273
+        Inevstigación: 98`;
         polygonTemplate.nonScalingStroke = true;
         polygonTemplate.strokeWidth = 0.5;
 
@@ -338,10 +426,12 @@ export class Dashboard1Component implements OnInit {
     this.MostrandoMonitoreoInstitucionalEspecifico = false;
   }
   OcultarMonitoreoIntegral(){
+    this.MostrandoMonitoreoIntegralEspecifico = false;
+  }
+  OcultarMonitoreoIntegralGeneral(){
     this.MostrandoMonitoreoIntegral = false;
   }
   //4.- Graficas generales
-    // Bar Chart Starts
     barChart: Chart = {
       type: 'Bar',
       data: data['Bar'],
@@ -379,8 +469,7 @@ export class Dashboard1Component implements OnInit {
           }
       },
 
-    };
-  // Bar Chart Ends
+      };
     //5.- Detalles de Grupo
     MostrarDetalleGrupo(){
       this.MostrandoDetalleGrupo = true;
@@ -388,12 +477,43 @@ export class Dashboard1Component implements OnInit {
     CerrarDetalleGrupo(){
       this.MostrandoDetalleGrupo = false;
     }
+    //6. Muestra el Historial de Observaciones de un Funcionario Estatal
     VerObservaciones(){
       this.MostrandoObservaciones = true;
     }
+    //6.1 Se cierra el historial de Observaciones
     CerrarObservaciones(){
       this.MostrandoObservaciones = false;
     }
+    //7. Muestra el Historial de Respuestas de un Funcionario Estatal
+    VerHistorial(){
+      this.MostrandoHistorialRespuestas = true;
+    }
+    //7.1 Cerrar el Historial de Respuestas de un Funcionario Estatañ
+    CerrarHistorial(){
+      this.MostrandoHistorialRespuestas = false;
+    }
+    //8. Muestra la tabla de contacto de un Funcionario Estatal
+    VerContacto(){
+      this.MostrandoContacto = true;
+    }
+    //8.1 Cerrar la tabla de contacto de un Funcionario Estatal
+    CerrarContacto(){
+      this.MostrandoContacto = false;
+    }
+    //9. Muestra el form para realizarle una Observacion a un Funcionario Estatal
+    RealizarObservacion(){
+      this.MostrandoRealizarObservacion = true;
+    }
+    //9.1 Cerrar el form para realizar una Observación a un usuario
+    CerrarRealizarObservacion(){
+      this.MostrandoRealizarObservacion = false;
+    }
+    //10. Función que muestra unas charts en la construccion de informes
+    BotonGenerarGrafica(){
+
+    }
+
 
     ToggleEnviarObservacion(){
       if(this.MostrandoObservaciones){
@@ -409,6 +529,23 @@ export class Dashboard1Component implements OnInit {
       } else {
         this.GenerarTicketObservacion = true;
       }
+    }
+
+    //6. Mostrar Detalle de grupo en Monitoreo Institucional Especifico
+    BotonMostrarDetalleGrupo(){
+      this.MostrarDetalleGrupoMonitoreoInstitucional = true;
+    }
+    //7. Cierra el Detalle de grupo en Monitoreo Institucional Especifico
+    BotonCerrarDetalleGrupo(){
+      this.MostrarDetalleGrupoMonitoreoInstitucional = false;
+    }
+    //8- Muestra la card para mandar observaciones al Grupo
+    BotonMostrarRealizarObservacionGrupo(){
+      this.MostrarRealizarObservacionGrupo = true;
+    }
+    //9. Cierra la card para mandar observaciones al grupo
+    BotonCerrarRealizarObservacionGrupo(){
+      this.MostrarRealizarObservacionGrupo = false;
     }
 
   /*
@@ -481,6 +618,19 @@ export class Dashboard1Component implements OnInit {
           break;
       }
     }
+  }
+
+
+  /*
+  *
+  *
+  * Funcion que pasa asitencia
+  *
+  *
+  * */
+  asistenciaPoli(id){
+    //document.getElementById('poli-' + id).style.visibility = "hidden";
+    document.getElementById('poli-' + id).innerHTML = "<i class='ft-check-square'></i>"
   }
 
 

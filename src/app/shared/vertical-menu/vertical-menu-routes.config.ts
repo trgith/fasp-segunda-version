@@ -446,6 +446,42 @@ export const ROUTES: RouteInfo[] = [
       }
     ]
   },
+  //Menu de Ayuda
+  {
+    path: 'evaluadorExterno', title: 'Ayuda', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
+    submenu: [
+      {
+        path: '#', title: 'Guías de Uso', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false,
+        submenu: [
+          {
+            path: '#', title: 'Guía de Uso 1', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+          },
+          {
+            path: '#', title: 'Guía de Uso 2', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+          },
+        ]
+      },
+      {
+        path: '#', title: 'Anexos', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false,
+        submenu: [
+          {
+            path: '#', title: 'Documentos Metodológicos', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+          }
+        ]
+      },
+      {
+        path: '#', title: 'Tutoriales', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false,
+        submenu: [
+          {
+            path: '#', title: 'Tutorial 1', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+          },
+          {
+            path: '#', title: 'Tutorial 2', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+          },
+        ]
+      }
+    ]
+  },
   //Sidebar de Enlace Estatal
   { path: 'enlaceEstatal', title: 'Inicio', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
   {
@@ -489,7 +525,18 @@ export const ROUTES: RouteInfo[] = [
   },
   //Menu de Aplicador
   { path: 'aplicador', title: 'Inicio', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
-  { path: 'aplicador', title: 'Firma Digital', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false, submenu: []},
+  {
+    path: 'aplicador', title: 'Grupos', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
+    submenu: [
+      {
+        path: '#', title: 'Grupo 82737', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      },
+      {
+        path: '#', title: 'Grupo 09325', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+      }
+    ]
+  },
   { path: 'aplicador', title: 'Solicitudes de Ayuda', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false, submenu: []},
   { path: 'aplicador', title: 'Observaciones', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false, submenu: []},
+  { path: 'aplicador', title: 'Checklist', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false, submenu: []}
 ];
