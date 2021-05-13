@@ -446,9 +446,8 @@ export const ROUTES: RouteInfo[] = [
         path: '#', title: 'Formatos Integral', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
       }
     ],
-    
+
   },
-<<<<<<< HEAD
   //Menu de Ayuda
   {
     path: 'evaluadorExterno', title: 'Ayuda', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
@@ -485,11 +484,6 @@ export const ROUTES: RouteInfo[] = [
       }
     ]
   },
-=======
- 
-
-
->>>>>>> origin/master
   //Sidebar de Enlace Estatal
   { path: 'enlaceEstatal', title: 'Inicio', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
   {
