@@ -1,0 +1,3301 @@
+<!-- Menu de Evaluador Externo  -->
+<div class="card" *ngIf="MainEvaluador">
+  <div class="card-content">
+    <div class="card-body">
+      <div class="row justify-content-md-center">
+        <div class="col-md">
+          <button class="btn btn-warning btn-block" (click)="MostrarMonitoreoInstitucional()">
+            Monitoreo Institucional
+          </button>
+        </div>
+        <div class="col-md">
+          <button class="btn btn-warning btn-block" (click)="MostrarMonitoreoIntegral()">
+            Monitoreo Integral
+          </button>
+        </div>
+      </div>
+      <br>
+      <div class="row justify-content-md-center">
+        <div class="col-md">
+          <button class="btn btn-warning btn-block" (click)="MostrarCreacionDeInformeInstitucional()">
+              Informe Institucional
+          </button>
+        </div>
+        <div class="col-md">
+          <button class="btn btn-warning btn-block" (click)="MostrarCreacionDeInformeIntegral()">
+              Inform Integral
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Menu de Evaluador Externo  -->
+
+<!-- Boton para iniciar Chat -->
+<div class="card d-flex flex-column align-items-end">
+  <div class="card-header">
+      <a class="btn btn-info" [routerLink]="['/dashboard/chat-dashboard']">Iniciar Chat</a>
+  </div>
+  <br>
+</div>
+<!-- Boton para iniciar Chat -->
+
+<!-- Contenedor principal de mapa y boton -->
+<div class="card" *ngIf="MostrarMapa">
+  <div class="card-header">
+    <h4 class="card-title">
+      Ubicaciones
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+      <div class="row justify-content-md-center" id="chartdiv" style="height: 35em !important;">
+      </div>
+      <br>
+      <div class="row justify-content-md-center">
+        <div class="col-12 col-md-6 mb-2 mb-md-0">
+          <button type="button" class="btn btn-success btn-block" (click)="VerNacional()" style="background-color: #022e24;">Ver Gráficas Nacionales</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contenedor principal de mapa y boton -->
+
+
+<!-- Card de Areas Institucional e Integral -->
+<div class="card" *ngIf="MostrandoAreas">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Áreas
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="ToggleAreas()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 col-md-6 mb-2 mb-md-0">
+          <button type="button" class="btn btn-success btn-block" (click)="MostrarBotonesInstitucional()" style="background-color: #022e24;">Institucional</button>
+        </div>
+        <div class="col-12 col-md-6">
+          <button type="button" class="btn btn-success btn-block" (click)="MostrarBotonesIntegral()" style="background-color: #022e24;">Integral</button>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-3">
+          <button type="button" class="btn btn-success btn-block" (click)="MostrarMonitoreoInstitucional()" style="background-color: #022e24;">Monitoreo</button>
+        </div>
+        <div class="col-3">
+          <button type="button" class="btn btn-success btn-block" (click)="MostrarCreacionDeInformeInstitucional()" style="background-color: #022e24;">Informe de Evaluación</button>
+        </div>
+        <div class="col-3">
+          <button type="button" class="btn btn-success btn-block" (click)="MostrarMonitoreoIntegral()" style="background-color: #022e24;">Monitoreo</button>
+        </div>
+        <div class="col-3">
+          <button type="button" class="btn btn-success btn-block" (click)="MostrarCreacionDeInformeIntegral()" style="background-color: #022e24;">Informe de Evaluación</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Card de Areas de Institucional e Integral -->
+
+
+<!-- Editor de informe Institucional -->
+<div class="card" *ngIf="MostrandoCreacionDeInformeInstitucional">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Creación de Informe Institucional
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="CerrarCardCreacionInformeInstitucional()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          Redactando para el índice:
+          <select class="form-control" id="IndiceInstitucional">
+            <option>I. Introducción</option>
+            <option>II. Perfil Personal Operativo</option>
+            <option>III. Aspectos Socioeconómicos</option>
+            <option>IV. Profesionalización</option>
+            <option>V. Capacitación</option>
+            <option>VI. Evaluación Policial</option>
+            <option>VII. Equipamiento</option>
+            <option>VIII. Uso de Tecnología</option>
+            <option>IX. Infraestructura</option>
+            <option>X. Hábitos de Trabajo</option>
+            <option>XI. Problemas en el Trabajo</option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-12 col-md-8 mb-2 mb-md-0">
+          <!-- Editor de Texto -->
+          <app-editor></app-editor>
+          <!-- Editor de Texto -->
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="row">
+              <div class="col-12 col-md-8 mb-2 mb-md-0">
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Perfil Personal Operativo</option>
+                  <option>Aspectos Socioeconómicos</option>
+                  <option>Profesionalización</option>
+                  <option>Capacitación</option>
+                  <option>Evaluación Policial</option>
+                  <option>Equipamiento</option>
+                  <option>Uso de Tecnología</option>
+                  <option>Infraestructura</option>
+                  <option>Hábitos de Trabajo</option>
+                  <option>Problemas en el Trabajo</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-4">
+                <button type="button" class="btn btn-success" style="background-color: #022e24;" title="Generar Gráfica" (click)="BotonGenerarGrafica()">
+                  <i class="ft-pie-chart"></i>
+                </button>
+              </div>
+
+              <!-- Grafica Generada -->
+              <div class="col-lg-6 col-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                              <apx-chart
+                              [series]="pieChartOptions.series"
+                              [colors]="pieChartOptions.colors"
+                              [chart]="pieChartOptions.chart"
+                              [xaxis]="pieChartOptions.xaxis"
+                              [yaxis]="pieChartOptions.yaxis"
+                              [title]="pieChartOptions.title"
+                              [dataLabels]="pieChartOptions.dataLabels"
+                              [stroke]="pieChartOptions.stroke"
+                              [grid]="pieChartOptions.grid"
+                              [tooltip]="pieChartOptions.tooltip"
+                              [plotOptions]="pieChartOptions.plotOptions"
+                              [fill]="pieChartOptions.fill"
+                              [legend]="pieChartOptions.legend"
+                              [labels]="pieChartOptions.labels"
+                              [markers]="pieChartOptions.markers"
+                              [theme]="pieChartOptions.theme"
+                              [responsive]="pieChartOptions.responsive"
+                            ></apx-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <!-- Grafica Generada -->
+
+            </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <button type="button" class="btn btn-success btn-block" style="background-color: #022e24;">Descargar Vista Previa</button>
+        </div>
+        <div class="col-12 col-md-4">
+          <button type="button" class="btn btn-success btn-block" style="background-color: #022e24;">Exportar</button>
+        </div>
+        <div class="col-12 col-md-4">
+          <button type="button" class="btn btn-success btn-block" style="background-color: #022e24;">Vista Previa</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Editor de Informe Institucional -->
+
+
+<!-- Editor de informe Integral -->
+<div class="card" *ngIf="MostrandoCreacionDeInformeIntegral">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Creación de Informe Integral
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="CerrarCardCreacionInformeIntegral()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          Redactando para el índice:
+          <select class="form-control" id="IndiceInstitucional">
+            <option>Introducción</option>
+            <option>1. Programa de Impulso al Modelo Nacional de Policía y Justicia Cívica</option>
+            <option>2. Programa de Profesionalización, Certificación y Capacitación de los Elementos</option>
+            <option>3. Equipamiento e Infraestructura de los elementos policiales y las Instituciones de Seguridad</option>
+            <option>4. Programa de Prevención Social de la Violencia y la Delincuencia con Participación </option>
+            <option>5. Programa de Fortalecimiento al Sistema Penitenciario Nacional y de Ejecución de Medidas para Adolescentes </option>
+            <option>6. Sistema Nacional de Información</option>
+            <option>7. Fortalecimiento Tecnológico del Registro Vehicular (REPUVE)</option>
+            <option>Conclusiones Generales</option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-12 col-md-8 mb-2 mb-md-0">
+          <app-editor></app-editor>
+        </div>
+        <div class="col-12 col-md-4">
+          <div>
+            <div class="row">
+              <div class="col-12 col-md-8 mb-2 mb-md-0">
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Programa de Impulso al Modelo Nacional de Policía y Justicia Cívica</option>
+                  <option>Programa de Profesionalización, Certificación y Capacitación de los Elementos</option>
+                  <option>Equipamiento e Infraestructura de los elementos policiales y las Instituciones de Seguridad</option>
+                  <option>Programa de Prevención Social de la Violencia y la Delincuencia con Participación </option>
+                  <option>Programa de Fortalecimiento al Sistema Penitenciario Nacional y de Ejecución de Medidas para Adolescentes </option>
+                  <option>Sistema Nacional de Información</option>
+                  <option>Fortalecimiento Tecnológico del Registro Vehicular (REPUVE) </option>
+                </select>
+              </div>
+              <div class="col-12 col-md-4">
+                <button type="button" class="btn btn-success" style="background-color: #022e24;" title="Generar Gráfica" (click)="BotonGenerarGrafica()">
+                  <i class="ft-pie-chart"></i>
+                </button>
+              </div>
+
+              <!-- Grafica Generada -->
+              <div class="col-lg-6 col-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                              <apx-chart
+                              [series]="pieChartOptions.series"
+                              [colors]="pieChartOptions.colors"
+                              [chart]="pieChartOptions.chart"
+                              [xaxis]="pieChartOptions.xaxis"
+                              [yaxis]="pieChartOptions.yaxis"
+                              [title]="pieChartOptions.title"
+                              [dataLabels]="pieChartOptions.dataLabels"
+                              [stroke]="pieChartOptions.stroke"
+                              [grid]="pieChartOptions.grid"
+                              [tooltip]="pieChartOptions.tooltip"
+                              [plotOptions]="pieChartOptions.plotOptions"
+                              [fill]="pieChartOptions.fill"
+                              [legend]="pieChartOptions.legend"
+                              [labels]="pieChartOptions.labels"
+                              [markers]="pieChartOptions.markers"
+                              [theme]="pieChartOptions.theme"
+                              [responsive]="pieChartOptions.responsive"
+                            ></apx-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <!-- Grafica Generada -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <button type="button" class="btn btn-success btn-block" style="background-color: #022e24;">Guardar</button>
+        </div>
+        <div class="col-12 col-md-4">
+          <button type="button" class="btn btn-success btn-block" style="background-color: #022e24;">Exportar</button>
+        </div>
+        <div class="col-12 col-md-4">
+          <button type="button" class="btn btn-success btn-block" style="background-color: #022e24;">Vista Previa</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Editor de Informe Integral -->
+
+
+<!-- Monitoreo Institucional Especifico -->
+<div class="card" *ngIf="MostrandoMonitoreoInstitucionalEspecifico">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Monitoreo Detallado de la Encuesta Institucional
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="OcultarMonitoreoDetalladoInstitucional()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+        <!--table starts-->
+        <section id="ng-tables">
+          <div class="row text-left">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-content">
+                  <div class="card-body">
+
+                    <!-- Graficas -->
+                    <div class="row">
+                      <div class="col-12 col-md-3 mb-2 mb-md-0">
+
+                          <!-- Tipos de Polis -->
+                          <div class="card">
+                            <div class="card-content">
+                              <div class="card-body">
+                                <div class="media">
+                                  <div class="media-body text-left">
+                                    <h3 class="card-text">30</h3>
+                                    <span>Estatal</span>
+                                  </div>
+                                  <div class="media-right align-self-center">
+                                    <i class="ft-user font-large-2 float-right"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <br>
+                          <br>
+                          <div class="card">
+                            <div class="card-content">
+                              <div class="card-body">
+                                <div class="media">
+                                  <div class="media-body text-left">
+                                    <h3 class="card-text">48</h3>
+                                    <span>Custodia</span>
+                                  </div>
+                                  <div class="media-right align-self-center">
+                                    <i class="ft-user font-large-2 float-right"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <br>
+                          <br>
+                          <div class="card">
+                            <div class="card-content">
+                              <div class="card-body">
+                                <div class="media">
+                                  <div class="media-body text-left">
+                                    <h3 class="card-text">70</h3>
+                                    <span>Investigación</span>
+                                  </div>
+                                  <div class="media-right align-self-center">
+                                    <i class="ft-user font-large-2 float-right"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Tipos de Polis -->
+
+                      </div>
+                      <div class="col-12 col-md-9">
+
+                        <!-- Las graficas -->
+                        <div class="row">
+                          <div class="col-md-12 text-center">
+                            <img src="assets/img/grafica2.svg" width="1100" style="margin-left: 20%;">
+                          </div>
+                          <div class="col-md-12 text-center">
+                            <img src="assets/img/grafica2.svg" width="1100" style="margin-left: 20%;">
+                          </div>
+                          <div class="col-md-12 text-center">
+                            <img src="assets/img/grafica2.svg" width="1100" style="margin-left: 20%;">
+                          </div>
+                        </div>
+                        <!-- Las graficas -->
+
+                      </div>
+                    </div>
+                    <!-- Graficas -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--table ends-->
+
+        <br>
+
+        <!-- Cards de Grupos -->
+        <div class="row">
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card bg-success">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1" style="color: white;">#156</h3>
+                      <span style="color: white;">Porcentaje Completado %35</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-message-square font-large-2 float-right" style="color: white;"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="warning" [value]="35" class="progress-bar-sm" height="4px"></ngb-progressbar><br>
+                  <div class="row">
+                    <div class="col text-center">
+                      <button class="btn btn-warning" (click)="BotonMostrarDetalleGrupo()" style="background-color: #022e24;" title="Ver Detalle de Grupo">
+                        <i class="ft-eye"></i>
+                      </button>
+                    </div>
+                    <div class="col text-center">
+                      <button class="btn btn-warning" (click)="BotonMostrarDetalleGrupo()" style="background-color: #022e24;" title="Descargar Informe">
+                        <i class="ft-download"></i>
+                      </button>
+                    </div>
+                    <div class="col text-center">
+                      <button class="btn btn-warning" (click)="BotonMostrarRealizarObservacionGrupo()" style="background-color: #022e24;" title="Realizar Observación">
+                        <i class="ft-volume-2"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card bg-success">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1" style="color: white;">#157</h3>
+                      <span style="color: white;">Porcentaje Completado %70</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-message-square font-large-2 float-right" style="color: white;"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="warning" [value]="70" class="progress-bar-sm" height="4px"></ngb-progressbar><br>
+                  <div class="row">
+                    <div class="col text-center">
+                      <button class="btn btn-warning" (click)="BotonMostrarDetalleGrupo()" style="background-color: #022e24;" title="Ver Detalle de Grupo">
+                        <i class="ft-eye"></i>
+                      </button>
+                    </div>
+                    <div class="col text-center">
+                      <button class="btn btn-warning" (click)="BotonMostrarDetalleGrupo()" style="background-color: #022e24;" title="Descargar Informe">
+                        <i class="ft-download"></i>
+                      </button>
+                    </div>
+                    <div class="col text-center">
+                      <button class="btn btn-warning" (click)="BotonMostrarRealizarObservacionGrupo()" style="background-color: #022e24;" title="Realizar Observación">
+                        <i class="ft-volume-2"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card bg-success">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1" style="color: white;">#158</h3>
+                      <span style="color: white;">Porcentaje Completado %100</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-message-square font-large-2 float-right" style="color: white;"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="warning" [value]="100" class="progress-bar-sm" height="4px"></ngb-progressbar><br>
+                  <div class="row">
+                    <div class="col text-center">
+                      <button class="btn btn-warning" (click)="BotonMostrarDetalleGrupo()" style="background-color: #022e24;" title="Ver Detalle de Grupo">
+                        <i class="ft-eye"></i>
+                      </button>
+                    </div>
+                    <div class="col text-center">
+                      <button class="btn btn-warning" (click)="BotonMostrarDetalleGrupo()" style="background-color: #022e24;" title="Descargar Informe">
+                        <i class="ft-download"></i>
+                      </button>
+                    </div>
+                    <div class="col text-center">
+                      <button class="btn btn-warning" (click)="BotonMostrarRealizarObservacionGrupo()" style="background-color: #022e24;" title="Realizar Observación">
+                        <i class="ft-volume-2"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card bg-success">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1" style="color: white;">#159</h3>
+                      <span style="color: white;">Porcentaje Completado %24</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-message-square font-large-2 float-right" style="color: white;"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="warning" [value]="24" class="progress-bar-sm" height="4px"></ngb-progressbar><br>
+                  <div class="row">
+                    <div class="col text-center">
+                      <button class="btn btn-warning" (click)="BotonMostrarDetalleGrupo()" style="background-color: #022e24;" title="Ver Detalle de Grupo">
+                        <i class="ft-eye"></i>
+                      </button>
+                    </div>
+                    <div class="col text-center">
+                      <button class="btn btn-warning" (click)="BotonMostrarDetalleGrupo()" style="background-color: #022e24;" title="Descargar Informe">
+                        <i class="ft-download"></i>
+                      </button>
+                    </div>
+                    <div class="col text-center">
+                      <button class="btn btn-warning" (click)="BotonMostrarRealizarObservacionGrupo()" style="background-color: #022e24;" title="Realizar Observación">
+                        <i class="ft-volume-2"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Cards Grupos -->
+
+        <br>
+
+        <!-- Detalle de Grupos -->
+        <div *ngIf="MostrarDetalleGrupoMonitoreoInstitucional">
+          <!-- Tabla -->
+          <section id="extended">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="row">
+                      <div class="col">
+                        <h4 class="card-title">Detalle de Grupo</h4>
+                      </div>
+                      <div class="col text-right">
+                        <button class="btn btn-success" (click)="BotonCerrarDetalleGrupo()">
+                          Cerrar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="card-body table-responsive">
+                      <table class="table text-center m-0">
+                        <thead>
+                          <tr>
+                            <th>Folio</th>
+                            <th>Sexo</th>
+                            <th>Edad</th>
+                            <th>Programa</th>
+                            <th>T. Restante</th>
+                            <th>T. Transcurrido</th>
+                            <th>% Completado</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>P0L-242021</td>
+                            <td>Masculino</td>
+                            <td>De 18 a 23 años</td>
+                            <td>Programa 6</td>
+                            <td>2h 30m 30s</td>
+                            <td>0h 30m 30s</td>
+                            <td>30%</td>
+                          </tr>
+                          <tr>
+                            <td>P0L-252021</td>
+                            <td>Masculino</td>
+                            <td>De 18 a 23 años</td>
+                            <td>Programa 1</td>
+                            <td>1h 30m 40s</td>
+                            <td>1h 30m 20s</td>
+                            <td>50%</td>
+                          </tr>
+                          <tr>
+                            <td>P0L-262021</td>
+                            <td>Femenino</td>
+                            <td>De 42 a 47 años</td>
+                            <td>Programa 3</td>
+                            <td>1h 40m 38</td>
+                            <td>2h 20m 22</td>
+                            <td>30%</td>
+                          </tr>
+                          <tr>
+                            <td>P0L-272021</td>
+                            <td>Masculino</td>
+                            <td>De 36 a 41 años</td>
+                            <td>Programa 2</td>
+                            <td>1h 40m 40</td>
+                            <td>1h 20m 20s</td>
+                            <td>30%</td>
+                          </tr>
+                          <tr>
+                            <td>P0L-282021</td>
+                            <td>Femenino</td>
+                            <td>De 36 a 41 años</td>
+                            <td>Programa 2</td>
+                            <td>1h 20m 30s</td>
+                            <td>1h 40m 30s</td>
+                            <td>80%</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Tabla -->
+        </div>
+        <!-- Detalle de Grupos -->
+
+        <!-- Espacio para Tickets de Error -->
+        <section id="horizontal-form-layout" *ngIf="MostrarRealizarObservacionGrupo">
+          <div class="row match-height">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col text-left">
+                      <h4 class="card-title">Generar Ticket de Observación</h4>
+                    </div>
+                    <div class="col text-right">
+                      <button class="btn btn-success" (click)="BotonCerrarRealizarObservacionGrupo()">
+                        Cerrar
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <small>Esto generará una observación para el Aplicador del Grupo</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div class="card-body">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-6 col-12">
+                          <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="horizontal-form-1">Nombre</label>
+                            <div class="col-md-9">
+                              <input type="text" class="form-control square" id="horizontal-form-1" name="first-name">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                          <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="horizontal-form-2">Apellidos</label>
+                            <div class="col-md-9">
+                              <input type="text" class="form-control square" id="horizontal-form-2" name="last-name">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 col-12">
+                          <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="horizontal-form-6">Asunto</label>
+                            <div class="col-md-9">
+                              <select class="form-control" id="exampleFormControlSelect1" class="form-control square">
+                                <option>Discordancia de Datos</option>
+                                <option>Datos no visibles</option>
+                                <option>Otro</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                          <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="horizontal-form-9">Descripción</label>
+                            <div class="col-md-9">
+                              <textarea id="horizontal-form-9" rows="6" class="form-control square" name="comment3"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col text-right">
+                          <button type="button" class="btn btn-primary mr-2" style="background-color: #022e24;"><i class="ft-check-square mr-1"></i>Enviar</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Espacio para Tickets de Error -->
+
+    </div>
+  </div>
+</div>
+<!-- Monitoreo Institucional Especifico -->
+
+<!-- Monitoreo Institucional Tabla General -->
+<div class="card" *ngIf="MostrandoMonitoreoInstitucional">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Monitoreo General de la Encuesta Institucional
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="OcultarMonitoreoInstitucional()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+      <!--table starts-->
+        <section id="ng-tables">
+          <div class="row text-left">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-content">
+                  <div class="card-body">
+                    <form>
+                      <div class="row">
+                        <div class="col text-left">
+                          <input class="form-control ml-2" type="text" name="searchTerm" placeholder="Buscar Usuario"/>
+                        </div>
+                        <div class="col text-right">
+                          <select class="form-control" id="TiposUsuario" class="form-control square">
+                            <option>Estatal</option>
+                            <option>Custodio</option>
+                            <option>Investigación</option>
+                          </select>
+                        </div>
+                      </div>
+                      <br>
+
+                      <div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col" sortable="name">Folio</th>
+                              <th scope="col" sortable="area">Inciso</th>
+                              <th scope="col" sortable="population">Sección</th>
+                              <th scope="col" sortable="population">Descargar PDF</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>P0L-242021</td>
+                              <td>A)</td>
+                              <td>Sección 4</td>
+                              <td>
+                                <button class="btn btn-success">
+                                  Descargar PDF
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>P0L-352021</td>
+                              <td>B)</td>
+                              <td>Sección 2</td>
+                              <td>
+                                <button class="btn btn-success">
+                                  Descargar PDF
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>P0L-352021</td>
+                              <td>B)</td>
+                              <td>Sección 2</td>
+                              <td>
+                                <button class="btn btn-success">
+                                  Descargar PDF
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>P0L-352021</td>
+                              <td>B)</td>
+                              <td>Sección 2</td>
+                              <td>
+                                <button class="btn btn-success">
+                                  Descargar PDF
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>P0L-352021</td>
+                              <td>B)</td>
+                              <td>Sección 2</td>
+                              <td>
+                                <button class="btn btn-success">
+                                  Descargar PDF
+                                </button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <div class="d-flex justify-content-between p-2">
+                        <ngb-pagination>
+                        </ngb-pagination>
+
+                        <select class="custom-select" style="width: auto" name="pageSize">
+                          <option>5 registros por página</option>
+                          <option>10 registros por página</option>
+                          <option>20 registros por página</option>
+                        </select>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--table ends-->
+    </div>
+  </div>
+</div>
+<!-- Monitoreo Institucional Tabla General -->
+
+
+<!-- Monitoreo Integral Especifico -->
+<div class="card" *ngIf="MostrandoMonitoreoIntegralEspecifico">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Monitoreo Detallado de la Encuesta Integral
+        </div>
+        <div class="text-right">
+          <button class="btn btn-warning" (click)="OcultarMonitoreoIntegral()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+        <!-- Detalle de Grupos -->
+        <div>
+
+          <!-- Cards de Programas -->
+            <!-- Card Programa 1 - 4 -->
+            <div class="row">
+              <div class="col-xl-3 col-lg-6 col-12">
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-body">
+                      <div class="media">
+                        <div class="media-body text-left">
+                          <h3 class="mb-1 success">31.40 %</h3>
+                          <span> Programa de Impulso al Modelo Nacional de Policía y Justicia Cívica <br> &nbsp; </span>
+                        </div>
+                        <div class="media-right align-self-center" (click)="MostrarDetalleGrupo()">
+                          <img src="assets/img/iconos_programas/Justicia.svg" width="100">
+                        </div>
+                      </div>
+                      <ngb-progressbar type="success" [value]="31" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12">
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-body">
+                      <div class="media">
+                        <div class="media-body text-left">
+                          <h3 class="mb-1 success">25.89 %</h3>
+                          <span>Profesionalización, Certificación y Capacitación de los Elementos e Instituciones de Seguridad Pública</span>
+                        </div>
+                        <div class="media-right align-self-center" (click)="MostrarDetalleGrupo()">
+                          <img src="assets/img/iconos_programas/Certificado.svg" width="100">
+                        </div>
+                      </div>
+                      <ngb-progressbar type="success" [value]="25" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12">
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-body">
+                      <div class="media">
+                        <div class="media-body text-left">
+                          <h3 class="mb-1 success">87.21 %</h3>
+                          <span>Equipamiento e Infraestructura de los Elementos e Instituciones de Seguridad Pública</span>
+                        </div>
+                        <div class="media-right align-self-center" (click)="MostrarDetalleGrupo()">
+                          <img src="assets/img/iconos_programas/Equipamiento.svg" width="100">
+                        </div>
+                      </div>
+                      <ngb-progressbar type="success" [value]="87" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12">
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-body">
+                      <div class="media">
+                        <div class="media-body text-left">
+                          <h3 class="mb-1 success">43.23 %</h3>
+                          <span>Programa de Prevención Social de Violencia y Delincuencia con Participación Ciudadana</span>
+                        </div>
+                        <div class="media-right align-self-center" (click)="MostrarDetalleGrupo()">
+                          <img src="assets/img/iconos_programas/ParticipacionCiudadana.svg" width="100">
+                        </div>
+                      </div>
+                      <ngb-progressbar type="success" [value]="43" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card Programa 1 - 4 -->
+            <!-- Card Programa 5 - 7 -->
+            <div class="row">
+              <div class="col-xl-3 col-lg-6 col-12">
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-body">
+                      <div class="media">
+                        <div class="media-body text-left">
+                          <h3 class="mb-1 success">46.13 %</h3>
+                          <span>Fortalecimiento al Sistema Penitenciario Nacional y Ejecución de Medidas Adolescentes</span>
+                        </div>
+                        <div class="media-right align-self-center" (click)="MostrarDetalleGrupo()">
+                          <img src="assets/img/iconos_programas/SistemaPenitenciario.svg" width="100">
+                        </div>
+                      </div>
+                      <ngb-progressbar type="success" [value]="46" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12">
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-body">
+                      <div class="media">
+                        <div class="media-body text-left">
+                          <h3 class="mb-1 success">25.89 %</h3>
+                          <span> Sistema Nacional de Información <br><br> &nbsp; </span>
+                        </div>
+                        <div class="media-right align-self-center" (click)="MostrarDetalleGrupo()">
+                          <img src="assets/img/iconos_programas/Informacion.svg" width="100">
+                        </div>
+                      </div>
+                      <ngb-progressbar type="success" [value]="25" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12">
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-body">
+                      <div class="media">
+                        <div class="media-body text-left">
+                          <h3 class="mb-1 success">64.21 %</h3>
+                          <span>Fortalecimiento Tecnológico del Registro Vehicular (REPUVE) <br> &nbsp; </span>
+                        </div>
+                        <div class="media-right align-self-center" (click)="MostrarDetalleGrupo()">
+                          <img src="assets/img/iconos_programas/Repuve.svg" width="100">
+                        </div>
+                      </div>
+                      <ngb-progressbar type="success" [value]="64" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card Programa 5 - 7 -->
+          <!-- Cards de Programas -->
+
+          <!-- Tabla de Usuarios -->
+          <section id="extended" *ngIf="MostrandoDetalleGrupo">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="row">
+                      <div class="col">
+                        <h4 class="card-title">Usuarios Respondiendo el Programa</h4>
+                      </div>
+                      <div class="col text-right">
+                        <button class="btn btn-success" (click)="CerrarDetalleGrupo()" style="background-color: #1F5247;">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="card-body table-responsive">
+                      <table class="table text-center m-0">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Usuario</th>
+                            <th>Fecha Inicio</th>
+                            <th>Porcentaje</th>
+                            <th>Historial Respuesta</th>
+                            <th>Observaciones</th>
+                            <th>Contacto</th>
+                            <th>Realizar Observación</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>3424</td>
+                            <td>fake_history@outlook.com</td>
+                            <td>28/04/2021 12:30:22 PM</td>
+                            <td>50%</td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="VerHistorial()">
+                                <i class="ft-align-justify font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="VerObservaciones()">
+                                <i class="ft-eye font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="VerContacto()">
+                                <i class="ft-phone font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="RealizarObservacion()">
+                                <i class="ft-volume-2 font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>6753</td>
+                            <td>sal_limon@gmail.com</td>
+                            <td>27/04/2021 14:02:09 PM</td>
+                            <td>89%</td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="VerHistorial()">
+                                <i class="ft-align-justify font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="VerObservaciones()">
+                                <i class="ft-eye font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="VerContacto()">
+                                <i class="ft-phone font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="RealizarObservacion()">
+                                <i class="ft-volume-2 font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>6534</td>
+                            <td>love_les@gmail.com</td>
+                            <td>28/04/2021 17:20:11 PM</td>
+                            <td>10%</td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="VerHistorial()">
+                                <i class="ft-align-justify font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="VerObservaciones()">
+                                <i class="ft-eye font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="VerContacto()">
+                                <i class="ft-phone font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="RealizarObservacion()">
+                                <i class="ft-volume-2 font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>6524</td>
+                            <td>ivan_ferreiro@gmail.com</td>
+                            <td>28/04/2021 17:20:11 PM</td>
+                            <td>40%</td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="VerHistorial()">
+                                <i class="ft-align-justify font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="VerObservaciones()">
+                                <i class="ft-eye font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="VerContacto()">
+                                <i class="ft-phone font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="RealizarObservacion()">
+                                <i class="ft-volume-2 font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>6542</td>
+                            <td>sklo_908@outlook.com</td>
+                            <td>28/04/2021 17:20:11 PM</td>
+                            <td>70%</td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="VerHistorial()">
+                                <i class="ft-align-justify font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="VerObservaciones()">
+                                <i class="ft-eye font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="VerContacto()">
+                                <i class="ft-phone font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                            <td>
+                              <a href="javascript:;" class="info p-0" (click)="RealizarObservacion()">
+                                <i class="ft-volume-2 font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Tabla de Usuarios -->
+
+          <!-- Historial de Respuestas -->
+          <section id="extended" *ngIf="MostrandoHistorialRespuestas">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="row">
+                      <div class="col">
+                        <h4 class="card-title">Historial de Respuestas Usuario</h4>
+                      </div>
+                      <div class="col text-right">
+                        <button class="btn btn-success" (click)="CerrarHistorial()" style="background-color: #1F5247;">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="card-body table-responsive">
+                      <table class="table text-center m-0">
+                        <thead>
+                          <tr>
+                            <th>Respuesta</th>
+                            <th>Subprograma</th>
+                            <th>Programa</th>
+                            <th>Fecha y Hora</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Sí</td>
+                            <td>Subprograma de Equipamiento de las Instituciones de Seguridad Pública</td>
+                            <td> Programa de Fortalecimiento al Sistema Penitenciario Nacional y de Ejecución de Medidas para Adolescentes</td>
+                            <td>12/05/2021 15:31:47</td>
+                          </tr>
+                          <tr>
+                            <td>A veces</td>
+                            <td>Subprograma de Fortalecimiento y/o Creación de las Unidades de Inteligencia Patrimonial y Económica</td>
+                            <td>Sistema Nacional de Información</td>
+                            <td>12/05/2021 15:27:34</td>
+                          </tr>
+                          <tr>
+                            <td>No</td>
+                            <td>Subprograma Modelo Homologado de las Unidades de Policía Cibernética</td>
+                            <td>Programa de Fortalecimiento al Sistema Penitenciario Nacional y de Ejecución de Medidas para Adolescentes</td>
+                            <td>12/05/2021 15:25:35</td>
+                          </tr>
+                          <tr>
+                            <td>Sí</td>
+                            <td>Subprograma de Acceso a la Justicia para las Mujeres</td>
+                            <td>Equipamiento e Infraestructura de los elementos policiales y las Instituciones de Seguridad Pública</td>
+                            <td>13/05/2021 09:45:23</td>
+                          </tr>
+                          <tr>
+                            <td>Sí</td>
+                            <td>Subprograma de Acreditación</td>
+                            <td>Equipamiento e Infraestructura de los elementos policiales y las Instituciones de Seguridad Pública</td>
+                            <td>14/05/2021 09:41:35</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Historual de Respuestas -->
+
+          <!-- Historial de Observaciones -->
+          <section id="extended" *ngIf="MostrandoObservaciones">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="row">
+                      <div class="col">
+                        <h4 class="card-title">Historial de Observaciones de Usuario</h4>
+                      </div>
+                      <div class="col text-right">
+                        <button class="btn btn-success" (click)="CerrarObservaciones()" style="background-color: #1F5247;">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="card-body table-responsive">
+                      <table class="table text-center m-0">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Descripcion</th>
+                            <th>Hora Enviado</th>
+                            <th>Estatus</th>
+                            <th>Observación</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>Descripcion de Prueba</td>
+                            <td>16:02</td>
+                            <td>Pendiente</td>
+                            <td>
+                              <button class="btn btn-success" (click)="ToggleGenerarTicketObservacion()" style="background-color: #022e24;">
+                                Generar
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Historial de Observaciones -->
+
+          <!-- Tabla de Contacto -->
+          <section id="extended" *ngIf="MostrandoContacto">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="row">
+                      <div class="col">
+                        <h4 class="card-title">Contacto del Usuario</h4>
+                      </div>
+                      <div class="col text-right">
+                        <button class="btn btn-success" (click)="CerrarContacto()" style="background-color: #1F5247;">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="card-body table-responsive">
+                      <table class="table text-center m-0">
+                        <thead>
+                          <tr>
+                            <th>Num. Empleado</th>
+                            <th>Nombre Completo</th>
+                            <th>Teléfono</th>
+                            <th>Email</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1764</td>
+                            <td>Eric Ramirez Jara</td>
+                            <td>654 878 7653</td>
+                            <td>eric_ramizre@gmail.com</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Tabla de Contacto -->
+
+          <!-- Realizar nueva Observacion -->
+          <section id="extended" *ngIf="MostrandoRealizarObservacion">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="row">
+                      <div class="col">
+                        <h4 class="card-title">Realizar Observación</h4>
+                      </div>
+                      <div class="col text-right">
+                        <button class="btn btn-success" (click)="CerrarRealizarObservacion()" style="background-color: #1F5247;">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+
+                    <!-- Form de levantar Observacion -->
+                    <div class="card-body">
+                      <form>
+                        <div class="row">
+                          <div class="col-md-6 col-12">
+                            <div class="form-group row">
+                              <label class="col-md-3 col-form-label" for="horizontal-form-1">Nombre</label>
+                              <div class="col-md-9">
+                                <input type="text" class="form-control square" id="horizontal-form-1" name="first-name">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6 col-12">
+                            <div class="form-group row">
+                              <label class="col-md-3 col-form-label" for="horizontal-form-2">Apellidos</label>
+                              <div class="col-md-9">
+                                <input type="text" class="form-control square" id="horizontal-form-2" name="last-name">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6 col-12">
+                            <div class="form-group row">
+                              <label class="col-md-3 col-form-label" for="horizontal-form-6">Asunto</label>
+                              <div class="col-md-9">
+                                <select class="form-control" id="exampleFormControlSelect1" class="form-control square">
+                                  <option>Discordancia de Datos</option>
+                                  <option>Datos no visibles</option>
+                                  <option>Otro</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6 col-12">
+                            <div class="form-group row">
+                              <label class="col-md-3 col-form-label" for="horizontal-form-9">Descripción</label>
+                              <div class="col-md-9">
+                                <textarea id="horizontal-form-9" rows="6" class="form-control square" name="comment3"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <button type="button" class="btn btn-primary mr-2" style="background-color: #1F5247;"><i class="ft-check-square mr-1"></i>Enviar</button>
+                      </form>
+                    </div>
+                    <!-- Form de levantar Observacion -->
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Realizar Nueva Observacion -->
+
+        </div>
+        <!-- Detalle de Grupos -->
+
+    </div>
+  </div>
+</div>
+<!-- Monitoreo Integral Especifico -->
+
+
+<!-- Monitoreo Integral General -->
+<div class="card" *ngIf="MostrandoMonitoreoIntegral">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Monitoreo de la Encuesta Integral
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="OcultarMonitoreoIntegralGeneral()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+      <!--table starts-->
+        <section id="ng-tables">
+          <div class="row text-left">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-content">
+                  <div class="card-body">
+                    <form>
+                      <div class="row">
+                        <div class="col text-left">
+                          <input class="form-control ml-2" type="text" name="searchTerm" placeholder="Buscar Usuario"/>
+                        </div>
+                        <div class="col text-right">
+                          <select class="form-control" id="Programa" class="form-control square">
+                            <option>Programa de Impulso al Modelo Nacional de Policía y Justicia Cívica</option>
+                            <option>Programa de Profesionalización, Certificación y Capacitación de los Elementos</option>
+                            <option>Equipamiento e Infraestructura de los elementos policiales y las Instituciones de Seguridad</option>
+                            <option>Programa de Prevención Social de la Violencia y la Delincuencia con Participación </option>
+                            <option>Programa de Fortalecimiento al Sistema Penitenciario Nacional y de Ejecución de Medidas para Adolescentes </option>
+                            <option>Sistema Nacional de Información</option>
+                            <option>Fortalecimiento Tecnológico del Registro Vehicular (REPUVE) </option>
+                          </select>
+                        </div>
+                      </div>
+                      <br>
+
+                      <div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col" sortable="name">Usuario</th>
+                              <th scope="col" sortable="population">Sección</th>
+                              <th scope="col" sortable="population">Programa</th>
+                              <th scope="col">Acciones</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>david_tr678@gmail.com</td>
+                              <td>Seccion 3</td>
+                              <td>Programa 1</td>
+                              <td>
+                                <button class="btn btn-success" title="Enviar" type="button" style="background-color: #022e24;" (click)="MandarObservacion(mandarObservacion)">
+                                  <i class="ft-volume"></i>
+                                </button>
+                                &nbsp;
+                                <button class="btn btn-info" title="Ver" type="button" style="background-color: #022e24;" (click)="VerHistorial(verHistorial)">
+                                  <i class="ft-eye"></i>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>leonelGarcia10@gmail.com</td>
+                              <td>Seccion 1</td>
+                              <td>Programa 3</td>
+                              <td>
+                                <button class="btn btn-success" title="Enviar" type="button" style="background-color: #022e24;" (click)="MandarObservacion(mandarObservacion)">
+                                  <i class="ft-volume"></i>
+                                </button>
+                                &nbsp;
+                                <button class="btn btn-info" title="Ver" type="button" style="background-color: #022e24;" (click)="VerHistorial(verHistorial)">
+                                  <i class="ft-eye"></i>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>mailJUKU@outlook.com</td>
+                              <td>Seccion 1</td>
+                              <td>Programa 3</td>
+                              <td>
+                                <button class="btn btn-success" title="Enviar" type="button" style="background-color: #022e24;" (click)="MandarObservacion(mandarObservacion)">
+                                  <i class="ft-volume"></i>
+                                </button>
+                                &nbsp;
+                                <button class="btn btn-info" title="Ver" type="button" style="background-color: #022e24;" (click)="VerHistorial(verHistorial)">
+                                  <i class="ft-eye"></i>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>zamira876@gmail.com</td>
+                              <td>Seccion 1</td>
+                              <td>Programa 3</td>
+                              <td>
+                                <button class="btn btn-success" title="Enviar" type="button" style="background-color: #022e24;" (click)="MandarObservacion(mandarObservacion)">
+                                  <i class="ft-volume"></i>
+                                </button>
+                                &nbsp;
+                                <button class="btn btn-info" title="Ver" type="button" style="background-color: #022e24;" (click)="VerHistorial(verHistorial)">
+                                  <i class="ft-eye"></i>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>ggJoestar@outlook.com.com</td>
+                              <td>Seccion 1</td>
+                              <td>Programa 3</td>
+                              <td>
+                                <button class="btn btn-success" title="Enviar" type="button" style="background-color: #022e24;" (click)="MandarObservacion(mandarObservacion)">
+                                  <i class="ft-volume"></i>
+                                </button>
+                                &nbsp;
+                                <button class="btn btn-info" title="Ver" type="button" style="background-color: #022e24;" (click)="VerHistorial(verHistorial)">
+                                  <i class="ft-eye"></i>
+                                </button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <div class="d-flex justify-content-between p-2">
+                        <ngb-pagination>
+                        </ngb-pagination>
+
+                        <select class="custom-select" style="width: auto" name="pageSize">
+                          <option>5 registros por página</option>
+                          <option>10 registros por página</option>
+                          <option>20 registros por página</option>
+                        </select>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--table ends-->
+    </div>
+  </div>
+</div>
+<!-- Monitoreo Integral General -->
+
+<!-- 32 Graficas Nacional -->
+<div class="card" *ngIf="Nacional">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Progreso Nacional
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="CerrarNacional()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+      <!-- Buscador de Estado -->
+      <div class="row">
+        <div class="col">
+          <input class="form-control ml-2" type="text" name="searchTerm" placeholder="Buscar Estado"/>
+        </div>
+      </div>
+      <!-- Buscador de Estado -->
+
+      <br>
+
+      <!-- Graficas -->
+      <div *ngFor="let estado of estados">
+        <div>
+          <div class="row">
+            <div class="col text-center">
+              <h4>{{ estado }}</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-center">
+              <img src="assets/img/estados/{{ estado }}.svg" width="300">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              Encuesta Institucional
+              Fecha de Aplicación: <strong>24/04/2021</strong>
+              <div class="row">
+                <div class="col-md-6">
+                  <p>
+                    Validado por el Estado: <i class="ft-check" style="color: green;"></i>
+                  </p>
+                  <p>
+                    Validado por el Estado: <i class="ft-check" style="color: green;"></i>
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    Fecha de Aplicación: <strong>26/05/2021</strong>
+                  </p>
+                  <p>
+                    Fecha de Aplicación: <strong>19/06/2021</strong>
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <img src="assets/img/grafica2.svg" width="900">
+              </div>
+            </div>
+            <div class="col">
+              Encuesta Institucional
+              Fecha de Aplicación: <strong>24/04/2021</strong>
+              <div class="row">
+                <div class="col-md-6">
+                  <p>
+                    Validado por el Estado: <i class="ft-check" style="color: green;"></i>
+                  </p>
+                  <p>
+                    Validado por el Estado: <i class="ft-check" style="color: green;"></i>
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    Fecha de Aplicación: <strong>26/05/2021</strong>
+                  </p>
+                  <p>
+                    Fecha de Aplicación: <strong>19/06/2021</strong>
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <img src="assets/img/grafica4.svg" width="650">
+              </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <br>
+      <!-- Graficas -->
+
+    </div>
+  </div>
+</div>
+<!-- 32 Graficas Nacional -->
+
+<!-- Descarga de Datos -->
+<div class="card" *ngIf="MostrandoDescargas">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col text-left">
+          Descargas
+        </div>
+        <div class="col text-right">
+          <button class="btn btn-success" (click)="cerrarDescargas()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+
+          <!-- Descargas Institucional -->
+          <p>Datos Institucionales</p>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="white mb-3" style="color: black !important;">Filtro por Entidad</h5>
+              </div>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>Entidad 1</option>
+                <option>Entidad 2</option>
+                <option>Entidad 3</option>
+                <option>Entidad 4</option>
+                <option>Entidad 5</option>
+              </select>
+            </li>
+            <li class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="white mb-3" style="color: black !important;">Bases de Datos de Institucionales</h5>
+                <small>Última actualización hace 1 hora</small>
+              </div>
+              <small><a style="color: green;" href="">Descargar Base de Datos (xlsx)</a></small><br>
+              <small><a style="color: green;" href="">Descargar Base de Datos (csv)</a></small><br>
+              <small><a style="color: green;" href="">Descargar Base de Datos (estata)</a></small><br>
+            </li>
+            <li class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-3">Formatos de Informe</h5>
+                <small class="text-muted">Construido hace 30 min</small>
+              </div>
+              <small><a style="color: green;" href="">Descargar formato (pdf)</a></small><br>
+            </li>
+          </ul>
+          <!-- Descargas Institucional -->
+
+        </div>
+        <div class="col">
+
+          <!-- Descargas Institucional -->
+          <p>Datos Integrales</p>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="white mb-3" style="color: black !important;">Filtro por Entidad</h5>
+              </div>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>Entidad 1</option>
+                <option>Entidad 2</option>
+                <option>Entidad 3</option>
+                <option>Entidad 4</option>
+                <option>Entidad 5</option>
+              </select>
+            </li>
+            <li class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="white mb-3" style="color: black !important;">Bases de Datos de Integrales</h5>
+                <small>Última actualización hace 1 hora</small>
+              </div>
+              <small><a style="color: green;" href="">Descargar Base de Datos (xlsx)</a></small><br>
+              <small><a style="color: green;" href="">Descargar Base de Datos (csv)</a></small><br>
+              <small><a style="color: green;" href="">Descargar Base de Datos (estata)</a></small><br>
+            </li>
+            <li class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-3">Formatos de Informe</h5>
+                <small class="text-muted" style="color: red;">En construcción</small>
+              </div>
+              <small><a style="color: gray;" href="">Descargar formato (pdf)</a></small><br>
+            </li>
+          </ul>
+          <!-- Descargas Institucional -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Descarga de Datos -->
+
+<!-- Chat -->
+<div class="card" *ngIf="MostrandoObservaciones">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Enviar Observación
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="ToggleEnviarObservacion()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+      <!-- Card para enviar observacion -->
+        <div class="col-lg-6 col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">Bordered Form</h4>
+            </div>
+            <div class="card-content">
+              <div class="card-body">
+                <p>Use <code>form.form-bordered .form-group</code> for bordered form and <code>label.label-control</code> for proper padding to a label.</p>
+                <form class="form-bordered">
+                  <div class="form-group row">
+                    <label class="col-md-3 label-control" for="bordered-form-1">Employee Name</label>
+                    <div class="col-md-9">
+                      <div class="position-relative has-icon-left">
+                        <input type="text" id="bordered-form-1" class="form-control" name="employeename">
+                        <div class="form-control-position">
+                          <i class="ft-user"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-md-3 label-control" for="bordered-form-2">Project Name</label>
+                    <div class="col-md-9">
+                      <div class="position-relative has-icon-left">
+                        <input type="text" id="bordered-form-2" class="form-control" name="projectname">
+                        <div class="form-control-position">
+                          <i class="ft-briefcase"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-md-3 label-control" for="bordered-form-3">Rate Per Hour</label>
+                    <div class="col-md-9">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="text" id="bordered-form-3" class="form-control" aria-label="Amount (to the nearest dollar)" name="rateperhour">
+                        <div class="input-group-append">
+                          <span class="input-group-text">.00</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-md-3 label-control" for="bordered-form-4">Time</label>
+                    <div class="col-md-9">
+                      <div class="position-relative has-icon-left">
+                        <input type="text" id="bordered-form-4" class="form-control pickatime" name="time">
+                        <div class="form-control-position">
+                          <i class="ft-clock"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row last mb-3">
+                    <label class="col-md-3 label-control" for="bordered-form-6">Notes</label>
+                    <div class="col-md-9">
+                      <div class="position-relative has-icon-left">
+                        <textarea id="bordered-form-6" rows="4" class="form-control" name="notes"></textarea>
+                        <div class="form-control-position">
+                          <i class="ft-file"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-primary mr-2" style="background-color: #022e24;"><i class="ft-check-square mr-1"></i>Save</button>
+                  <button type="button" class="btn btn-secondary" style="background-color: #022e24;"><i class="ft-x mr-1"></i>Cancel</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- Card para enviar observacion -->
+    </div>
+  </div>
+</div>
+<!-- Chat -->
+
+<!-- Visualizador de informe Institucional -->
+<div class="card" *ngIf="MostrandoVisualizacionDeInformeInstitucional">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Validación de Informe Institucional
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="CerrarCardCreacionInformeInstitucional()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+      <!-- Cuadros de Informes -->
+      <div class="row">
+        <div class="col-xl-3 col-lg-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media">
+                  <div class="media-body text-left">
+                    <h3 class="mb-1 success">64.89 %</h3>
+                    <span>Puebla</span>
+                  </div>
+                  <div class="media-right align-self-center">
+                    <i class="ft-alert-circle success font-large-2 float-right"></i>
+                  </div>
+                </div>
+                <ngb-progressbar type="warning" [value]="60" class="progress-bar-sm" height="4px"></ngb-progressbar>
+              </div>
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col" style="margin: 1px;">
+                    <button class="btn btn-success btn-block">Descargar Informe</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col" style="margin: 1px;">
+                    <button class="btn btn-success btn-block">Enviar Observación</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col" style="margin: 1px;">
+                    <button class="btn btn-success btn-block">Validar Informe</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media">
+                  <div class="media-body text-left">
+                    <h3 class="mb-1 success">100.00 %</h3>
+                    <span>Veracruz</span>
+                  </div>
+                  <div class="media-right align-self-center">
+                    <i class="ft-check-circle success font-large-2 float-right"></i>
+                  </div>
+                </div>
+                <ngb-progressbar type="sucess" [value]="100" class="progress-bar-sm" height="4px"></ngb-progressbar>
+              </div>
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col" style="margin: 1px;">
+                    <button class="btn btn-success btn-block">Descargar Informe</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col" style="margin: 1px;">
+                    <button class="btn btn-success btn-block">Enviar Observación</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col" style="margin: 1px;">
+                    <button class="btn btn-success btn-block">Validar Informe</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media">
+                  <div class="media-body text-left">
+                    <h3 class="mb-1 warning">30.43 %</h3>
+                    <span>Michoacán</span>
+                  </div>
+                  <div class="media-right align-self-center">
+                    <i class="ft-alert-circle warning font-large-2 float-right"></i>
+                  </div>
+                </div>
+                <ngb-progressbar type="warning" [value]="30" class="progress-bar-sm" height="4px"></ngb-progressbar>
+              </div>
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col" style="margin: 1px;">
+                    <button class="btn btn-success btn-block">Descargar Informe</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col" style="margin: 1px;">
+                    <button class="btn btn-success btn-block" (click)="openModal(customContent)">Enviar Observación</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col" style="margin: 1px;">
+                    <button class="btn btn-success btn-block">Validar Informe</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Cuadros de Informes -->
+
+    </div>
+  </div>
+</div>
+<!-- Visualizador de Informe Institucional -->
+
+
+<!-- Visualizador de informe Integral -->
+<div class="card" *ngIf="MostrandoVisualizacionDeInformeIntegral">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Visualización de Informe Integral
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="CerrarCardCreacionInformeIntegral()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+        <!-- Cuadros de Informes -->
+        <div class="row">
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 warning">64.89 %</h3>
+                      <span>Puebla</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-alert-circle warning font-large-2 float-right"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="warning" [value]="60" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-secondary btn-block">Descargar Informe</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-warning btn-block">Enviar Observación</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Validar Informe</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 success">100.00 %</h3>
+                      <span>Veracruz</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-check-circle success font-large-2 float-right"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="sucess" [value]="100" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-secondary btn-block">Descargar Informe</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Enviar Observación</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Validar Informe</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 warning">30.43 %</h3>
+                      <span>Michoacán</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-alert-circle warning font-large-2 float-right"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="warning" [value]="30" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-secondary btn-block">Descargar Informe</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-warning btn-block" (click)="openModal(customContent)">Enviar Observación</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Validar Informe</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Cuadros de Informes -->
+
+    </div>
+  </div>
+</div>
+<!-- Visualizador de Informe Integral -->
+
+<!-- Modal Solicitar Observacion -->
+<ng-template #customContent let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Solicitar Chat</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <!-- Cuerpo de Formulario -->
+    <form>
+      <div class="row">
+        <div class="col-md-12 col-12">
+          <div class="form-group row">
+            <label class="col-md-12 col-form-label" for="horizontal-form-6">Asunto</label>
+            <div class="col-md-12">
+              <select class="form-control" id="exampleFormControlSelect1" class="form-control square">
+                <option>Solicitud de Información Adicional</option>
+                <option>Discordancia de Datos</option>
+                <option>Datos no visibles</option>
+                <option>Otro</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-12">
+          <div class="form-group row">
+            <label class="col-md-12 col-form-label" for="horizontal-form-9">Descripción</label>
+            <div class="col-md-12">
+              <textarea id="horizontal-form-12" rows="12" class="form-control square" name="comment3"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <!-- Cuerpo de Formulario -->
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="c('Close click')" style="background-color: #1F5247;">Enviar</button>
+  </div>
+</ng-template>
+<!-- Modal Solicitar Observacion -->
+
+<!-- Construccion de Informe Institucional Nacional -->
+<div class="card" *ngIf="MostrandoConstruccionInformeNacionalInstitucional">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Construcción de Informe Nacional Institucional
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="CerrarCardCreacionInformeNacionalInstitucional()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+        <!-- Contenido de Construccion Nacional Institucional -->
+        <div class="row">
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 success">64.89 %</h3>
+                      <span>Puebla</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-alert-circle success font-large-2 float-right"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="warning" [value]="60" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Descargar Informe</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Enviar Observación</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Validar Informe</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 success">100.00 %</h3>
+                      <span>Veracruz</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-check-circle success font-large-2 float-right"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="sucess" [value]="100" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Descargar Informe</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Enviar Observación</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Validar Informe</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 warning">30.43 %</h3>
+                      <span>Michoacán</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-alert-circle warning font-large-2 float-right"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="warning" [value]="30" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Descargar Informe</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block" (click)="openModal(customContent)">Enviar Observación</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Validar Informe</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <app-editor></app-editor>
+        </div>
+        <!-- Contenido de Construccion Nacional Institucional -->
+
+    </div>
+  </div>
+</div>
+<!-- Construccion de Informe Institucional Nacional -->
+
+<!-- Construccion de Informe Integral Nacional -->
+<div class="card" *ngIf="MostrandoConstruccionInformeNacionalIntegral">
+  <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Construcción de Informe Nacional Integral
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="CerrarCardCreacionInformeNacionalIntegral()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+        <!-- Contenido de Construccion Nacional Institucional -->
+        <div class="row">
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 success">64.89 %</h3>
+                      <span>Puebla</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-alert-circle success font-large-2 float-right"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="warning" [value]="60" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Descargar Informe</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Enviar Observación</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Validar Informe</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 success">100.00 %</h3>
+                      <span>Veracruz</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-check-circle success font-large-2 float-right"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="sucess" [value]="100" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Descargar Informe</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Enviar Observación</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Validar Informe</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 warning">30.43 %</h3>
+                      <span>Michoacán</span>
+                    </div>
+                    <div class="media-right align-self-center">
+                      <i class="ft-alert-circle warning font-large-2 float-right"></i>
+                    </div>
+                  </div>
+                  <ngb-progressbar type="warning" [value]="30" class="progress-bar-sm" height="4px"></ngb-progressbar>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Descargar Informe</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block" (click)="openModal(customContent)">Enviar Observación</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col" style="margin: 1px;">
+                      <button class="btn btn-success btn-block">Validar Informe</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-left: 5%; margin-right: 5%;">
+          <app-editor></app-editor>
+        </div>
+        <!-- Contenido de Construccion Nacional Institucional -->
+
+    </div>
+  </div>
+</div>
+<!-- Construccion de Informe Integral Nacional -->
+
+<!-- Pantalla de ficha informativa de Grupo -->
+<div class="card" *ngIf="MostrandoFichaInformativa">
+  <div class="card-header">
+  <h4 class="card-title">
+    <div class="row">
+      <div class="col">
+        Ficha Informativa de Grupo
+      </div>
+      <div class="text-right">
+        <button class="btn btn-success" (click)="CerrarCardMostrandoValidacionDeFirma()" style="background-color: #1F5247;">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </h4>
+</div>
+<div class="card-content">
+  <div class="card-body">
+
+    <!-- Cuerpo de Card -->
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Estado:</label>
+          <input type="text" class="form-control" value="Hidalgo" readonly>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Fecha Aplicación:</label>
+          <input type="text" class="form-control" value="12/05/2021" readonly>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Tipo Policia:</label>
+          <input type="text" class="form-control" value="Estatal" readonly>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Cantidad:</label>
+          <input type="text" class="form-control" value="54" readonly>
+        </div>
+      </div>
+    </form>
+    <!-- Cuerpo de Card -->
+
+  </div>
+</div>
+</div>
+<!-- Pantalla de ficha informativa de Grupo -->
+
+<!-- Pantalla de aplicador -->
+<div class="card" *ngIf="MostrandoAplicadorInicio">
+    <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Usuarios Respondiendo en el grupo 82737
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="CerrarCardMostrandoAplicadorInicio()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+      <!-- Cuerpo de la card de Aplicador Inicio -->
+      <div class="row">
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-8765</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 25%; background-color: #1F5247;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(1)" id="poli-1">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button id="semaforo-1" class="btn btn-success" (click)="VerAsistencia(verSolicitud)">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(2)" id="poli-2">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button id="semaforo-2" class="btn btn-success" (click)="VerAsistencia(verSolicitud)">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(3)" id="poli-3">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(4)" id="poli-4">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(5)" id="poli-5">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(6)" id="poli-6">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(7)" id="poli-7">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" (click)="VerAsistencia(verSolicitud)" id="semaforo-3">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(8)" id="poli-8">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(9)" id="poli-9">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(10)" id="poli-10">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(11)" id="poli-11">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(12)" id="poli-12">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(13)" id="poli-13">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="VerAsistencia(verSolicitud)" id="semaforo-3">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(14)" id="poli-14">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(15)" id="poli-15">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(16)" id="poli-16">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" (click)="VerAsistencia(verSolicitud)" id="semaforo-4">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(17)" id="poli-17">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">P0L-5487</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #1F5247;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: white; border: none" (click)="openModalPoli(infoPoli)">
+                  <i class="ft-eye" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" style="background-color: white; border: none" (click)="asistenciaPoli(18)" id="poli-18">
+                  <i class="ft-square" style="color: #1F5247;"></i>
+                </button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-success" (click)="VerAsistencia(verSolicitud)" id="semaforo-5">
+                  <i class="ft-alert-circle" style="color: #1F5247;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Cuerpo de la card de Aplicador Inicio id="semaforo-4"-->
+
+    </div>
+  </div>
+</div>
+<!-- Pantalla de aplicador -->
+
+<!-- Pantalla de validar cuestionario -->
+<div class="card" *ngIf="MostrandoValidacionDeFirma">
+    <div class="card-header">
+    <h4 class="card-title">
+      <div class="row">
+        <div class="col">
+          Validar Cuestionario
+        </div>
+        <div class="text-right">
+          <button class="btn btn-success" (click)="CerrarCardMostrandoValidacionDeFirma()" style="background-color: #1F5247;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </h4>
+  </div>
+  <div class="card-content">
+    <div class="card-body">
+
+      <!-- Cuerpo de Card -->
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Nombre Completo Aplicador</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Nombre Completo Aplicador">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Nombre Completo Enlace Estatal</label>
+            <input type="text" class="form-control" id="inputPassword4" placeholder="Nombre Completo Enlace Estatal">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputAddress">Grupo</label>
+            <select id="inputState" class="form-control">
+              <option selected>Elegir Grupo...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputAddress">Grupo</label>
+            <select id="inputState2" class="form-control">
+              <option selected>Elegir Grupo...</option>
+              <option>...</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail5">Código de verificación Aplicador</label>
+            <input type="number" class="form-control" id="inputEmail5" placeholder="Código">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail5">Código de verificación Enlace Estatal</label>
+            <input type="number" class="form-control" id="inputEmail5" placeholder="Código">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6 text-center">
+            <button type="button" class="btn btn-primary" style="background-color: #1F5247;">Validar como Aplicador</button>
+          </div>
+          <div class="form-group col-md-6 text-center">
+            <button type="button" class="btn btn-primary" style="background-color: #1F5247;">Validar como Enlace Estatal</button>
+          </div>
+        </div>
+
+      </form>
+      <!-- Cuerpo de Card -->
+
+    </div>
+  </div>
+</div>
+<!-- Pantalla de validar cuestionario -->
+
+<!-- Pantalla para ver su historial de Observaciones -->
+<div class="card" *ngIf="MostrandoHistorialObservaciones">
+  <div class="card-header">
+  <h4 class="card-title">
+    <div class="row">
+      <div class="col">
+        Historial de Observaciones
+      </div>
+      <div class="text-right">
+        <button class="btn btn-success" (click)="CerrarCardMostrandoValidacionDeFirma()" style="background-color: #1F5247;">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </h4>
+</div>
+<div class="card-content">
+  <div class="card-body">
+
+    <!-- Cuerpo de Card -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Fecha y Hora de Emisión</th>
+          <th scope="col">Asunto</th>
+          <th scope="col">Estatus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>10-05-2021 11:45:08</td>
+          <td>Velocidad de Respuesta Baja</td>
+          <td>Atendida</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>10-05-2021 11:50:30</td>
+          <td>Velocidad de Respuesta Baja</td>
+          <td>Atendida</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10-05-2021 12:32:42</td>
+          <td>Velocidad de Respuesta Excesiva</td>
+          <td>En proceso...</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Cuerpo de Card -->
+
+  </div>
+</div>
+</div>
+<!-- Pantalla para ver su historial de Observaciones -->
+
+<!-- Modal para datos de un poli-->
+<ng-template #infoPoli let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Respuestas recientes</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <!-- Cuerpo de Formulario -->
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Folio</th>
+            <th scope="col">Sección</th>
+            <th scope="col">Porcentaje Completado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>P0L-7653</td>
+            <td>Profesionalización</td>
+            <td>35%</td>
+          </tr>
+          <tr>
+            <td>P0L-6524</td>
+            <td>Aspectos Socioeconómicos</td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td>P0L-6534</td>
+            <td>Equipamiento</td>
+            <td>100%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Cuerpo de Formulario -->
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="c('Close click')" style="background-color: #1F5247;">Cerrar</button>
+  </div>
+</ng-template>
+<!-- Modal para datos de un poli-->
+
+<!-- Modal para datos ver una Solicitud de Ayuda -->
+<ng-template #verSolicitud let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Solicitud de Ayuda</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <!-- Cuerpo de Formulario -->
+    <p>El usuario ha solicitado ayuda, favor de acercase para brindar atención.</p>
+    <!-- Cuerpo de Formulario -->
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="c('Close click')" style="background-color: #1F5247;">Cerrar</button>
+  </div>
+</ng-template>
+<!-- Modal para datos ver una Solicitud de Ayuda -->

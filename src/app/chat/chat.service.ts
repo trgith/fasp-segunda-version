@@ -156,7 +156,7 @@ export class ChatService {
       ]
       , 'text'),
   ];
-  
+
 
   public usersChat: UsersChat[] = [
     {

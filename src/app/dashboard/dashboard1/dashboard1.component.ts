@@ -149,7 +149,7 @@ export class Dashboard1Component implements OnInit {
   MostrarRealizarObservacionGrupo: boolean;
   MostrandoFichaInformativa: boolean;
   estados = [
-    'Aguascalientes', 'Baja California', 'Baja California Sur', 'Campeche', 'Coahuila', 'Colima', 'Chiapas', 'Chihuahua', 'Durango', 'Distrito Federal', 'Guanajuato', 'Guerrero', 'Hidalgo', 'Jalisco', 'México', 'Michoacán', 'Morelos', 'Nayarit', 'Nuevo León', 'Oaxaca', 'Puebla', 'Querétaro', 'Quintana Roo', 'San Luis Potosí', 'Sinaloa', 'Sonora', 'Tabasco', 'Tamaulipas', 'Tlaxcala', 'Veracruz', 'Yucatán', 'Zacatecas'
+    'Aguascalientes', 'Baja California', 'Baja California Sur', 'Campeche', 'Coahuila', 'Colima', 'Chiapas', 'Chihuahua', 'Durango', 'Distrito Federal', 'Guanajuato', 'Guerrero', 'Hidalgo', 'Jalisco', 'México', 'Michoacan', 'Morelos', 'Nayarit', 'Nuevo Leon', 'Oaxaca', 'Puebla', 'Queretaro', 'Quintana Roo', 'San Luis Potosi', 'Sinaloa', 'Sonora', 'Tabasco', 'Tamaulipas', 'Tlaxcala', 'Veracruz', 'Yucatan', 'Zacatecas'
   ];
   usuarioLogeado: string;
 
@@ -480,7 +480,7 @@ export class Dashboard1Component implements OnInit {
           }
       },
 
-      };
+    };
     //5.- Detalles de Grupo
     MostrarDetalleGrupo(){
       this.MostrandoDetalleGrupo = true;
@@ -652,18 +652,18 @@ export class Dashboard1Component implements OnInit {
   * */
   CambioColor(){
     if(this.colorRojo){
-      document.getElementById('semaforo-poli-1').style.backgroundColor = "red";
-      document.getElementById('semaforo-poli-2').style.backgroundColor = "red";
-      document.getElementById('semaforo-poli-3').style.backgroundColor = "red";
-      document.getElementById('semaforo-poli-4').style.backgroundColor = "red";
-      document.getElementById('semaforo-poli-5').style.backgroundColor = "red";
+      document.getElementById('semaforo-1').style.backgroundColor = "red";
+      document.getElementById('semaforo-2').style.backgroundColor = "red";
+      document.getElementById('semaforo-3').style.backgroundColor = "red";
+      document.getElementById('semaforo-4').style.backgroundColor = "red";
+      document.getElementById('semaforo-5').style.backgroundColor = "red";
       this.colorRojo = false;
     } else {
-      document.getElementById('semaforo-poli-1').style.backgroundColor = "orange";
-      document.getElementById('semaforo-poli-2').style.backgroundColor = "orange";
-      document.getElementById('semaforo-poli-3').style.backgroundColor = "orange";
-      document.getElementById('semaforo-poli-4').style.backgroundColor = "orange";
-      document.getElementById('semaforo-poli-5').style.backgroundColor = "orange";
+      document.getElementById('semaforo-1').style.backgroundColor = "orange";
+      document.getElementById('semaforo-2').style.backgroundColor = "orange";
+      document.getElementById('semaforo-3').style.backgroundColor = "orange";
+      document.getElementById('semaforo-4').style.backgroundColor = "orange";
+      document.getElementById('semaforo-5').style.backgroundColor = "orange";
       this.colorRojo = true;
     }
   }

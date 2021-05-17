@@ -58,7 +58,16 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.renderer.removeClass(this.document.body, "chat-application");
   }
 
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+    //Variable para el cambio de color del boton para Aplicador
+    setInterval(this.NuevoMensaje, 10000);
+  }
 
+  NuevoMensaje(){
+    //alert('ssssss');
+  }
 
 
   //send button function calls
@@ -72,8 +81,8 @@ export class ChatComponent implements OnInit, OnDestroy {
       })
       this.newMessage = "";
     }
-      
   }
+
 
   viewChat(chat: UsersChat) {
 
