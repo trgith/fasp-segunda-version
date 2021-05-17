@@ -409,7 +409,7 @@ export const ROUTES: RouteInfo[] = [
   //Sidebar de Evaluador Externo
   { path: 'evaluadorExterno', title: 'Inicio', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
   {
-    path: 'evaluadorExterno', title: 'Construir Informe', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
+    path: 'evaluadorExterno', title: 'Monitoreo', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
     submenu: [
       {
         path: '#', title: 'Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
@@ -420,7 +420,7 @@ export const ROUTES: RouteInfo[] = [
     ]
   },
   {
-    path: 'evaluadorExterno', title: 'Monitoreo', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
+    path: 'evaluadorExterno', title: 'Construir Informe', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
     submenu: [
       {
         path: '#', title: 'Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
@@ -487,7 +487,7 @@ export const ROUTES: RouteInfo[] = [
   //Sidebar de Enlace Estatal
   { path: 'enlaceEstatal', title: 'Inicio', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
   {
-    path: 'enlaceEstatal', title: 'Validar Informe', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
+    path: 'enlaceEstatal', title: 'Monitoreo', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
     submenu: [
       {
         path: '#', title: 'Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
@@ -498,7 +498,7 @@ export const ROUTES: RouteInfo[] = [
     ]
   },
   {
-    path: 'enlaceEstatal', title: 'Monitoreo', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
+    path: 'enlaceEstatal', title: 'Validar Informe', icon: '', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
     submenu: [
       {
         path: '#', title: 'Institucional', icon: 'ft-target submenu-icon', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []

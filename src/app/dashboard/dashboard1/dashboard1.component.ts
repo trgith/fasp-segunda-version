@@ -11,6 +11,7 @@ import * as am4charts from '@amcharts/amcharts4/charts';
 import countries2  from '@amcharts/amcharts4-geodata/data/countries2';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 import { NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { interval, Subscription } from 'rxjs';
 import {
   ApexAxisChartSeries,
   ApexChart,
@@ -88,6 +89,7 @@ var themeColors = [$primary, $warning, $success, $danger, $info];
 
 export class Dashboard1Component implements OnInit {
 
+
   programas: Programas[];
 
   constructor(private modalService: NgbModal) {
@@ -150,6 +152,9 @@ export class Dashboard1Component implements OnInit {
     'Aguascalientes', 'Baja California', 'Baja California Sur', 'Campeche', 'Coahuila', 'Colima', 'Chiapas', 'Chihuahua', 'Durango', 'Distrito Federal', 'Guanajuato', 'Guerrero', 'Hidalgo', 'Jalisco', 'México', 'Michoacán', 'Morelos', 'Nayarit', 'Nuevo León', 'Oaxaca', 'Puebla', 'Querétaro', 'Quintana Roo', 'San Luis Potosí', 'Sinaloa', 'Sonora', 'Tabasco', 'Tamaulipas', 'Tlaxcala', 'Veracruz', 'Yucatán', 'Zacatecas'
   ];
   usuarioLogeado: string;
+
+  //Variable para el color del boton
+  colorRojo: boolean;
 
   ngOnInit() {
     //Variable de Usuario para mostrar si o no los elementos
@@ -217,10 +222,13 @@ export class Dashboard1Component implements OnInit {
     //Variables a Identificar
     this.MostrarDetalleGrupoMonitoreoInstitucional = false;
     this.MostrarRealizarObservacionGrupo = false;
+    this.colorRojo = false;
   }
 
 
   ngAfterViewInit() {
+        //Variable para el cambio de color del boton para Aplicador
+        setInterval(this.CambioColor, 1000);
 
         am4core.useTheme(am4themes_animated);
         let geo : any = [{"country_code":"MX","country_name":"Mexico"}];
@@ -304,6 +312,9 @@ export class Dashboard1Component implements OnInit {
         // Create hover state and set alternative fill color
         let hs = polygonTemplate.states.create("hover");
         hs.properties.fill = chart.colors.getIndex(16).brighten(-0.5);
+
+        //Zoom Control
+        chart.zoomControl = new am4maps.ZoomControl();
 
         //Function Click
         /*
@@ -630,7 +641,35 @@ export class Dashboard1Component implements OnInit {
   * */
   asistenciaPoli(id){
     //document.getElementById('poli-' + id).style.visibility = "hidden";
-    document.getElementById('poli-' + id).innerHTML = "<i class='ft-check-square'></i>"
+    document.getElementById('poli-' + id).innerHTML = "<i class='ft-check-square' style='color: #1F5247'></i>"
+  }
+  /*
+  *
+  *
+  * Función de cambio de color en botón
+  *
+  *
+  * */
+  CambioColor(){
+    if(this.colorRojo){
+      document.getElementById('semaforo-poli-1').style.backgroundColor = "red";
+      document.getElementById('semaforo-poli-2').style.backgroundColor = "red";
+      document.getElementById('semaforo-poli-3').style.backgroundColor = "red";
+      document.getElementById('semaforo-poli-4').style.backgroundColor = "red";
+      document.getElementById('semaforo-poli-5').style.backgroundColor = "red";
+      this.colorRojo = false;
+    } else {
+      document.getElementById('semaforo-poli-1').style.backgroundColor = "orange";
+      document.getElementById('semaforo-poli-2').style.backgroundColor = "orange";
+      document.getElementById('semaforo-poli-3').style.backgroundColor = "orange";
+      document.getElementById('semaforo-poli-4').style.backgroundColor = "orange";
+      document.getElementById('semaforo-poli-5').style.backgroundColor = "orange";
+      this.colorRojo = true;
+    }
+  }
+
+  VerAsistencia(verSolicitud){
+    this.modalService.open(verSolicitud, { windowClass: 'dark-modal' });
   }
 
 
@@ -668,6 +707,7 @@ export class Dashboard1Component implements OnInit {
 
     return result;
   }
+
 
   /*
   *

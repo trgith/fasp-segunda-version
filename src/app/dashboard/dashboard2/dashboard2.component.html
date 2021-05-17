@@ -1,9 +1,24 @@
 <!--
 
-  Seccion para Funcionario Estatal
+  Seccion para Policia
 
 -->
 <div *ngIf="usuarioLogeado == 'policia'">
+
+    <!-- Logos -->
+    <div class="row" *ngIf="usuarioLogeado == 'policia' && instrucciones">
+      <div class="col-md-4 text-left">
+        <img src="assets/img/logo1.png" width="350">
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="assets/img/logo2.jpeg" width="350">
+      </div>
+      <div class="col-md-4 text-right">
+        <img src="assets/img/logo3.png" width="350">
+      </div>
+    </div>
+    <!-- Logos -->
+
     <!-- Pantalla de bienvenida -->
     <div class="card" *ngIf="usuarioLogeado == 'policia' && instrucciones">
         <div class="card-content">
@@ -12,28 +27,20 @@
             </div>
             <div class="card-body">
 
+              <p>
+                Cumpliendo con el Art. 3 de los Lineamientos Generales de Evaluación del Fondo de Aportaciones para la Seguridad Pública (FASP) se lleva a cabo la siguiente Encuesta Institucional.
+                Es importante que recuerdes:
+              </p>
                 <!-- Instrucciones -->
                 <ul class="list-group">
                     <li class="list-group-item">
-                        I. El cuestionario es de aplicación anónima y está orientado a conocer la percepción del personal operativo de las instituciones policiales, de procuración de justicia y del sistema penitenciario de las entidades federativas en temas tales como: Perfil,
-                        Aspectos socioeconómicos, Profesionalización, Capacitación, Evaluación Policial, Equipamiento, Uso de tecnología, Infraestructura, Condiciones laborales, Hábitos y Problemas en el trabajo.
+                        I. Esta aplicación es ANÓNIMA
                     </li>
                     <li class="list-group-item">
-                        II. El encuestador o responsable de la aplicación de la encuesta electrónica deberá llenar la totalidad de los campos del encabezado de la encuesta.
+                        II. Cualquier duda favor de solicitar apoyo a tu aplicador(a)
                     </li>
                     <li class="list-group-item">
-                        III. La encuesta podrá ser aplicada mediante una entrevista preferentemente directa o conjunta del encuestador hacia el personal seleccionado, o bien, bajo la metodología que determine el evaluador externo en caso de que sea mediante aplicación electrónica.
-                    </li>
-                    <li class="list-group-item">
-                        IV. En todas las preguntas se presentan respuestas de opción múltiple, por lo que ninguna pregunta puede quedar sin contestar, a excepción de aquellas que están condicionadas a la respuesta de otras preguntas.
-                    </li>
-                    <li class="list-group-item">
-                        V. En caso de que el encuestado no conteste o no sepa la respuesta de la pregunta número l (uno), no deberá continuar con la aplicación de la encuesta y en caso de haber contestado la totalidad de la encuesta salvo la pregunta número l (uno), la encuesta
-                        se deberá considerar NO VÁLIDA, por lo que no deberá ser registrada en la base de datos correspondiente.
-                    </li>
-                    <li class="list-group-item">
-                        VI. Antes de concluir con la aplicación de la encuesta, el encuestador o responsable de la aplicación de la encuesta electrónica deberá revisar que todas las preguntas hayan sido contestadas y, en su caso, solicitar al encuestado indicar su(s) respuesta(s)
-                        correspondiente(s a las pregunta(s) faltante(s) por contestar.
+                        III. Contesta todas las preguntas
                     </li>
                     <li class="list-group-item text-center">
                         <button class="btn btn-success" (click)="ComenzarCuestionario()" style="background-color: #1F5247;">Comenzar Cuestionario</button>
@@ -267,7 +274,10 @@
     <!-- Boton de Expulsión de Emergencia jsjs -->
     <div class="row" *ngIf="botonEmergencia">
         <div class="col text-center" (click)="ExpulsionDeEmergencia()">
-            <button class="btn btn-danger">Expulsión de Emergencia</button>
+            <button class="btn btn-danger">Terminar Encuesta</button>
+        </div>&nbsp;
+        <div class="col text-center" (click)="ExpulsionDeEmergencia2()">
+          <button class="btn btn-danger">Salir de Encuesta</button>
         </div>
     </div>
     <!-- Boton de Expulsión de Emergencia jsjs -->
@@ -287,6 +297,10 @@
                 </h4>
                 <h5>Muchas gracias por tu participación</h5>
                 <!-- Contenido de Card -->
+
+                <div class="col text-center" (click)="ExpulsionDeEmergencia2()">
+                  <button class="btn btn-danger">Salir de Encuesta</button>
+                </div>
             </div>
         </div>
     </div>
@@ -301,6 +315,20 @@
 -->
 <div *ngIf="usuarioLogeado == 'funcionarioEstatal'">
 
+    <!-- Logos -->
+    <div class="row" *ngIf="usuarioLogeado == 'funcionarioEstatal' && instrucciones">
+      <div class="col-md-4 text-left">
+        <img src="assets/img/logo1.png" width="350">
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="assets/img/logo2.jpeg" width="350">
+      </div>
+      <div class="col-md-4 text-right">
+        <img src="assets/img/logo3.png" width="350">
+      </div>
+    </div>
+    <!-- Logos -->
+
     <!-- Pantalla de bienvenida -->
     <div class="card" *ngIf="usuarioLogeado == 'funcionarioEstatal' && instrucciones">
         <div class="card-content">
@@ -309,27 +337,24 @@
             </div>
             <div class="card-body">
 
+                <p>
+                  Cumpliendo con el Art. 3 de los Lineamientos Generales de Evaluación del Fondo de Aportaciones para la Seguridad Pública (FASP) se lleva a cabo la siguiente Encuesta Institucional.
+                  Es importante que recuerdes:
+                </p>
+
                 <!-- Instrucciones -->
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <strong>¡Bienvenido!</strong>, como se encuentra establecido en los Lineamientos del FASP 2020 (Artículo 15), adicionalmente al Informe Estatal de Evaluación 2020, es requisito llenar la Base de Datos de las metas alcanzadas y
-                        los avances generales de los Programas con Prioridad Nacional y Subprogramas con corte al 31 de diciembre de 2020 en un archivo electrónico formato MS-Excel (xslx)."
+                      De ser necesario se deberán subir los documentos que sean necesarios para acreditar la información
                     </li>
                     <li class="list-group-item">
-                        "Para este ejercicio se ha diseñado un formato de Base de Datos especifico para contener la información tal y como se analizará en el Informe Nacional de Evaluación. Es por eso que, aunque contiene todos los datos correspondientes al Informe, el diseño
-                        es diferente y se le solicita se respete el mismo, ya que servirá para vaciar la información que nos proporcione, directamente en un repositorio general."
+                      Contesta todas las preguntas
                     </li>
                     <li class="list-group-item">
-                        "La base cuenta con especificaciones de los siguientes tipos de información: dato numérico o decimal, respuestas binarias o dicotómicas [SI/NO], catálogos específicos que debe contener alguna respuesta [años/condiciones]. La intención de incluir este
-                        nivel de especificidad no ha sido restringir su captura, es para aclarar el tipo de dato necesario para poder incluir su evaluación en un repositorio nacional."
+                      Cualquier duda favor de solicitar apoyo a tu enlace externo
                     </li>
                     <li class="list-group-item">
-                        "Para los casos en los que desee añadir información o aclaraciones pertinentes, se le solicita abrir una nueva pestaña que aclare los siguientes elementos: Capítulo al que se refiere, Sección e Inciso, indicando si se trata de un anexo, algún dato añadido
-                        o una aclaración (o cualquier otro que usted considere importante). La misma dinámica aplica para cualquier imagen, fotografía o documento adjunto que desee integrar, se le solicita vaya en una pestaña nueva."
-                    </li>
-                    <li class="list-group-item">
-                        "Finalmente, usted puede contar con que todos los rubros incluidos en esta Base de Datos son los mismos que encontrará en el Informe del Anexo 2, por lo que es la guía ideal para reconocer el tipo de información que deberá cargar para cada Capítulo, Sección
-                        y/o Inciso de la Evaluación FASP 2021."
+                      Cumple con los tiempos estipulados
                     </li>
                     <li class="list-group-item text-center">
                         <button class="btn btn-success" (click)="ComenzarCuestionarioIntegral()" style="background-color: #1F5247;">Comenzar Cuestionario</button>
@@ -498,7 +523,10 @@
     <!-- Boton de Expulsión de Emergencia jsjs -->
     <div class="row" *ngIf="botonEmergencia">
         <div class="col text-center" (click)="ExpulsionDeEmergencia()">
-            <button class="btn btn-danger">Expulsión de Emergencia</button>
+            <button class="btn btn-danger">Terminar Encuesta</button>
+        </div>
+        <div class="col text-center" (click)="ExpulsionDeEmergencia2()">
+          <button class="btn btn-danger">Salir de Encuesta</button>
         </div>
     </div>
     <!-- Boton de Expulsión de Emergencia jsjs -->
@@ -518,6 +546,9 @@
                 </h4>
                 <h5>Muchas gracias por tu participación</h5>
                 <!-- Contenido de Card -->
+                <div class="col text-center" (click)="ExpulsionDeEmergencia2()">
+                  <button class="btn btn-danger">Salir de Encuesta</button>
+                </div>
             </div>
         </div>
     </div>

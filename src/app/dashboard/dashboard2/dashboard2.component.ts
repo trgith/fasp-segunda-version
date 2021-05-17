@@ -102,6 +102,11 @@ export class Dashboard2Component{
     this.segundaPregunta = false;
     this.contadorActivo = false;
     this.botonEmergencia = false;
+    this.titulo = false;
+    this.porcentajeActual = false;
+  }
+
+  ExpulsionDeEmergencia2(){
     this.closedSesionEmergency();
   }
 
